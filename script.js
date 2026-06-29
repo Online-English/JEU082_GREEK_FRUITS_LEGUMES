@@ -32,8 +32,8 @@ const vocabulaire = [
     { grec: "Κουνουπίδι", francais: "Chou-fleur", emoji: "🥦", lvl: 3, mne: "Se prononce 'kounoupidi'. Chou blanc." },
     { grec: "Κολοκύθι", francais: "Courgette", emoji: "🥒", lvl: 3, mne: "Se prononce 'kolokythi'. Pour les mezzés." },
     { grec: "Μελιτζάνα", francais: "Aubergine", emoji: "🍆", lvl: 3, mne: "Se prononce 'melitzana'. Indispensable pour la moussaka !" },
-    { grec: "Πιπεριά", francais: "Poivron", emoji: "🫑", lvl: 3, mne: "Se prononce 'piperia'. De la même racine piquante que le poivre." },
-    { grec: "Φασολάκια", francais: "Haricots verts", emoji: "🫘", lvl: 3, mne: "Se prononce 'fasolakia'. Les petits haricots fins du potager." },
+    { grec: "Πιπεριά", francais: "Poivron", emoji: "🫑", lvl: 3, mne: "Se prononce 'piperia'. Même racine que le poivre." },
+    { grec: "Φασολάκια", francais: "Haricots verts", emoji: "🫘", lvl: 3, mne: "Se prononce 'fasolakia'. Petits haricots fins." },
 
     // ================= NIVEAU 4 =================
     { grec: "Μάνγκο", francais: "Mangue", emoji: "🥭", lvl: 4, mne: "Se prononce 'mango'. Écriture directe." },
@@ -48,7 +48,7 @@ const vocabulaire = [
     { grec: "Μαϊντανός", francais: "Persil", emoji: "🌱", lvl: 4, mne: "Se prononce 'maintanos'. L'herbe aromatique phare." },
 
     // ================= NIVEAU 5 =================
-    { grec: "Βατόμουρο", francais: "Mûre", emoji: "🍇", lvl: 5, mne: "Se prononce 'vatomouro'. La mûre sauvage des ronces." },
+    { grec: "Βατόμουρο", francais: "Mûre", emoji: "🍇", lvl: 5, mne: "Se prononce 'vatomouro'. Mûre des ronces." },
     { grec: "Κράνμπερι", francais: "Canneberge", emoji: "🍒", lvl: 5, mne: "Phonétique de cranberry." },
     { grec: "Μανταρίνι", francais: "Mandarine", emoji: "🍊", lvl: 5, mne: "Se prononce 'mandarini'. Identique." },
     { grec: "Σταφύλι", francais: "Raisin", emoji: "🍇", lvl: 5, mne: "Se prononce 'stafyli'. Les vignes des Cyclades." },
@@ -63,7 +63,7 @@ const vocabulaire = [
     { grec: "Φιστίκι", francais: "Pistache", emoji: "🥜", lvl: 6, mne: "Se prononce 'fistiki'. La pistache d'Égine." },
     { grec: "Κάστανο", francais: "Châtaigne", emoji: "🌰", lvl: 6, mne: "Se prononce 'kastano'. Châtaignes chaudes." },
     { grec: "Φουντούκι", francais: "Noisette", emoji: "🥜", lvl: 6, mne: "Se prononce 'fountouki'. Fruit du coudrier." },
-    { grec: "Αμύγδαλο", francais: "Amande", emoji: "🌰", lvl: 6, mne: "Se prononce 'amygdalo'. Amygdales en amande." },
+    { grec: "Αμύγδαλο", francais: "Amande", emoji: "🌰", lvl: 6, mne: "Se prononce 'amygdalo'. Amande en amande." },
     { grec: "Καρύδα", francais: "Noix de coco", emoji: "🥥", lvl: 6, mne: "Se prononce 'karyda'. Grosse noix exotique." },
     { grec: "Φάβα", francais: "Fève", emoji: "🫘", lvl: 6, mne: "Se prononce 'fava'. Purée typique de Santorin." },
     { grec: "Γλυκοπατάτα", francais: "Patate douce", emoji: "🍠", lvl: 6, mne: "Se prononce 'glykopatata'. Patate sucrée." },
@@ -98,13 +98,13 @@ const vocabulaire = [
     // ================= NIVEAU 9 =================
     { grec: "Φραγκόσυκο", francais: "Figue de Barbarie", emoji: "🌵", lvl: 9, mne: "Se prononce 'frangosyko'. Figue épineuse." },
     { grec: "Φραγkoστάφυλο", francais: "Groseille", emoji: "🍒", lvl: 9, mne: "Se prononce 'frangostafylo'. Baie acide." },
-    { grec: "Φρούτο του πάθους", francais: "Fruit de la passion", emoji: "🍇", lvl: 9, mne: "Frouto tou pathous." },
+    { grec: "Fruit de la passion", francais: "Fruit de la passion", emoji: "🍇", lvl: 9, mne: "Frouto tou pathous." },
     { grec: "Γκότζι μπέρι", francais: "Baie de Goji", emoji: "🍒", lvl: 9, mne: "Phonétique directe." },
     { grec: "Μούρο", francais: "Mûre sauvage", emoji: "🍇", lvl: 9, mne: "Se prononce 'mouro'. Fruits des buissons." },
     { grec: "Τζίντζερ", francais: "Gingembre", emoji: "🫚", lvl: 9, mne: "Phonétique de ginger." },
     { grec: "Κάπαρη", francais: "Câpre", emoji: "🌱", lvl: 9, mne: "Se prononce 'kapari'. Câpres salées des roches." },
     { grec: "Μάραθος", francais: "Fenouil sauvage", emoji: "🌿", lvl: 9, mne: "Se prononce 'marathos'. Herbe folle." },
-    { grec: "Σπαράγγι της θάλασσας", francais: "Salicorne", emoji: "🌿", lvl: 9, mne: "Asperge de mer marine." },
+    { grec: "Salicorne", francais: "Salicorne", emoji: "🌿", lvl: 9, mne: "Asperge de mer marine." },
     { grec: "Βλαστός μπαμπού", francais: "Pousse de bambou", emoji: "🎍", lvl: 9, mne: "Pousse asiatique." },
 
     // ================= NIVEAU 10 =================
@@ -120,10 +120,7 @@ const vocabulaire = [
     { grec: "Φύκια", francais: "Algues", emoji: "🌿", lvl: 10, mne: "Fykia. Légumes de la mer." }
 ];
 
-const avatarsList = ["🍎", "🤓", "🎓", "🏛️", "🏺", "🦉", "🦁", "🦅", "🐉", "🌋", "☀️", "🌟", "👑", "🔮", "⚔️", "🛡️", "🏹", "✨", "🔥", "👑"];
-const prestigeAvatars = ["⚡", "🔱", "🏹", "🦉", "🛡️", "🌋", "🍷"];
-
-// Économie rehaussée : Prix multipliés par 20
+// Prix indexés x20
 const shopAvatars = [
     { emoji: "👶", cost: 0 }, { emoji: "🥔", cost: 400 }, { emoji: "🥦", cost: 800 }, { emoji: "🥑", cost: 1200 }, { emoji: "🍉", cost: 1600 },
     { emoji: "🥕", cost: 2000 }, { emoji: "🍓", cost: 2400 }, { emoji: "🍋", cost: 2800 }, { emoji: "🍄", cost: 3200 }, { emoji: "🍇", cost: 3600 },
@@ -132,16 +129,11 @@ const shopAvatars = [
 ];
 
 const shopThemes = [
-    { id: "theme-orchard", name: "Verger Nocturne 🌌", cost: 0 },
-    { id: "theme-greenhouse", name: "Serre Épurée ☀️", cost: 0 },
-    { id: "theme-olympe", name: "Marbre Sacré 🏛️", cost: 0 },
-    { id: "theme-atlantis", name: "Fonds d'Atlantis 🌊", cost: 1600 },
-    { id: "theme-cyberpunk", name: "Potager Cyberpunk ⚡", cost: 3200 },
-    { id: "theme-sunset", name: "Crépuscule Égée 🌅", cost: 4800 },
-    { id: "theme-forest", name: "Forêt des Dryades 🌳", cost: 6400 },
-    { id: "theme-royal", name: "Festin Royal 👑", cost: 8000 },
-    { id: "theme-neon", name: "Salade Néon 🧪", cost: 10000 },
-    { id: "theme-sahara", name: "Oasis du Sahara 🏜️", cost: 12000 }
+    { id: "theme-orchard", name: "Verger Nocturne 🌌", cost: 0 }, { id: "theme-greenhouse", name: "Serre Épurée ☀️", cost: 0 },
+    { id: "theme-olympe", name: "Marbre Sacré 🏛️", cost: 0 }, { id: "theme-atlantis", name: "Fonds d'Atlantis 🌊", cost: 1600 },
+    { id: "theme-cyberpunk", name: "Potager Cyberpunk ⚡", cost: 3200 }, { id: "theme-sunset", name: "Crépuscule Égée 🌅", cost: 4800 },
+    { id: "theme-forest", name: "Forêt des Dryades 🌳", cost: 6400 }, { id: "theme-royal", name: "Festin Royal 👑", cost: 8000 },
+    { id: "theme-neon", name: "Salade Néon 🧪", cost: 10000 }, { id: "theme-sahara", name: "Oasis du Sahara 🏜️", cost: 12000 }
 ];
 
 const badgesList = [
@@ -153,13 +145,13 @@ const badgesList = [
 let state = JSON.parse(localStorage.getItem('greekVocabV2')) || { 
     score: 0, drachmes: 0, streak: 0, highestStreak: 0, currentCombo: 1, lastLvl: 1, prestige: 0, streakFreeze: 0, lastActiveDate: "",
     unlockedAvatars: ["👶"], unlockedThemes: ["theme-orchard", "theme-greenhouse", "theme-olympe"],
-    activeAvatar: "👶", activeTheme: "theme-dark", history: {}, dailyQuests: { date: "", list: [] }, chronoRecords: [], activityLog: {},
+    activeAvatar: "👶", activeTheme: "theme-orchard", history: {}, dailyQuests: { date: "", list: [] }, chronoRecords: [], activityLog: {},
     activityTracker: { qcm: 0, lecture: 0, ecriture: 0, audition: 0, oral: 0, chrono: 0, rattrapage: 0, association: 0 }
 };
 
 let currentWord = null; let isSlowAudio = false; let chronoTimer = null; let timeLeft = 60; let chronoScore = 0;
 let assocSelected = null; let assocPairsMatched = 0;
-let slideshowInterval = null; let slideshowIndex = 0;
+let slideshowInterval = null; let slideshowIndex = 0; let slideshowLevel = "all";
 
 function launchCelebration() {
     for (let i = 0; i < 70; i++) {
@@ -185,7 +177,7 @@ function playTone(freqs, duration) {
 function getLevel() { 
     if(!state.activityTracker) state.activityTracker = {};
     const keys = ['qcm', 'lecture', 'ecriture', 'audition', 'oral', 'chrono', 'rattrapage', 'association'];
-    let greenCount = 0; keys.forEach(k => { if ((state.activityTracker[k] || 0) >= 2) greenCount++; });
+    let greenCount = 0; keys.forEach(k => { if ((state.activityTracker[k] || 0) >= 10) greenCount++; });
     let xpLevel = Math.floor(state.score / 5000) + 1;
     let allowedLevel = state.lastLvl || 1;
     if (xpLevel > allowedLevel) { if (greenCount >= 6) { return Math.min(10, xpLevel); } else { return allowedLevel; } }
@@ -218,11 +210,11 @@ function renderCalendarHeatmap() {
 function renderActivityDots() {
     const box = document.getElementById('activity-tracker-box'); if(!box) return;
     const labels = { qcm: "QCM", lecture: "Gr→Fr", ecriture: "Fr→Gr", audition: "Écoute", oral: "Oral", chrono: "Rush", rattrapage: "Rattrap.", association: "Assoc." };
-    let html = `<div class="dots-title">Exigence de diversité (6 Verts requis pour évoluer) :</div><div class="dots-grid">`;
+    let html = `<div class="dots-title">6 points verts pour débloquer niveau suivant :</div><div class="dots-grid">`;
     for (let k in labels) {
         const count = state.activityTracker[k] || 0;
-        let dotClass = "dot-red"; if(count === 1) dotClass = "dot-orange"; else if(count >= 2) dotClass = "dot-green";
-        html += `<div class="dot-item"><span class="status-dot ${dotClass}"></span><small>${labels[k]} (${count}/2)</small></div>`;
+        let dotClass = "dot-red"; if(count >= 1 && count < 10) dotClass = "dot-orange"; else if(count >= 10) dotClass = "dot-green";
+        html += `<div class="dot-item"><span class="status-dot ${dotClass}"></span><small>${labels[k]} (${count}/10)</small></div>`;
     }
     box.innerHTML = html + `</div>`;
 }
@@ -260,41 +252,22 @@ function renderQuestsUI() {
 }
 
 function getNextWord() {
-    const type = document.getElementById('exercise-select').value; 
-    const lvl = getLevel();
+    const type = document.getElementById('exercise-select').value; const lvl = getLevel();
     let pool = vocabulaire.filter(item => item.lvl <= lvl);
-    
-    // Mode rattrapage exclusif (cible uniquement les erreurs)
     if (type === 'rattrapage') {
         let weakPool = pool.filter(l => (state.history[l.grec]?.errors / state.history[l.grec]?.total) >= 0.40);
         return weakPool.length > 0 ? weakPool[Math.floor(Math.random() * weakPool.length)] : pool[Math.floor(Math.random() * pool.length)];
     }
-
-    // 1. Phase de découverte : Priorité absolue aux mots qui n'ont ENCORE JAMAIS été vus
     const unseen = pool.filter(l => !state.history[l.grec] || state.history[l.grec].total === 0);
     if (unseen.length > 0) return unseen[Math.floor(Math.random() * unseen.length)];
+    if (Math.random() < 0.25) { return pool[Math.floor(Math.random() * pool.length)]; }
 
-    // 2. Anti-monotonie : 25% de chance de piocher un mot totalement aléatoire parmi les débloqués
-    if (Math.random() < 0.25) {
-        return pool[Math.floor(Math.random() * pool.length)];
-    }
-
-    // 3. Tri SRS intelligent avec gestion des égalités (Roulement parfait)
     return pool.sort((a, b) => {
-        const totalA = state.history[a.grec]?.total || 0;
-        const totalB = state.history[b.grec]?.total || 0;
-        const errA = state.history[a.grec]?.errors || 0;
-        const errB = state.history[b.grec]?.errors || 0;
-
-        const rateA = errA / (totalA || 1);
-        const rateB = errB / (totalB || 1);
-
-        // Critère 1 : On trie d'abord par taux d'erreur décroissant (le plus difficile en premier)
-        if (rateB !== rateA) return rateB - rateA;
-
-        // Critère 2 : En cas d'égalité de réussite (ex: 0% d'erreur), on met en premier celui qui a été le MOINS RÉVISÉ
-        return totalA - totalB;
-    })[Math.floor(Math.random() * Math.min(4, pool.length))]; // Pioche dans un échantillon de tête élargi
+        const scoreA = (state.history[a.grec]?.errors || 0) / (state.history[a.grec]?.total || 1);
+        const scoreB = (state.history[b.grec]?.errors || 0) / (state.history[b.grec]?.total || 1);
+        if (scoreB !== scoreA) return scoreB - scoreA;
+        return (state.history[a.grec]?.total || 0) - (state.history[b.grec]?.total || 0);
+    })[Math.floor(Math.random() * Math.min(4, pool.length))];
 }
 
 function renderExercise() {
@@ -307,7 +280,7 @@ function renderExercise() {
     if (type === 'association') { buildAssociationGame(); return; }
 
     currentWord = getNextWord();
-    let html = type === 'rattrapage' ? `<h2 style="color:var(--error)">⚠️ REPAS DE RATTRAPAGE (XP X2)</h2>` : `<h2>Mission</h2>`;
+    let html = type === 'rattrapage' ? `<h2 style="color:var(--error)">⚠️ SESSION RATTRAPAGE (XP X2)</h2>` : `<h2>Mission</h2>`;
     let audioButton = `<button onclick="speak('${currentWord.grec}')" class="inline-audio-btn">🔊 Écouter</button>`;
 
     if (type === 'qcm' || type === 'chrono') {
@@ -351,8 +324,9 @@ window.selectAssocCard = function(idx, id) {
             setTimeout(() => { btn.className = "assoc-card hidden-pair"; prevBtn.className = "assoc-card hidden-pair"; }, 500);
             assocPairsMatched++;
             if (assocPairsMatched === 4) {
+                if(!state.activityTracker) state.activityTracker = {}; state.activityTracker['association'] = (state.activityTracker['association'] || 0) + 1;
                 state.score += 50; state.drachmes += 6; updateQuestProgress("gain_xp", 50); updateQuestProgress("drachmes", 6);
-                setTimeout(() => { alert("Tableau complété ! (+50 XP / +6 🪙)"); buildAssociationGame(); }, 600);
+                setTimeout(() => { alert("Tableau complété ! (+50 XP / +6 🪙)"); renderActivityDots(); buildAssociationGame(); }, 600);
             }
         } else {
             btn.classList.add('feedback-error'); prevBtn.classList.add('feedback-error'); playTone([220], 0.15);
@@ -363,8 +337,7 @@ window.selectAssocCard = function(idx, id) {
 };
 
 window.checkAnswer = function(btnElement, selected, correct) {
-    const buttons = btnElement.closest('.qcm-grid').querySelectorAll('.qcm-btn');
-    buttons.forEach(b => b.disabled = true);
+    const buttons = btnElement.closest('.qcm-grid').querySelectorAll('.qcm-btn'); buttons.forEach(b => b.disabled = true);
     const isCorrect = selected.toLowerCase() === correct.toLowerCase();
     if (isCorrect) { btnElement.classList.add('feedback-success'); } else { btnElement.classList.add('feedback-error'); }
     processResult(isCorrect, correct);
@@ -380,6 +353,8 @@ function processResult(isCorrect, correctAnswerDisplay) {
 
     if (isCorrect) {
         triggerVibrate(30); state.currentCombo = Math.min(3, (state.currentCombo || 1) + 1);
+        if(!state.activityTracker) state.activityTracker = {}; state.activityTracker[type] = (state.activityTracker[type] || 0) + 1;
+
         let baseXP = type === 'rattrapage' ? 20 : 10;
         let gainedXP = baseXP * state.currentCombo; let gainedDrachmes = Math.max(1, Math.round((12 * state.currentCombo) / 5));
         
@@ -457,19 +432,37 @@ window.resetGameProgress = function() {
     }
 };
 
+// Gestion de la logique de Diaporama Audio unifiée par Menu Déroulant
 window.toggleSlideshow = function() {
-    const btn = document.getElementById('btn-start-slideshow'); const view = document.getElementById('slideshow-view'); const content = document.getElementById('fiche-content');
+    const btn = document.getElementById('btn-start-slideshow'); 
+    const view = document.getElementById('slideshow-view'); 
+    const content = document.getElementById('fiche-content');
+    const selectMenu = document.getElementById('slideshow-level-select');
+    
     if (slideshowInterval) {
         clearInterval(slideshowInterval); slideshowInterval = null;
-        btn.innerText = "🎬 Lancer le Diaporama Audio"; btn.style.background = "var(--accent)"; view.style.display = "none"; content.style.display = "grid";
+        btn.innerText = "🎬 Lancer"; btn.style.background = "var(--accent)";
+        view.style.display = "none"; content.style.display = "grid";
+        selectMenu.disabled = false;
     } else {
-        btn.innerText = "⏹️ Arrêter le Diaporama"; btn.style.background = "var(--error)"; view.style.display = "block"; content.style.display = "none";
+        slideshowLevel = selectMenu.value;
+        btn.innerText = "⏹️ Arrêter"; btn.style.background = "var(--error)";
+        view.style.display = "block"; content.style.display = "none";
+        selectMenu.disabled = true;
         slideshowIndex = 0; runSlidePlayer(); slideshowInterval = setInterval(runSlidePlayer, 3500);
     }
 };
 
 function runSlidePlayer() {
-    const pool = vocabulaire.filter(i => i.lvl <= getLevel()); if (pool.length === 0) return window.toggleSlideshow();
+    const maxLvl = getLevel();
+    let pool = [];
+    if (slideshowLevel === "all") {
+        pool = vocabulaire.filter(i => i.lvl <= maxLvl);
+    } else {
+        pool = vocabulaire.filter(i => i.lvl === parseInt(slideshowLevel));
+    }
+
+    if (pool.length === 0) return window.toggleSlideshow();
     if (slideshowIndex >= pool.length) slideshowIndex = 0;
     const word = pool[slideshowIndex];
     document.getElementById('slide-emoji').innerText = word.emoji || "🥗";
@@ -516,7 +509,7 @@ function saveAndRefresh() {
     document.body.className = state.activeTheme || "theme-orchard";
     const cBox = document.getElementById('combo-box');
     if(state.currentCombo > 1) { cBox.style.display = "block"; document.getElementById('combo-val').innerText = `x${state.currentCombo}`; } else { cBox.style.display = "none"; }
-    renderDashboard(); renderQuestsUI();
+    renderDashboard(); renderQuestsUI(); renderActivityDots();
 }
 
 function renderDashboard() {
@@ -543,20 +536,35 @@ const shopModal = document.getElementById('modal-boutique');
 document.getElementById('btn-boutique').onclick = () => { openShopMenuUI(); shopModal.showModal(); };
 document.getElementById('close-boutique').onclick = () => shopModal.close();
 
+// Génération dynamique du Lexique statique + Hydratation intelligente du menu déroulant du Diaporama
 document.getElementById('btn-fiche').onclick = () => {
-    document.getElementById('fiche-content').innerHTML = vocabulaire.filter(i => i.lvl <= getLevel()).map(l => `
-        <div class="fiche-item"><span><b>${l.grec}</b> : ${l.francais} ${l.emoji} <br><small style="color:var(--accent)">Niv.${l.lvl}</small></span><div><button class="dictio-audio-btn" onclick="speak('${l.grec}')">🔊 Écouter</button></div></div>
-    `).join('');
+    const currentMaxLvl = getLevel();
+    
+    // 1. Remplissage des choix autorisés dans le menu déroulant
+    let selectHtml = `<option value="all">♻️ Jouer TOUS les mots débloqués (Niv. 1 à ${currentMaxLvl})</option>`;
+    for (let l = 1; l <= currentMaxLvl; l++) {
+        selectHtml += `<option value="${l}">📖 Uniquement le Niveau ${l}</option>`;
+    }
+    document.getElementById('slideshow-level-select').innerHTML = selectHtml;
+
+    // 2. Remplissage de la liste de révision statique sous-jacente
+    let html = "";
+    for (let l = 1; l <= currentMaxLvl; l++) {
+        html += `<div style="grid-column: 1 / -1; margin-top: 15px; border-bottom: 2px solid var(--accent); padding-bottom: 5px; background: rgba(0,0,0,0.1); padding: 5px 10px; border-radius: 8px;">
+            <h3 style="margin:0; font-size:1.05rem;">Mots du Niveau ${l}</h3>
+        </div>`;
+        const levelWords = vocabulaire.filter(i => i.lvl === l);
+        levelWords.forEach(word => {
+            html += `<div class="fiche-item"><span><b>${word.grec}</b> : ${word.francais} ${word.emoji}</span><div><button class="dictio-audio-btn" onclick="speak('${word.grec}')">🔊 Écouter</button></div></div>`;
+        });
+    }
+    document.getElementById('fiche-content').innerHTML = html; 
     document.getElementById('modal-fiche').showModal();
 };
-document.getElementById('close-modal').onclick = () => { if (slideshowInterval) window.toggleSlideshow(); document.getElementById('modal-fiche').close(); };
 
+document.getElementById('close-modal').onclick = () => { if (slideshowInterval) window.toggleSlideshow(); document.getElementById('modal-fiche').close(); };
 document.getElementById('slow-toggle').onclick = (e) => { isSlowAudio = !isSlowAudio; e.target.classList.toggle('active', isSlowAudio); e.target.innerText = isSlowAudio ? "Lent" : "Audio"; };
-document.getElementById('exercise-select').onchange = function() {
-    const type = this.value; if(!state.activityTracker) state.activityTracker = {};
-    state.activityTracker[type] = (state.activityTracker[type] || 0) + 1;
-    renderActivityDots(); renderExercise();
-};
+document.getElementById('exercise-select').onchange = function() { renderExercise(); };
 document.addEventListener('keydown', (e) => { if(e.key === 'Enter') { const ex = document.getElementById('exercise-select').value; if(ex !== 'association' && ex !== 'qcm' && ex !== 'chrono') window.validateText(); } });
 
 checkDailyStreakAndCalendar(); verifyAndGenerateQuests(); renderActivityDots(); renderExercise();

@@ -15,13 +15,18 @@ header { text-align: center; margin: 10px 0; }
 #btn-fiche, #btn-boutique, #btn-stats, .toggle-btn { cursor: pointer; border: none; background: var(--card); color: var(--text); padding: 10px 12px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); font-weight: bold; font-size: 0.8rem; }
 
 .activity-tracker-box { background: var(--card); max-width: 440px; margin: 10px auto; padding: 10px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-.dots-title { font-size: 0.8rem; font-weight: bold; margin-bottom: 6px; text-align: left; opacity: 0.8; }
+.dots-title { font-size: 0.82rem; font-weight: bold; margin-bottom: 6px; text-align: left; color: var(--text); opacity: 0.95; }
 .dots-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-.dot-item { display: flex; align-items: center; gap: 4px; font-size: 0.75rem; }
+.dot-item { display: flex; align-items: center; gap: 4px; font-size: 0.72rem; }
 .status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 .dot-red { background-color: var(--error); box-shadow: 0 0 6px var(--error); }
 .dot-orange { background-color: #f59e0b; box-shadow: 0 0 6px #f59e0b; }
 .dot-green { background-color: var(--success); box-shadow: 0 0 6px var(--success); }
+
+/* Zone de pilotage du Diaporama */
+.slideshow-controls-container { display: flex; gap: 8px; margin-top: 10px; width: 100%; align-items: center; }
+.slideshow-controls-container select { flex: 2; margin: 0; padding: 12px; font-size: 0.9rem; }
+.slideshow-controls-container button { flex: 1; padding: 12px; background: var(--accent); color: white; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 0.9rem; }
 
 .word-audio-container { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 5px 0; }
 .inline-audio-btn { background: var(--kbd-bg); color: var(--text); border: none; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: bold; margin-top: 5px; }
@@ -74,7 +79,7 @@ input { padding: 14px; border-radius: 12px; border: 2px solid var(--kbd-bg); wid
 .hint-word { margin-top: 10px; font-style: italic; color: #94a3b8; font-size: 0.8rem; }
 
 .shop-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; background: var(--bg); padding: 10px; border-radius: 12px; max-height: 25vh; overflow-y: auto; }
-.shop-grid-themes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; background: var(--bg); padding: 10px; border-radius: 12px; max-height: 25vh; overflow-y: auto; }
+.shop-grid-themes { display: grid; grid-template-columns: repeat(1, 1fr); gap: 6px; background: var(--bg); padding: 10px; border-radius: 12px; max-height: 25vh; overflow-y: auto; }
 .shop-item-box { background: var(--kbd-bg); border-radius: 8px; padding: 10px 4px; text-align: center; cursor: pointer; font-size: 1.4rem; border: 2px solid transparent; }
 .shop-item-box.owned { border: 2px solid var(--success); }
 .shop-item-box.active-equip { background-color: var(--accent); border: 2px solid #fff; }

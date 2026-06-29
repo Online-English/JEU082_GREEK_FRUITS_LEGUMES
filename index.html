@@ -39,14 +39,14 @@
             <option value="association">🧩 MINI-JEU D'ASSOCIATION</option>
         </select>
 
-        <!-- Traqueur d'exigence de niveau (Pastilles de couleurs renommé) -->
+        <!-- Traqueur d'exigence de niveau (Pastilles de couleurs) -->
         <div id="activity-tracker-box" class="activity-tracker-box"></div>
 
         <div id="exercise-container">
             <p>Chargement des ingrédients...</p>
         </div>
 
-        <!-- Bloc Missions du Jour déplacé en bas de page -->
+        <!-- Bloc Missions du Jour -->
         <div id="daily-quests-box" class="daily-quests-box">
             <h4>🎯 Missions du Jour (+300 XP / +30 🪙)</h4>
             <div id="quests-list"></div>
@@ -56,21 +56,26 @@
         <div id="dashboard-grid" class="dashboard-grid"></div>
     </main>
 
-    <!-- Modal Lexique avec Diaporama Audio Ciblé par Niveau -->
+    <!-- Modal Lexique avec Sélecteur de Diaporama Intégré -->
     <dialog id="modal-fiche">
         <div class="modal-header">
-            <h2>Lexique Récolte 🔊</h2>
+            <h2>Lexique Potager 🔊</h2>
             <button id="close-modal">❌</button>
         </div>
         
-        <!-- Écran de projection partagé pour le diaporama du niveau sélectionné -->
-        <div id="slideshow-view" style="display:none; text-align:center; padding:20px; background:var(--bg); border-radius:12px; margin-top:10px; position:relative; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);">
-            <button onclick="toggleSlideshow()" class="dictio-audio-btn" style="position:absolute; top:10px; right:10px; background:var(--error); color:white;">⏹️ Quitter</button>
+        <!-- Commandes de Diaporama Unifiées -->
+        <div class="slideshow-controls-container">
+            <select id="slideshow-level-select"></select>
+            <button id="btn-start-slideshow" onclick="toggleSlideshow()">🎬 Lancer</button>
+        </div>
+
+        <!-- Écran de projection du diaporama -->
+        <div id="slideshow-view" style="display:none; text-align:center; padding:20px; background:var(--bg); border-radius:12px; margin-top:10px; box-shadow: inset 0 0 10px rgba(0,0,0,0.5);">
             <span id="slide-emoji" style="font-size:4rem; display:block;">🍎</span>
             <h2 id="slide-grec" style="font-size:2.5rem; margin:10px 0; color:var(--accent);">Μήλο</h2>
             <h3 id="slide-francais" style="font-size:1.4rem; margin:5px 0; opacity:0.8;">Pomme</h3>
         </div>
-        
+
         <div id="fiche-content"></div>
     </dialog>
 
@@ -115,7 +120,7 @@
         <h3>Vos Titres Honorifiques</h3>
         <div id="badges-grid" class="badges-grid"></div>
 
-        <!-- Boutons d'administration déplacés tout en bas de page -->
+        <!-- Outils de Sauvegarde & Réinitialisation tout en bas -->
         <h3 style="margin-top:20px; border-top: 1px solid var(--kbd-bg); padding-top:15px;">💾 Gestion des données locales</h3>
         <div class="backup-container">
             <button onclick="exportSave()">💾 Exporter la Sauvegarde</button>
