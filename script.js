@@ -536,14 +536,14 @@ const shopModal = document.getElementById('modal-boutique');
 document.getElementById('btn-boutique').onclick = () => { openShopMenuUI(); shopModal.showModal(); };
 document.getElementById('close-boutique').onclick = () => shopModal.close();
 
-// Génération dynamique du Lexique statique + Hydratation intelligente du menu déroulant du Diaporama
+// Lexique : Génération dynamique du Lexique + Hydratation simplifiée du menu Diaporama
 document.getElementById('btn-fiche').onclick = () => {
     const currentMaxLvl = getLevel();
     
-    // 1. Remplissage des choix autorisés dans le menu déroulant
-    let selectHtml = `<option value="all">♻️ Jouer TOUS les mots débloqués (Niv. 1 à ${currentMaxLvl})</option>`;
+    // 1. Remplissage épuré des choix autorisés dans le menu déroulant du diaporama
+    let selectHtml = `<option value="all">♻️ Tout</option>`;
     for (let l = 1; l <= currentMaxLvl; l++) {
-        selectHtml += `<option value="${l}">📖 Uniquement le Niveau ${l}</option>`;
+        selectHtml += `<option value="${l}">📖 Niveau ${l}</option>`;
     }
     document.getElementById('slideshow-level-select').innerHTML = selectHtml;
 
