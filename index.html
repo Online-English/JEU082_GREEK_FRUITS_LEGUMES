@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="manifest" href="manifest.json">
+    <title>Grec Vocab Master</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-orchard">
+    <div class="top-bar">
+        <button id="btn-boutique">🛍️ Marché & Thèmes</button>
+        <button id="btn-stats">📊 Stats & Badges</button>
+        <button id="slow-toggle" class="toggle-btn">🐢 Audio</button>
+        <button id="btn-fiche">📚 Potager Dictio</button>
+    </div>
+    
+    <header>
+        <div class="header-main">
+            <div class="avatar-badge"><span id="avatar-val">🍎</span></div>
+            <div class="level-badge">Rang <span id="level-val">1</span>/10 <span id="prestige-badge" style="display:none;">⭐ P.<span id="prestige-val">0</span></span></div>
+            <div class="combo-badge" id="combo-box">Combo <span id="combo-val">x1</span> 🔥</div>
+        </div>
+        <div id="stats">⚡ <span id="score">0</span> XP | 🪙 <span id="drachmes-val">0</span> Oboles | 🔥 Série : <span id="streak">0</span></div>
+        <div id="timer-container" class="timer-hidden">⏱️ Temps : <span id="timer-val">60</span>s | Session : <span id="chrono-score-val">0</span> pts</div>
+    </header>
+
+    <main>
+        <div id="daily-quests-box" class="daily-quests-box">
+            <h4>🎯 Missions du Jour (+300 XP / +150 🪙)</h4>
+            <div id="quests-list"></div>
+        </div>
+
+        <div class="progress-container"><div id="progress-bar"></div></div>
+        
+        <select id="exercise-select">
+            <option value="qcm">Mode QCM (Reconnaissance)</option>
+            <option value="lecture">Thème Grec → Français (Saisie)</option>
+            <option value="ecriture">Thème Français → Grec (Clavier Grec requis)</option>
+            <option value="audition">Mode Dictée Audio (Écoute → Traduction)</option>
+            <option value="oral">🗣️ Défi Chef Vocal (Prononciation)</option>
+            <option value="chrono">⏱️ RUSH POTAGER (Contre-la-montre)</option>
+            <option value="rattrapage">⚠️ REPAS DE RATTRAPAGE (XP x2)</option>
+            <option value="association">🧩 MINI-JEU D'ASSOCIATION</option>
+        </select>
+
+        <div id="exercise-container">
+            <p>Chargement des ingrédients...</p>
+        </div>
+
+        <h3>Vos Cultures Maîtrisées</h3>
+        <div id="dashboard-grid" class="dashboard-grid"></div>
+    </main>
+
+    <!-- Modal Dictionnaire -->
+    <dialog id="modal-fiche">
+        <div class="modal-header">
+            <h2>L'Almanach du Potager 🔊</h2>
+            <button id="close-modal">❌</button>
+        </div>
+        <div id="fiche-content"></div>
+    </dialog>
+
+    <!-- Modal Boutique -->
+    <dialog id="modal-boutique">
+        <div class="modal-header">
+            <h2>Le Marché d'Athènes 🪙</h2>
+            <button id="close-boutique">❌</button>
+        </div>
+        <div class="shop-section">
+            <h3>Objets Spéciaux</h3>
+            <div class="freeze-buy-container">
+                <span>❄️ Assurance récolte (Gèle votre série) : <span id="freeze-count-val">0</span></span>
+                <button class="buy-item-btn" onclick="buyItem('freeze', 400)">Acheter (400 🪙)</button>
+            </div>
+        </div>
+        <div class="shop-section">
+            <h3>Avatars de Chefs & Nature (20 choix)</h3>
+            <div id="avatars-shop-pool" class="shop-grid"></div>
+        </div>
+        <div class="shop-section">
+            <h3>Décors & Ambiances (10 choix)</h3>
+            <div id="themes-shop-pool" class="shop-grid-themes"></div>
+        </div>
+    </dialog>
+
+    <!-- Modal Stats -->
+    <dialog id="modal-stats">
+        <div class="modal-header">
+            <h2>Carnet de Récolte</h2>
+            <button id="close-stats">❌</button>
+        </div>
+        
+        <h3>📅 Calendrier d'Assiduité</h3>
+        <div id="calendar-heatmap" class="calendar-heatmap"></div>
+
+        <div id="stats-content" class="stats-content"></div>
+        
+        <h3>💾 Synchro & Sauvegarde</h3>
+        <div class="backup-container">
+            <button onclick="exportSave()">💾 Exporter</button>
+            <button onclick="document.getElementById('import-file-input').click()">📂 Importer</button>
+            <input type="file" id="import-file-input" style="display:none;" onchange="importSave(event)">
+        </div>
+
+        <h3>🏆 Records du Rush Potager</h3>
+        <ol id="leaderboard-list" class="leaderboard-list"></ol>
+
+        <h3>Vos Titres Honorifiques</h3>
+        <div id="badges-grid" class="badges-grid"></div>
+    </dialog>
+
+    <script src="script.js"></script>
+    <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');</script>
+</body>
+</html>
