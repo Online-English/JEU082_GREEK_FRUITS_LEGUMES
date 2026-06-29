@@ -37,7 +37,7 @@ const vocabulaire = [
 
     // ================= NIVEAU 4 =================
     { grec: "Μάνγκο", francais: "Mangue", emoji: "🥭", lvl: 4, mne: "Se prononce 'mango'. Écriture directe." },
-    { grec: "Ακτινίδιο", francais: "Kiwi", emoji: "🥝", lvl: 4, mne: "Se prononce 'aktinidio'. Rayons du fruit." },
+    { grec: "Ακτινίδio", francais: "Kiwi", emoji: "🥝", lvl: 4, mne: "Se prononce 'aktinidio'. Rayons du fruit." },
     { grec: "Γκρέιπφρουτ", francais: "Pamplemousse", emoji: "🍊", lvl: 4, mne: "Phonétique de grapefruit." },
     { grec: "Σμέουρο", francais: "Framboise", emoji: "🍓", lvl: 4, mne: "Se prononce 'smeouro'. Fruit délicat." },
     { grec: "Μύρτιλο", francais: "Myrtille", emoji: "🫐", lvl: 4, mne: "Se prononce 'myrtilo'. Très proche." },
@@ -54,14 +54,14 @@ const vocabulaire = [
     { grec: "Σταφύλι", francais: "Raisin", emoji: "🍇", lvl: 5, mne: "Se prononce 'stafyli'. Les vignes des Cyclades." },
     { grec: "Καρύδι", francais: "Noix", emoji: "🌰", lvl: 5, mne: "Se prononce 'karydi'. Petite coque ligneuse." },
     { grec: "Πράσο", francais: "Poireau", emoji: "🥬", lvl: 5, mne: "Se prononce 'praso'. Long poireau d'hiver." },
-    { grec: "Ρέβα", francais: "Navet", emoji: "🥔", lvl: 5, mne: "Se prononce 'reva'. Racine mauve." },
+    { grec: "Réβα", francais: "Navet", emoji: "🥔", lvl: 5, mne: "Reva. Racine mauve." },
     { grec: "Ραπάνι", francais: "Radis", emoji: "🥕", lvl: 5, mne: "Se prononce 'rapani'. Croquant avec du sel." },
     { grec: "Αγκινάρα", francais: "Artichaut", emoji: "🥬", lvl: 5, mne: "Se prononce 'anginara'. Cœur tendre." },
-    { grec: "Σπαράγγι", francais: "Asperge", emoji: "🥦", lvl: 5, mne: "Se prononce 'sparangi'. Asperge de printemps." },
+    { grec: "Σπαράγγi", francais: "Asperge", emoji: "🥦", lvl: 5, mne: "Se prononce 'sparangi'. Asperge de printemps." },
 
     // ================= NIVEAU 6 =================
     { grec: "Φιστίκι", francais: "Pistache", emoji: "🥜", lvl: 6, mne: "Se prononce 'fistiki'. La pistache d'Égine." },
-    { grec: "Κάstaνο", francais: "Châtaigne", emoji: "🌰", lvl: 6, mne: "Se prononce 'kastano'. Châtaignes chaudes." },
+    { grec: "Κάστανο", francais: "Châtaigne", emoji: "🌰", lvl: 6, mne: "Se prononce 'kastano'. Châtaignes chaudes." },
     { grec: "Φουντούκι", francais: "Noisette", emoji: "🥜", lvl: 6, mne: "Se prononce 'fountouki'. Fruit du coudrier." },
     { grec: "Αμύγδαλο", francais: "Amande", emoji: "🌰", lvl: 6, mne: "Se prononce 'amygdalo'. Amygdales en amande." },
     { grec: "Καρύδα", francais: "Noix de coco", emoji: "🥥", lvl: 6, mne: "Se prononce 'karyda'. Grosse noix exotique." },
@@ -69,18 +69,18 @@ const vocabulaire = [
     { grec: "Γλυκοπατάτα", francais: "Patate douce", emoji: "🍠", lvl: 6, mne: "Se prononce 'glykopatata'. Patate sucrée." },
     { grec: "Φασόλι", francais: "Haricot blanc", emoji: "🫘", lvl: 6, mne: "Se prononce 'fasoli'. Ingrédient de la fasolada." },
     { grec: "Ρεβίθι", francais: "Pois chiche", emoji: "🫘", lvl: 6, mne: "Se prononce 'revithi'. Base de soupe crémeuse." },
-    { grec: "Φακή", francais: "Lentille", emoji: "🫘", lvl: 6, mne: "Se prononce 'faki'. Lentilles brunes." },
+    { grec: "Φακή", francais: "Lentille", emoji: "𫫘", lvl: 6, mne: "Se prononce 'faki'. Lentilles brunes." },
 
     // ================= NIVEAU 7 =================
     { grec: "Χουρμάς", francais: "Datte", emoji: "🌴", lvl: 7, mne: "Se prononce 'chourmas'. Fruit séché." },
     { grec: "Παπάγια", francais: "Papaye", emoji: "🥭", lvl: 7, mne: "Se prononce 'papaya'. Phonétique." },
     { grec: "Αβοκάντο", francais: "Avocat", emoji: "🥑", lvl: 7, mne: "Se prononce 'avokanto'. Avocat bien mûr." },
     { grec: "Σταφίδα", francais: "Raisin sec", emoji: "🍇", lvl: 7, mne: "Se prononce 'stafida'. Raisin flétri." },
-    { grec: "Σύκο αποξηραμένο", francais: "Figue sèche", emoji: "𫫓", lvl: 7, mne: "Se prononce 'syko apoxirameno'." },
+    { grec: "Σύκο αποξηραμένο", francais: "Figue sèche", emoji: "🫒", lvl: 7, mne: "Se prononce 'syko apoxirameno'." },
     { grec: "Μπάμια", francais: "Gombo", emoji: "🥬", lvl: 7, mne: "Se prononce 'bamia'. Capsule mucilagineuse." },
     { grec: "Σέσκουλο", francais: "Bette", emoji: "🥬", lvl: 7, mne: "Se prononce 'seskoulo'. Blettes à carde." },
     { grec: "Κολοκύθα", francais: "Citrouille", emoji: "🎃", lvl: 7, mne: "Se prononce 'kolokytha'. Grosse courge d'automne." },
-    { grec: "Παντζάρι", francais: "Betterave", emoji: "🍠", lvl: 7, mne: "Se prononce 'pantzari'. Betterave pour salade ailée." },
+    { grec: "Παντζάρι", francais: "Betterave", emoji: "🍠", lvl: 7, mne: "Se prononce 'pantzari'. Betterave pour salade." },
     { grec: "Φινόκιο", francais: "Fenouil", emoji: "🌿", lvl: 7, mne: "Se prononce 'finokio'. Bulbe anisé." },
 
     // ================= NIVEAU 8 =================
@@ -90,7 +90,7 @@ const vocabulaire = [
     { grec: "Κυδώνι", francais: "Coing", emoji: "🍏", lvl: 8, mne: "Se prononce 'kydoni'. Idéal en pâte de fruits." },
     { grec: "Κράνο", francais: "Cornouille", emoji: "🍒", lvl: 8, mne: "Se prononce 'krano'. Baie acide sauvage." },
     { grec: "Ρόκα", francais: "Roquette", emoji: "🌿", lvl: 8, mne: "Se prononce 'roka'. Salade poivrée." },
-    { grec: "Αντίδι", francais: "Endive", emoji: "🥬", lvl: 8, mne: "Se prononce 'antidi'. Chicorée amère." },
+    { grec: "Αντίδι", francais: "Endive", emoji: "🥬", lvl: 8, mne: "Se prononce 'antidi'. Endive amère." },
     { grec: "Λαχανίδα", francais: "Chou frisé", emoji: "🥬", lvl: 8, mne: "Se prononce 'lachanida'. Chou kale rustique." },
     { grec: "Άνηθος", francais: "Aneth", emoji: "🌿", lvl: 8, mne: "Parfum des tzatzikis." },
     { grec: "Σχοινόπρασο", francais: "Ciboulette", emoji: "🌱", lvl: 8, mne: "Se prononce 'schoinopraso'." },
@@ -98,13 +98,13 @@ const vocabulaire = [
     // ================= NIVEAU 9 =================
     { grec: "Φραγκόσυκο", francais: "Figue de Barbarie", emoji: "🌵", lvl: 9, mne: "Se prononce 'frangosyko'. Figue épineuse." },
     { grec: "Φραγκοστάφυλο", francais: "Groseille", emoji: "🍒", lvl: 9, mne: "Se prononce 'frangostafylo'. Baie acide." },
-    { grec: "Fruit de la passion", francais: "Fruit de la passion", emoji: "🍇", lvl: 9, mne: "Frouto tou pathous." },
+    { grec: "Φρούτο του πάθους", francais: "Fruit de la passion", emoji: "🍇", lvl: 9, mne: "Frouto tou pathous." },
     { grec: "Γκότζι μπέρι", francais: "Baie de Goji", emoji: "🍒", lvl: 9, mne: "Phonétique directe." },
     { grec: "Μούρο", francais: "Mûre sauvage", emoji: "🍇", lvl: 9, mne: "Se prononce 'mouro'. Fruits des buissons." },
     { grec: "Τζίντζερ", francais: "Gingembre", emoji: "🫚", lvl: 9, mne: "Phonétique de ginger." },
     { grec: "Κάπαρη", francais: "Câpre", emoji: "🌱", lvl: 9, mne: "Se prononce 'kapari'. Câpres salées des roches." },
     { grec: "Μάραθος", francais: "Fenouil sauvage", emoji: "🌿", lvl: 9, mne: "Se prononce 'marathos'. Herbe folle." },
-    { grec: "Salicorne", francais: "Salicorne", emoji: "🌿", lvl: 9, mne: "Asperge de mer marine." },
+    { grec: "Σπαράγγι της θάλασσας", francais: "Salicorne", emoji: "🌿", lvl: 9, mne: "Asperge de mer marine." },
     { grec: "Βλαστός μπαμπού", francais: "Pousse de bambou", emoji: "🎍", lvl: 9, mne: "Pousse asiatique." },
 
     // ================= NIVEAU 10 =================
@@ -120,14 +120,11 @@ const vocabulaire = [
     { grec: "Φύκια", francais: "Algues", emoji: "🌿", lvl: 10, mne: "Fykia. Légumes de la mer." }
 ];
 
-const avatarsList = ["🍎", "🤓", "🎓", "🏛️", "🏺", "🦉", "🦁", "🦅", "🐉", "🌋", "☀️", "🌟", "👑", "🔮", "⚔️", "🛡️", "🏹", "✨", "🔥", "👑"];
-const prestigeAvatars = ["⚡", "🔱", "🏹", "🦉", "🛡️", "🌋", "🍷"];
-
 const shopAvatars = [
     { emoji: "👶", cost: 0 }, { emoji: "🥔", cost: 20 }, { emoji: "🥦", cost: 40 }, { emoji: "🥑", cost: 60 }, { emoji: "🍉", cost: 80 },
     { emoji: "🥕", cost: 100 }, { emoji: "🍓", cost: 120 }, { emoji: "🍋", cost: 140 }, { emoji: "🍄", cost: 160 }, { emoji: "🍇", cost: 180 },
     { emoji: "🌽", cost: 200 }, { emoji: "🍅", cost: 220 }, { emoji: "🍍", cost: 240 }, { emoji: "🥝", cost: 260 }, { emoji: "👨‍🍳", cost: 280 },
-    { emoji: "👩‍🍳", cost: 300 }, { emoji: "🐵", cost: 320 }, { emoji: "🦊", cost: 360 }, { emoji: "🦖", cost: 400 }, { emoji: "🧙", cost: 500 }
+    { emoji: "👩‍🍳", cost: 300 }, { emoji: "🐵", cost: 320 }, { emoji: "🦊", cost: 360 }, { emoji: "Rex", cost: 400 }, { emoji: "🧙", cost: 500 }
 ];
 
 const shopThemes = [
@@ -146,13 +143,14 @@ const badgesList = [
 
 let state = JSON.parse(localStorage.getItem('greekVocabV2')) || { 
     score: 0, drachmes: 0, streak: 0, highestStreak: 0, currentCombo: 1, lastLvl: 1, prestige: 0, streakFreeze: 0, lastActiveDate: "",
-    unlockedAvatars: ["🍎"], unlockedThemes: ["theme-orchard", "theme-greenhouse", "theme-olympe"],
-    activeAvatar: "🍎", activeTheme: "theme-orchard", history: {}, dailyQuests: { date: "", list: [] }, chronoRecords: [], activityLog: {},
+    unlockedAvatars: ["👶"], unlockedThemes: ["theme-orchard", "theme-greenhouse", "theme-olympe"],
+    activeAvatar: "👶", activeTheme: "theme-orchard", history: {}, dailyQuests: { date: "", list: [] }, chronoRecords: [], activityLog: {},
     activityTracker: { qcm: 0, lecture: 0, ecriture: 0, audition: 0, oral: 0, chrono: 0, rattrapage: 0, association: 0 }
 };
 
 let currentWord = null; let isSlowAudio = false; let chronoTimer = null; let timeLeft = 60; let chronoScore = 0;
 let assocSelected = null; let assocPairsMatched = 0;
+let slideshowInterval = null; let slideshowIndex = 0;
 
 function launchCelebration() {
     for (let i = 0; i < 70; i++) {
@@ -178,16 +176,10 @@ function playTone(freqs, duration) {
 function getLevel() { 
     if(!state.activityTracker) state.activityTracker = {};
     const keys = ['qcm', 'lecture', 'ecriture', 'audition', 'oral', 'chrono', 'rattrapage', 'association'];
-    let greenCount = 0;
-    keys.forEach(k => { if ((state.activityTracker[k] || 0) >= 2) greenCount++; });
-
+    let greenCount = 0; keys.forEach(k => { if ((state.activityTracker[k] || 0) >= 2) greenCount++; });
     let xpLevel = Math.floor(state.score / 5000) + 1;
     let allowedLevel = state.lastLvl || 1;
-
-    if (xpLevel > allowedLevel) {
-        if (greenCount >= 6) { return Math.min(10, xpLevel); } 
-        else { return allowedLevel; }
-    }
+    if (xpLevel > allowedLevel) { if (greenCount >= 6) { return Math.min(10, xpLevel); } else { return allowedLevel; } }
     return Math.min(10, xpLevel); 
 }
 
@@ -195,8 +187,7 @@ function checkDailyStreakAndCalendar() {
     const today = new Date().toISOString().split('T')[0];
     if (!state.activityLog) state.activityLog = {}; if (!state.activityLog[today]) state.activityLog[today] = 0;
     if (state.lastActiveDate && state.lastActiveDate !== today) {
-        const yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1);
-        const yesterdayStr = yesterday.toISOString().split('T')[0];
+        const yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1); const yesterdayStr = yesterday.toISOString().split('T')[0];
         if (state.lastActiveDate !== yesterdayStr && state.streak > 0) {
             if ((state.streakFreeze || 0) > 0) { state.streakFreeze--; alert("❄️ Assurance récolte consommée ! Série préservée."); } 
             else { state.streak = 0; }
@@ -208,8 +199,7 @@ function checkDailyStreakAndCalendar() {
 function renderCalendarHeatmap() {
     const container = document.getElementById('calendar-heatmap'); let html = '';
     for (let i = 20; i >= 0; i--) {
-        const d = new Date(); d.setDate(d.getDate() - i); const dateStr = d.toISOString().split('T')[0];
-        const xp = state.activityLog[dateStr] || 0;
+        const d = new Date(); d.setDate(d.getDate() - i); const dateStr = d.toISOString().split('T')[0]; const xp = state.activityLog[dateStr] || 0;
         let intensityLvl = 0; if (xp > 0 && xp <= 40) intensityLvl = 1; else if (xp > 40 && xp <= 120) intensityLvl = 2; else if (xp > 120) intensityLvl = 3;
         html += `<div class="cal-day day-lvl-${intensityLvl}" title="${dateStr} : +${xp} XP"></div>`;
     }
@@ -289,7 +279,8 @@ function renderExercise() {
         const opts = [currentWord.francais];
         while(opts.length < 4) { const r = vocabulaire[Math.floor(Math.random() * vocabulaire.length)].francais; if(!opts.includes(r)) opts.push(r); }
         opts.sort(() => Math.random() - 0.5);
-        html += `<div class="word-audio-container"><span class="big-char">${currentWord.grec}</span>${audioButton}</div><p>Traduisez ce mot :</p><div class="qcm-grid">` + opts.map(o => `<button class="qcm-btn" onclick="checkAnswer('${o}', '${currentWord.francais}')">${o}</button>`).join('') + `</div>`;
+        // Utilisation sécurisée de backticks pour le passage de l'élément QCM et éviter le crash de sélection
+        html += `<div class="word-audio-container"><span class="big-char">${currentWord.grec}</span>${audioButton}</div><p>Traduisez ce mot :</p><div class="qcm-grid">` + opts.map(o => `<button class="qcm-btn" onclick="checkAnswer(this, \`${o}\`, \`${currentWord.francais}\`)">${o}</button>`).join('') + `</div>`;
     } else if (type === 'lecture' || type === 'rattrapage') {
         html += `<div class="word-audio-container"><span class="big-char">${currentWord.grec}</span>${audioButton}</div><p>Écrivez la traduction en Français :</p><input type="text" id="answer" data-correct="${currentWord.francais}" placeholder="Saisie en français..."><br><button class="valider-btn" onclick="validateText()">Valider</button>`;
     } else if (type === 'ecriture') {
@@ -307,11 +298,7 @@ function renderExercise() {
 function buildAssociationGame() {
     const container = document.getElementById('exercise-container'); assocPairsMatched = 0; assocSelected = null;
     const shuffled = [...vocabulaire].filter(item => item.lvl <= getLevel()).sort(() => Math.random() - 0.5).slice(0, 4);
-    let cards = [];
-    shuffled.forEach(item => {
-        cards.push({ id: item.grec, text: `${item.emoji} ${item.grec}`, type: "greek" });
-        cards.push({ id: item.grec, text: item.francais, type: "french" });
-    });
+    let cards = []; shuffled.forEach(item => { cards.push({ id: item.grec, text: `${item.emoji} ${item.grec}`, type: "greek" }); cards.push({ id: item.grec, text: item.francais, type: "french" }); });
     cards.sort(() => Math.random() - 0.5);
     let html = `<h2>🧩 Association Fertile</h2><p>Liez l'ingrédient à sa traduction ! En bonus, cliquez pour écouter.</p><div class="association-grid">`;
     cards.forEach((card, idx) => { html += `<button id="assoc-card-${idx}" class="assoc-card" onclick="selectAssocCard(${idx}, '${card.id}')">${card.text}</button>`; });
@@ -320,8 +307,7 @@ function buildAssociationGame() {
 
 window.selectAssocCard = function(idx, id) {
     const btn = document.getElementById(`assoc-card-${idx}`); if (btn.classList.contains('hidden-pair')) return;
-    triggerVibrate(25); if(btn.innerText.includes("🍎") || btn.innerText.includes("🥦") || btn.innerText.includes("🥑")) speak(id);
-
+    triggerVibrate(25); if(btn.innerText.includes("🍎") || btn.innerText.includes("🥦") || btn.innerText.includes("🥑") || btn.innerText.includes("🍉")) speak(id);
     if (!assocSelected) { assocSelected = { idx, id }; btn.classList.add('selected'); } 
     else {
         const prevBtn = document.getElementById(`assoc-card-${assocSelected.idx}`);
@@ -342,6 +328,18 @@ window.selectAssocCard = function(idx, id) {
     }
 };
 
+// Traitement unifié du QCM : Bloque la grille et applique un retour visuel direct de couleur
+window.checkAnswer = function(btnElement, selected, correct) {
+    const buttons = btnElement.closest('.qcm-grid').querySelectorAll('.qcm-btn');
+    buttons.forEach(b => b.disabled = true);
+    
+    const isCorrect = selected.toLowerCase() === correct.toLowerCase();
+    if (isCorrect) { btnElement.classList.add('feedback-success'); } 
+    else { btnElement.classList.add('feedback-error'); }
+    
+    processResult(isCorrect, correct);
+};
+
 window.validateText = function() { const i = document.getElementById('answer'); processResult(i.value.trim().toLowerCase() === i.dataset.correct.toLowerCase(), i.dataset.correct); };
 
 function processResult(isCorrect, correctAnswerDisplay) {
@@ -353,15 +351,13 @@ function processResult(isCorrect, correctAnswerDisplay) {
     if (isCorrect) {
         triggerVibrate(30); state.currentCombo = Math.min(3, (state.currentCombo || 1) + 1);
         let baseXP = type === 'rattrapage' ? 20 : 10;
-        let gainedXP = baseXP * state.currentCombo; 
-        let gainedDrachmes = Math.max(1, Math.round((12 * state.currentCombo) / 5));
+        let gainedXP = baseXP * state.currentCombo; let gainedDrachmes = Math.max(1, Math.round((12 * state.currentCombo) / 5));
         
         state.score += gainedXP; state.drachmes += gainedDrachmes; state.streak++;
         state.activityLog[today] = (state.activityLog[today] || 0) + gainedXP;
         if(type === 'chrono') { timeLeft += 2; chronoScore += gainedXP; document.getElementById('chrono-score-val').innerText = chronoScore; }
         
         updateQuestProgress("gain_xp", gainedXP); updateQuestProgress("answers", 1); updateQuestProgress("drachmes", gainedDrachmes);
-
         if(state.streak > (state.highestStreak || 0)) state.highestStreak = state.streak;
         if(input) input.classList.add('feedback-success');
         playTone([523.25, 659.25, 783.99], 0.12);
@@ -369,12 +365,13 @@ function processResult(isCorrect, correctAnswerDisplay) {
         triggerVibrate([60, 40, 60]); state.currentCombo = 1; state.streak = 0;
         state.history[currentWord.grec].errors++; if(type === 'chrono') timeLeft = Math.max(0, timeLeft - 5);
         playTone([220, 180], 0.2);
+        
         const container = document.getElementById('exercise-container');
         const mneDiv = document.createElement('div'); mneDiv.className = "mnemonic-text"; mneDiv.innerText = `💡 Rappel : ${currentWord.mne}`;
         container.insertBefore(mneDiv, container.lastChild);
         if(input) { input.classList.add('feedback-error'); input.value = `Correction : ${correctAnswerDisplay}`; }
     }
-    saveAndRefresh();
+    saveAndRefresh(); verifyAndGenerateQuests();
     setTimeout(renderExercise, isCorrect ? 1000 : 2800);
 }
 
@@ -400,8 +397,7 @@ window.startSpeech = function() {
     rec.onstart = () => document.getElementById('mic-trigger').classList.add('recording');
     rec.onresult = (e) => {
         const txt = e.results[0][0].transcript.toLowerCase(); document.getElementById('oral-transcript').innerText = `Entendu : ${txt}`;
-        const match = txt.includes(currentWord.grec.toLowerCase());
-        setTimeout(() => processResult(match, currentWord.grec), 800);
+        const match = txt.includes(currentWord.grec.toLowerCase()); setTimeout(() => processResult(match, currentWord.grec), 800);
     };
     rec.onerror = () => document.getElementById('mic-trigger').classList.remove('recording');
     rec.onend = () => document.getElementById('mic-trigger').classList.remove('recording');
@@ -410,8 +406,8 @@ window.startSpeech = function() {
 
 window.exportSave = function() {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state));
-    const dlAnchor = document.createElement('a'); dlAnchor.setAttribute("href", dataStr); dlAnchor.setAttribute("download", `vocab_master_save.json`);
-    document.body.appendChild(dlAnchor); dlAnchor.click(); dlAnchor.remove();
+    const dlAnchor = document.createElement('a'); dlAnchor.setAttribute("href", dataStr);
+    dlAnchor.setAttribute("download", `vocab_master_save.json`); document.body.appendChild(dlAnchor); dlAnchor.click(); dlAnchor.remove();
 };
 
 window.importSave = function(event) {
@@ -425,6 +421,46 @@ window.importSave = function(event) {
     };
     reader.readAsText(file);
 };
+
+// Réinitialisation totale des XP et des configurations de l'application
+window.resetGameProgress = function() {
+    if (confirm("🔄 Attention ! Voulez-vous réinitialiser l'INTEGRALITE de vos données de progression ? Cette action effacera vos scores, oboles et configurations.")) {
+        localStorage.removeItem('greekVocabV2');
+        location.reload();
+    }
+};
+
+// Gestion de la logique de Diaporama Audio Automatique
+window.toggleSlideshow = function() {
+    const btn = document.getElementById('btn-start-slideshow');
+    const view = document.getElementById('slideshow-view');
+    const content = document.getElementById('fiche-content');
+    
+    if (slideshowInterval) {
+        clearInterval(slideshowInterval); slideshowInterval = null;
+        btn.innerText = "🎬 Lancer le Diaporama Audio"; btn.style.background = "var(--accent)";
+        view.style.display = "none"; content.style.display = "grid";
+    } else {
+        btn.innerText = "⏹️ Arrêter le Diaporama"; btn.style.background = "var(--error)";
+        view.style.display = "block"; content.style.display = "none";
+        slideshowIndex = 0; runSlidePlayer();
+        slideshowInterval = setInterval(runSlidePlayer, 3500);
+    }
+};
+
+function runSlidePlayer() {
+    const pool = vocabulaire.filter(i => i.lvl <= getLevel());
+    if (pool.length === 0) return window.toggleSlideshow();
+    if (slideshowIndex >= pool.length) slideshowIndex = 0;
+    
+    const word = pool[slideshowIndex];
+    document.getElementById('slide-emoji').innerText = word.emoji || "🥗";
+    document.getElementById('slide-grec').innerText = word.grec;
+    document.getElementById('slide-francais').innerText = word.francais;
+    
+    speak(word.grec);
+    slideshowIndex++;
+}
 
 window.buyItem = function(type, cost, value) {
     if (type !== 'equip-avatar' && type !== 'equip-theme') {
@@ -441,7 +477,6 @@ window.buyItem = function(type, cost, value) {
 
 function openShopMenuUI() {
     document.getElementById('freeze-count-val').innerText = state.streakFreeze || 0;
-    
     document.getElementById('avatars-shop-pool').innerHTML = shopAvatars.map(a => {
         const isOwned = state.unlockedAvatars.includes(a.emoji); const isActive = state.activeAvatar === a.emoji;
         let cName = "shop-item-box" + (isActive ? " active-equip" : (isOwned ? " owned" : ""));
@@ -467,9 +502,7 @@ function saveAndRefresh() {
     document.body.className = state.activeTheme || "theme-orchard";
     
     const cBox = document.getElementById('combo-box');
-    if(state.currentCombo > 1) { cBox.style.display = "block"; document.getElementById('combo-val').innerText = `x${state.currentCombo}`; } 
-    else { cBox.style.display = "none"; }
-    
+    if(state.currentCombo > 1) { cBox.style.display = "block"; document.getElementById('combo-val').innerText = `x${state.currentCombo}`; } else { cBox.style.display = "none"; }
     renderDashboard(); renderQuestsUI();
 }
 
@@ -499,16 +532,18 @@ document.getElementById('close-boutique').onclick = () => shopModal.close();
 
 document.getElementById('btn-fiche').onclick = () => {
     document.getElementById('fiche-content').innerHTML = vocabulaire.filter(i => i.lvl <= getLevel()).map(l => `
-        <div class="fiche-item"><span><b>${l.grec}</b> : ${l.francais} ${l.emoji} <br><small style="color:var(--accent)">Niv.${l.lvl}</small></span><div><button class="dictio-audio-btn" onclick="speak('${l.grec}')">🔊 Grec</button></div></div>
+        <div class="fiche-item"><span><b>${l.grec}</b> : ${l.francais} ${l.emoji} <br><small style="color:var(--accent)">Niv.${l.lvl}</small></span><div><button class="dictio-audio-btn" onclick="speak('${l.grec}')">🔊 Écouter</button></div></div>
     `).join('');
     document.getElementById('modal-fiche').showModal();
 };
-document.getElementById('close-modal').onclick = () => document.getElementById('modal-fiche').close();
+document.getElementById('close-modal').onclick = () => {
+    if (slideshowInterval) window.toggleSlideshow(); // Coupe proprement le diaporama à la fermeture
+    document.getElementById('modal-fiche').close();
+};
 
 document.getElementById('slow-toggle').onclick = (e) => { isSlowAudio = !isSlowAudio; e.target.classList.toggle('active', isSlowAudio); e.target.innerText = isSlowAudio ? "Lent" : "Audio"; };
 document.getElementById('exercise-select').onchange = function() {
-    const type = this.value;
-    if(!state.activityTracker) state.activityTracker = {};
+    const type = this.value; if(!state.activityTracker) state.activityTracker = {};
     state.activityTracker[type] = (state.activityTracker[type] || 0) + 1;
     renderActivityDots(); renderExercise();
 };

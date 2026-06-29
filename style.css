@@ -10,7 +10,7 @@
 .theme-sahara { --bg: #3e2723; --card: #4e342e; --text: #ffe082; --accent: #ffb300; --success: #81c784; --error: #e57373; --kbd-bg: #5d4037; }
 
 body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; transition: 0.3s; margin: 0; padding: 15px; -webkit-user-select: none; user-select: none; }
-.top-bar { display: flex; justify-content: space-between; max-width: 460px; margin: 0 auto; }
+.top-bar { display: flex; justify-content: space-between; max-width: 460px; margin: 0 auto; gap: 4px; }
 header { text-align: center; margin: 10px 0; }
 #btn-fiche, #btn-boutique, #btn-stats, .toggle-btn { cursor: pointer; border: none; background: var(--card); color: var(--text); padding: 10px 12px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); font-weight: bold; font-size: 0.8rem; }
 
@@ -24,7 +24,7 @@ header { text-align: center; margin: 10px 0; }
 .dot-green { background-color: var(--success); box-shadow: 0 0 6px var(--success); }
 
 .word-audio-container { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 5px 0; }
-.inline-audio-btn { background: var(--kbd-bg); color: var(--text); border: none; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: bold; }
+.inline-audio-btn { background: var(--kbd-bg); color: var(--text); border: none; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-weight: bold; margin-top: 5px; }
 
 .calendar-heatmap { display: flex; gap: 5px; justify-content: center; background: var(--card); padding: 12px; border-radius: 12px; margin: 10px 0; }
 .cal-day { width: 14px; height: 14px; border-radius: 3px; background: rgba(255,255,255,0.1); }
@@ -33,7 +33,7 @@ header { text-align: center; margin: 10px 0; }
 .cal-day.day-lvl-2 { background: #4ade80; }
 .cal-day.day-lvl-3 { background: #166534; }
 
-.daily-quests-box { background: var(--card); max-width: 440px; margin: 10px auto; padding: 12px; border-radius: 16px; border-left: 5px solid #f59e0b; text-align: left; }
+.daily-quests-box { background: var(--card); max-width: 440px; margin: 15px auto 10px auto; padding: 12px; border-radius: 16px; border-left: 5px solid #f59e0b; text-align: left; }
 .daily-quests-box h4 { margin: 0 0 8px 0; font-size: 0.95rem; text-transform: uppercase; }
 .quest-item { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 4px 0; }
 .quest-item.done { text-decoration: line-through; color: var(--success); font-weight: bold; }
@@ -47,9 +47,10 @@ header { text-align: center; margin: 10px 0; }
 
 select { width: 100%; max-width: 440px; display: block; margin: 10px auto; padding: 12px; border-radius: 12px; border: 2px solid var(--kbd-bg); background: var(--card); color: var(--text); font-size: 1rem; font-weight: bold; }
 input { padding: 14px; border-radius: 12px; border: 2px solid var(--kbd-bg); width: 90%; font-size: 16px; margin-top: 15px; background: var(--bg); color: var(--text); text-align: center; outline: none; box-sizing: border-box; }
+.valider-btn { padding: 14px; background: var(--accent); color: white; border: none; border-radius: 12px; cursor: pointer; margin-top: 15px; font-size: 1.1rem; font-weight: bold; width: 90%; }
 
 .qcm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-.qcm-btn { background: var(--kbd-bg); color: var(--text); border: none; padding: 14px; font-size: 1.05rem; font-weight: bold; border-radius: 12px; cursor: pointer; }
+.qcm-btn { background: var(--kbd-bg); color: var(--text); border: 2px solid transparent; padding: 14px; font-size: 1.05rem; font-weight: bold; border-radius: 12px; cursor: pointer; transition: 0.15s; }
 
 .association-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 15px; }
 .assoc-card { background: var(--kbd-bg); color: var(--text); border: 2px solid transparent; padding: 15px 5px; font-size: 1.1rem; font-weight: bold; border-radius: 12px; cursor: pointer; }
@@ -66,15 +67,15 @@ input { padding: 14px; border-radius: 12px; border: 2px solid var(--kbd-bg); wid
 
 @keyframes pulse { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
 
-.feedback-success { border-color: var(--success) !important; background: rgba(34,197,94,0.2) !important; }
-.feedback-error { border-color: var(--error) !important; background: rgba(239,68,68,0.2) !important; }
+.feedback-success { border-color: var(--success) !important; background: rgba(34,197,94,0.3) !important; color: #bbf7d0 !important; }
+.feedback-error { border-color: var(--error) !important; background: rgba(239,68,68,0.3) !important; color: #fecdd3 !important; }
 .big-char { font-size: 3.2rem; display: block; color: var(--accent); font-weight: bold; margin: 5px 0; word-break: break-all; }
 .mnemonic-text { font-size: 0.95rem; color: #f59e0b; margin: 10px 0; font-weight: bold; background: rgba(245,158,11,0.1); padding: 8px; border-radius: 8px; text-align: left; }
 .hint-word { margin-top: 10px; font-style: italic; color: #94a3b8; font-size: 0.8rem; }
 
 .shop-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; background: var(--bg); padding: 10px; border-radius: 12px; max-height: 25vh; overflow-y: auto; }
-.shop-grid-themes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; background: var(--bg); padding: 10px; border-radius: 12px; max-height: 25vh; overflow-y: auto; }
-.shop-item-box { background: var(--kbd-bg); border-radius: 8px; padding: 10px 4px; text-align: center; cursor: pointer; font-size: 1.4rem; transition: 0.2s; border: 2px solid transparent; }
+.shop-grid-themes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; background: var(--bg); padding: 10px; border-radius: 12px; max-height: 25vh; overflow-y: auto; }
+.shop-item-box { background: var(--kbd-bg); border-radius: 8px; padding: 10px 4px; text-align: center; cursor: pointer; font-size: 1.4rem; border: 2px solid transparent; }
 .shop-item-box.owned { border: 2px solid var(--success); }
 .shop-item-box.active-equip { background-color: var(--accent); border: 2px solid #fff; }
 
@@ -84,8 +85,8 @@ input { padding: 14px; border-radius: 12px; border: 2px solid var(--kbd-bg); wid
 .freeze-buy-container { display: flex; justify-content: space-between; align-items: center; background: var(--bg); padding: 10px; border-radius: 12px; font-size: 0.9rem; }
 .buy-item-btn { padding: 8px 14px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; background: var(--accent); color: white; }
 
-.backup-container { display: flex; gap: 8px; margin: 15px 0; }
-.backup-container button { flex: 1; padding: 10px; border-radius: 8px; border: none; background: var(--accent); color: white; font-weight: bold; cursor: pointer; font-size: 0.85rem; }
+.backup-container { display: flex; gap: 8px; margin: 15px 0 5px 0; }
+.backup-container button { flex: 1; padding: 10px; border-radius: 8px; border: none; background: var(--kbd-bg); color: var(--text); font-weight: bold; cursor: pointer; font-size: 0.85rem; border: 1px solid rgba(255,255,255,0.1); }
 
 .leaderboard-list { background: var(--bg); padding: 10px 10px 10px 30px; border-radius: 12px; margin: 10px 0; font-weight: bold; color: #f59e0b; text-align: left; }
 .leaderboard-list li { padding: 4px 0; color: var(--text); border-bottom: 1px dashed rgba(255,255,255,0.05); font-size: 0.9rem; }
@@ -103,7 +104,6 @@ dialog { border: none; border-radius: 20px; background: var(--card); color: var(
 dialog::backdrop { background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
 .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--kbd-bg); padding-bottom: 10px; }
 #close-modal, #close-boutique, #close-stats { background: none; border: none; cursor: pointer; font-size: 1.2rem; color: var(--text); }
-#fiche-content { display: grid; grid-template-columns: repeat(1, 1fr); gap: 8px; padding-top: 15px; max-height: 45vh; overflow-y: auto; }
+#fiche-content { display: grid; grid-template-columns: repeat(1, 1fr); gap: 8px; padding-top: 15px; max-height: 35vh; overflow-y: auto; }
 .fiche-item { background: var(--bg); padding: 12px; border-radius: 8px; text-align: left; font-size: 0.95rem; display: flex; justify-content: space-between; align-items: center; }
 .dictio-audio-btn { background: var(--kbd-bg); color: var(--text); border: none; padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: bold; }
-.btn-prestige { background: linear-gradient(135deg, #fbbf24, #d97706); color: white; border: none; padding: 12px 20px; border-radius: 12px; font-weight: bold; width: 100%; margin-top: 15px; cursor: pointer; display: none; }
