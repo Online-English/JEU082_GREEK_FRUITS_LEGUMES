@@ -1,4 +1,105 @@
-const vocabulaire = [{"artGrec": "το", "grec": "Μήλο", "artFr": "la", "francais": "Pomme", "genreFr": "f.", "emoji": "🍎", "lvl": 1, "mne": "Se prononce 'milo'. Facile : une pomme pour le petit Milo !"}, {"artGrec": "η", "grec": "Μπανάνα", "artFr": "la", "francais": "Banane", "genreFr": "f.", "emoji": "🍌", "lvl": 1, "mne": "Transcription directe et universelle : banana."}, {"artGrec": "το", "grec": "Λεμόνι", "artFr": "le", "francais": "Citron", "genreFr": "m.", "emoji": "🍋", "lvl": 1, "mne": "Se prononce 'lemoni'. Pensez à la limonade !"}, {"artGrec": "το", "grec": "Πορτοκάλι", "artFr": "l'", "francais": "Orange", "genreFr": "f.", "emoji": "🍊", "lvl": 1, "mne": "Se prononce 'portokali'. Le Portugal gérait autrefois l'import des oranges."}, {"artGrec": "η", "grec": "Φράουλα", "artFr": "la", "francais": "Fraise", "genreFr": "f.", "emoji": "🍓", "lvl": 1, "mne": "Se prononce 'fraoula'. Ressemble un peu au mot 'fraise'."}, {"artGrec": "η", "grec": "Πατάτα", "artFr": "la", "francais": "Pomme de terre", "genreFr": "f.", "emoji": "🥔", "lvl": 1, "mne": "Se prononce 'patata'. Identique à la patate !"}, {"artGrec": "το", "grec": "Καρότο", "artFr": "la", "francais": "Carotte", "genreFr": "f.", "emoji": "🥕", "lvl": 1, "mne": "Se prononce 'karoto'. Très proche de carotte."}, {"artGrec": "η", "grec": "Ντομάτα", "artFr": "la", "francais": "Tomate", "genreFr": "f.", "emoji": "🍅", "lvl": 1, "mne": "Se prononce 'domata'. Le N initial adoucit le T en D."}, {"artGrec": "το", "grec": "Σκόρδο", "artFr": "l'", "francais": "Ail", "genreFr": "m.", "emoji": "🧄", "lvl": 1, "mne": "Se prononce 'skordo'. L'Ail détruit votre fraîcheur buccale."}, {"artGrec": "το", "grec": "Κρεμμύδι", "artFr": "l'", "francais": "Oignon", "genreFr": "m.", "emoji": "🧅", "lvl": 1, "mne": "Se prononce 'kremmydi'. On dirait une crème piquante."}, {"artGrec": "το", "grec": "Κεράσι", "artFr": "la", "francais": "Cerise", "genreFr": "f.", "emoji": "🍒", "lvl": 2, "mne": "Se prononce 'kerasi'. Très proche phonétiquement."}, {"artGrec": "το", "grec": "Καρπούζι", "artFr": "la", "francais": "Pastèque", "genreFr": "f.", "emoji": "🍉", "lvl": 2, "mne": "L'emblème des étés en Grèce (karpouzi)."}, {"artGrec": "το", "grec": "Πεπόνι", "artFr": "le", "francais": "Melon", "genreFr": "m.", "emoji": "🍈", "lvl": 2, "mne": "Se prononce 'peponi'. Facile : attention aux pépins."}, {"artGrec": "το", "grec": "Ροδάκινο", "artFr": "la", "francais": "Pêche", "genreFr": "f.", "emoji": "🍑", "lvl": 2, "mne": "Se prononce 'rodakino'. Une pêche rose comme une rose ('rodo')."}, {"artGrec": "το", "grec": "Σύκο", "artFr": "la", "francais": "Figue", "genreFr": "f.", "emoji": "🫒", "lvl": 2, "mne": "Se prononce 'syko'. Fruit du sycomore."}, {"artGrec": "το", "grec": "Αγγούρι", "artFr": "le", "francais": "Concombre", "genreFr": "m.", "emoji": "🥒", "lvl": 2, "mne": "Se prononce 'angouri'. Légume d'eau allongé."}, {"artGrec": "το", "grec": "Μαρούλι", "artFr": "la", "francais": "Laitue", "genreFr": "f.", "emoji": "🥬", "lvl": 2, "mne": "Se prononce 'marouli'. Rouler la salade."}, {"artGrec": "το", "grec": "Σπανάκι", "artFr": "l'", "francais": "Épinard", "genreFr": "m.", "emoji": "🌿", "lvl": 2, "mne": "Se prononce 'spanaki'. Pour faire la spanakopita."}, {"artGrec": "το", "grec": "Μανιτάρι", "artFr": "le", "francais": "Champignon", "genreFr": "m.", "emoji": "🍄", "lvl": 2, "mne": "Se prononce 'manitari'. Cueillis à la main."}, {"artGrec": "το", "grec": "Μπρόκολο", "artFr": "le", "francais": "Brocoli", "genreFr": "m.", "emoji": "🥦", "lvl": 2, "mne": "Se prononce 'brokolo'. Suffixe modifié."}, {"artGrec": "το", "grec": "Αχλάδι", "artFr": "la", "francais": "Poire", "genreFr": "f.", "emoji": "🍐", "lvl": 3, "mne": "Se prononce 'achladi'. Une poire juteuse."}, {"artGrec": "ο", "grec": "Ανανάς", "artFr": "l'", "francais": "Ananas", "genreFr": "m.", "emoji": "🍍", "lvl": 3, "mne": "Se prononce 'ananas'. Identique !"}, {"artGrec": "το", "grec": "Βερίκοκο", "artFr": "l'", "francais": "Abricot", "genreFr": "m.", "emoji": "🍑", "lvl": 3, "mne": "Se prononce 'verikoko'. Couleur abricot."}, {"artGrec": "το", "grec": "Δαμάσκηνο", "artFr": "la", "francais": "Prune", "genreFr": "f.", "emoji": "🫐", "lvl": 3, "mne": "Se prononce 'damaskino'. Lié à la ville de Damas."}, {"artGrec": "το", "grec": "Ρόδι", "artFr": "la", "francais": "Grenade", "genreFr": "f.", "emoji": "🍇", "lvl": 3, "mne": "Se prononce 'rodi'. Fruit porte-bonheur."}, {"artGrec": "το", "grec": "Κουνουπίδι", "artFr": "le", "francais": "Chou-fleur", "genreFr": "m.", "emoji": "🥦", "lvl": 3, "mne": "Se prononce 'kounoupidi'. Chou blanc."}, {"artGrec": "το", "grec": "Κολοκύθι", "artFr": "la", "francais": "Courgette", "genreFr": "f.", "emoji": "🥒", "lvl": 3, "mne": "Se prononce 'kolokythi'. Pour les mezzés."}, {"artGrec": "η", "grec": "Μελιτζάνα", "artFr": "l'", "francais": "Aubergine", "genreFr": "f.", "emoji": "🍆", "lvl": 3, "mne": "Se prononce 'melitzana'. Indispensable pour la moussaka !"}, {"artGrec": "η", "grec": "Πιπεριά", "artFr": "le", "francais": "Poivron", "genreFr": "m.", "emoji": "🫑", "lvl": 3, "mne": "Se prononce 'piperia'. Même racine que le poivre."}, {"artGrec": "τα", "grec": "Φασολάκια", "artFr": "les", "francais": "Haricots verts", "genreFr": "pl.", "emoji": "🫘", "lvl": 3, "mne": "Se prononce 'fasolakia'. Petits haricots fins."}, {"artGrec": "το", "grec": "Μάνγκο", "artFr": "la", "francais": "Mangue", "genreFr": "f.", "emoji": "🥭", "lvl": 4, "mne": "Se prononce 'mango'. Écriture directe."}, {"artGrec": "το", "grec": "Ακτινίδιο", "artFr": "le", "francais": "Kiwi", "genreFr": "m.", "emoji": "🥝", "lvl": 4, "mne": "Se prononce 'aktinidio'. Rayons du fruit."}, {"artGrec": "το", "grec": "Γκρέιπφρουτ", "artFr": "le", "francais": "Pamplemousse", "genreFr": "m.", "emoji": "🍊", "lvl": 4, "mne": "Phonétique de grapefruit."}, {"artGrec": "το", "grec": "Σμέουρο", "artFr": "la", "francais": "Framboise", "genreFr": "f.", "emoji": "🍓", "lvl": 4, "mne": "Se prononce 'smeouro'. Fruit délicat."}, {"artGrec": "το", "grec": "Μύρtiλο", "artFr": "la", "francais": "Myrtille", "genreFr": "f.", "emoji": "🫐", "lvl": 4, "mne": "Se prononce 'myrtilo'. Très proche."}, {"artGrec": "ο", "grec": "Αρακάς", "artFr": "les", "francais": "Petits pois", "genreFr": "pl.", "emoji": "🫛", "lvl": 4, "mne": "Se prononce 'arakas'. Billes vertes."}, {"artGrec": "το", "grec": "Καλαμπόκι", "artFr": "le", "francais": "Maïs", "genreFr": "m.", "emoji": "🌽", "lvl": 4, "mne": "Se prononce 'kalamboki'. Épi jaune."}, {"artGrec": "το", "grec": "Λάχανο", "artFr": "le", "francais": "Chou", "genreFr": "m.", "emoji": "🥬", "lvl": 4, "mne": "Se prononce 'lachano'. Gros chou cabus."}, {"artGrec": "το", "grec": "Σέλινο", "artFr": "le", "francais": "Céleri", "genreFr": "m.", "emoji": "🌿", "lvl": 4, "mne": "Se prononce 'selino'. Très proche."}, {"artGrec": "ο", "grec": "Μαϊντανός", "artFr": "le", "francais": "Persil", "genreFr": "m.", "emoji": "🌱", "lvl": 4, "mne": "Se prononce 'maintanos'. L'herbe aromatique phare."}, {"artGrec": "το", "grec": "Βατόμουρο", "artFr": "la", "francais": "Mûre", "genreFr": "f.", "emoji": "🍇", "lvl": 5, "mne": "Se prononce 'vatomouro'. Mûre des ronces."}, {"artGrec": "το", "grec": "Κράνμπερι", "artFr": "la", "francais": "Canneberge", "genreFr": "f.", "emoji": "🍒", "lvl": 5, "mne": "Phonétique de cranberry."}, {"artGrec": "το", "grec": "Μανταρίνι", "artFr": "la", "francais": "Mandarine", "genreFr": "f.", "emoji": "🍊", "lvl": 5, "mne": "Se prononce 'mandarini'. Identique."}, {"artGrec": "το", "grec": "Σταφύλι", "artFr": "le", "francais": "Raisin", "genreFr": "m.", "emoji": "🍇", "lvl": 5, "mne": "Se prononce 'stafyli'. Les vignes des Cyclades."}, {"artGrec": "το", "grec": "Καρύδι", "artFr": "la", "francais": "Noix", "genreFr": "f.", "emoji": "🌰", "lvl": 5, "mne": "Se prononce 'karydi'. Petite coque ligneuse."}, {"artGrec": "το", "grec": "Πράσο", "artFr": "le", "francais": "Poireau", "genreFr": "m.", "emoji": "🥬", "lvl": 5, "mne": "Se prononce 'praso'. Long poireau d'hiver."}, {"artGrec": "η", "grec": "Ρέβα", "artFr": "le", "francais": "Navet", "genreFr": "m.", "emoji": "🥔", "lvl": 5, "mne": "Reva. Racine mauve."}, {"artGrec": "το", "grec": "Ραπάνι", "artFr": "le", "francais": "Radis", "genreFr": "m.", "emoji": "🥕", "lvl": 5, "mne": "Se prononce 'rapani'. Croquant avec du sel."}, {"artGrec": "η", "grec": "Αγκινάρα", "artFr": "l'", "francais": "Artichaut", "genreFr": "m.", "emoji": "🥬", "lvl": 5, "mne": "Se prononce 'anginara'. Cœur tendre."}, {"artGrec": "το", "grec": "Σπαράγγι", "artFr": "l'", "francais": "Asperge", "genreFr": "f.", "emoji": "🥦", "lvl": 5, "mne": "Se prononce 'sparangi'. Asperge de printemps."}, {"artGrec": "το", "grec": "Φιστίκι", "artFr": "la", "francais": "Pistache", "genreFr": "f.", "emoji": "🥜", "lvl": 6, "mne": "Se prononce 'fistiki'. La pistache d'Égine."}, {"artGrec": "το", "grec": "Κάστανο", "artFr": "la", "francais": "Châtaigne", "genreFr": "f.", "emoji": "🌰", "lvl": 6, "mne": "Se prononce 'kastano'. Châtaignes chaudes."}, {"artGrec": "το", "grec": "Φουντούκι", "artFr": "la", "francais": "Noisette", "genreFr": "f.", "emoji": "🥜", "lvl": 6, "mne": "Se prononce 'fountouki'. Fruit du coudrier."}, {"artGrec": "το", "grec": "Αμύγδαλο", "artFr": "l'", "francais": "Amande", "genreFr": "f.", "emoji": "🌰", "lvl": 6, "mne": "Amnygdalo. En forme d'amande."}, {"artGrec": "η", "grec": "Καρύδα", "artFr": "la", "francais": "Noix de coco", "genreFr": "f.", "emoji": "🥥", "lvl": 6, "mne": "Se prononce 'karyda'. Grosse noix exotique."}, {"artGrec": "η", "grec": "Φάβα", "artFr": "la", "francais": "Fève", "genreFr": "f.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'fava'. Purée typique de Santorin."}, {"artGrec": "η", "grec": "Γλυκοπατάτα", "artFr": "la", "francais": "Patate douce", "genreFr": "f.", "emoji": "🍠", "lvl": 6, "mne": "Se prononce 'glykopatata'. Patate sucrée."}, {"artGrec": "το", "grec": "Φασόλι", "artFr": "le", "francais": "Haricot blanc", "genreFr": "m.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'fasoli'. Ingrédient de la fasolada."}, {"artGrec": "το", "grec": "Ρεβίθι", "artFr": "le", "francais": "Pois chiche", "genreFr": "m.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'revithi'. Base de soupe crémeuse."}, {"artGrec": "η", "grec": "Φακή", "artFr": "la", "francais": "Lentille", "genreFr": "f.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'faki'. Lentilles brunes."}, {"artGrec": "ο", "grec": "Χουρμάς", "artFr": "la", "francais": "Datte", "genreFr": "f.", "emoji": "🌴", "lvl": 7, "mne": "Se prononce 'chourmas'. Fruit séché."}, {"artGrec": "η", "grec": "Παπάγια", "artFr": "la", "francais": "Papaye", "genreFr": "f.", "emoji": "🥭", "lvl": 7, "mne": "Se prononce 'papaya'. Phonétique."}, {"artGrec": "το", "grec": "Αβοκάντο", "artFr": "l'", "francais": "Avocat", "genreFr": "m.", "emoji": "🥑", "lvl": 7, "mne": "Se prononce 'avokanto'. Avocat bien mûr."}, {"artGrec": "η", "grec": "Σταφίδα", "artFr": "le", "francais": "Raisin sec", "genreFr": "m.", "emoji": "🍇", "lvl": 7, "mne": "Se prononce 'stafida'. Raisin flétri."}, {"artGrec": "το", "grec": "Σύκο αποξηραμένο", "artFr": "la", "francais": "Figue sèche", "genreFr": "f.", "emoji": "𫫓", "lvl": 7, "mne": "Se prononce 'syko apoxirameno'."}, {"artGrec": "η", "grec": "Μπάμια", "artFr": "le", "francais": "Gombo", "genreFr": "m.", "emoji": "🥬", "lvl": 7, "mne": "Se prononce 'bamia'. Capsule mucilagineuse."}, {"artGrec": "το", "grec": "Σέσκουλο", "artFr": "la", "francais": "Bette", "genreFr": "f.", "emoji": "🥬", "lvl": 7, "mne": "Se prononce 'seskoulo'. Blettes à carde."}, {"artGrec": "η", "grec": "Κολοκύθα", "artFr": "la", "francais": "Citrouille", "genreFr": "f.", "emoji": "🎃", "lvl": 7, "mne": "Se prononce 'kolokytha'. Grosse courge d'automne."}, {"artGrec": "το", "grec": "Παντζάρι", "artFr": "la", "francais": "Betterave", "genreFr": "f.", "emoji": "🍠", "lvl": 7, "mne": "Se prononce 'pantzari'. Betterave pour salade."}, {"artGrec": "το", "grec": "Φινόκιο", "artFr": "le", "francais": "Fenouil", "genreFr": "m.", "emoji": "🌿", "lvl": 7, "mne": "Se prononce 'finokio'. Bulbe anisé."}, {"artGrec": "το", "grec": "Λάιμ", "artFr": "le", "francais": "Lime", "genreFr": "m.", "emoji": "🍋", "lvl": 8, "mne": "Se prononce 'laim'. Citron vert des îles."}, {"artGrec": "το", "grec": "Νεκταρίνι", "artFr": "la", "francais": "Nectarine", "genreFr": "f.", "emoji": "🍑", "lvl": 8, "mne": "Se prononce 'nektarini'. Identique."}, {"artGrec": "ο", "grec": "Λωτός", "artFr": "le", "francais": "Kaki", "genreFr": "m.", "emoji": "🍅", "lvl": 8, "mne": "Se prononce 'lotos'. Fruit du lotus sucré."}, {"artGrec": "το", "grec": "Κυδώνι", "artFr": "le", "francais": "Coing", "genreFr": "m.", "emoji": "🍏", "lvl": 8, "mne": "Se prononce 'kydoni'. Idéal en pâte de fruits."}, {"artGrec": "το", "grec": "Κράνο", "artFr": "la", "francais": "Cornouille", "genreFr": "f.", "emoji": "🍒", "lvl": 8, "mne": "Se prononce 'krano'. Baie acide sauvage."}, {"artGrec": "η", "grec": "Ρόκα", "artFr": "la", "francais": "Roquette", "genreFr": "f.", "emoji": "🌿", "lvl": 8, "mne": "Se prononce 'roka'. Salade poivrée."}, {"artGrec": "το", "grec": "Αντίδι", "artFr": "l'", "francais": "Endive", "genreFr": "f.", "emoji": "🥬", "lvl": 8, "mne": "Se prononce 'antidi'. Endive amère."}, {"artGrec": "η", "grec": "Λαχανίδα", "artFr": "le", "francais": "Chou frisé", "genreFr": "m.", "emoji": "🥬", "lvl": 8, "mne": "Se prononce 'lachanida'. Chou kale rustique."}, {"artGrec": "ο", "grec": "Άνηθος", "artFr": "l'", "francais": "Aneth", "genreFr": "m.", "emoji": "🌿", "lvl": 8, "mne": "Parfum des tzatzikis."}, {"artGrec": "το", "grec": "Σχοινόπρασο", "artFr": "la", "francais": "Ciboulette", "genreFr": "f.", "emoji": "🌱", "lvl": 8, "mne": "Se prononce 'schoinopraso'."}, {"artGrec": "το", "grec": "Φραγκόσυκο", "artFr": "la", "francais": "Figue de Barbarie", "genreFr": "f.", "emoji": "🌵", "lvl": 9, "mne": "Se prononce 'frangosyko'. Figue épineuse."}, {"artGrec": "το", "grec": "Φραγκοστάφυλο", "artFr": "la", "francais": "Groseille", "genreFr": "f.", "emoji": "🍒", "lvl": 9, "mne": "Se prononce 'frangostafylo'. Baie acide."}, {"artGrec": "το", "grec": "Φρούτο του πάθους", "artFr": "le", "francais": "Fruit de la passion", "genreFr": "m.", "emoji": "🍇", "lvl": 9, "mne": "Frouto tou pathous."}, {"artGrec": "το", "grec": "Γκότζι μπέρι", "artFr": "la", "francais": "Baie de Goji", "genreFr": "f.", "emoji": "🍒", "lvl": 9, "mne": "Phonétique directe."}, {"artGrec": "το", "grec": "Μούρο", "artFr": "la", "francais": "Mûre sauvage", "genreFr": "f.", "emoji": "🍇", "lvl": 9, "mne": "Se prononce 'mouro'. Fruits des buissons."}, {"artGrec": "το", "grec": "Τζίντζερ", "artFr": "le", "francais": "Gingembre", "genreFr": "m.", "emoji": "🫚", "lvl": 9, "mne": "Phonétique de ginger."}, {"artGrec": "η", "grec": "Κάπαρη", "artFr": "la", "francais": "Câpre", "genreFr": "f.", "emoji": "🌱", "lvl": 9, "mne": "Se prononce 'kapari'. Câpres salées des roches."}, {"artGrec": "ο", "grec": "Μάραθος", "artFr": "le", "francais": "Fenouil sauvage", "genreFr": "m.", "emoji": "🌿", "lvl": 9, "mne": "Se prononce 'marathos'. Herbe folle."}, {"artGrec": "το", "grec": "Σπαράγγι της θάλασσας", "artFr": "la", "francais": "Salicorne", "genreFr": "f.", "emoji": "🌿", "lvl": 9, "mne": "Asperge de mer marine."}, {"artGrec": "ο", "grec": "Βλαστός μπαμπού", "artFr": "la", "francais": "Pousse de bambou", "genreFr": "f.", "emoji": "🎍", "lvl": 9, "mne": "Pousse asiatique."}, {"artGrec": "το", "grec": "Λιτσί", "artFr": "le", "francais": "Litchi", "genreFr": "m.", "emoji": "🍒", "lvl": 10, "mne": "Se prononce 'litsi'. Fruit translucide."}, {"artGrec": "η", "grec": "Αγριοφράουλα", "artFr": "la", "francais": "Fraise des bois", "genreFr": "f.", "emoji": "🍓", "lvl": 10, "mne": "Se prononce 'agriofraoula'. Fraise sauvage."}, {"artGrec": "το", "grec": "Αγριοκέρασο", "artFr": "la", "francais": "Merise", "genreFr": "f.", "emoji": "🍒", "lvl": 10, "mne": "Se prononce 'agriokeraso'. Cerise sauvage des bois."}, {"artGrec": "η", "grec": "Ρέβα", "artFr": "le", "francais": "Navet", "genreFr": "m.", "emoji": "🥔", "lvl": 10, "mne": "Reva. Racine blanche."}, {"artGrec": "το", "grec": "Μύρτιλο", "artFr": "la", "francais": "Myrtille", "genreFr": "f.", "emoji": "🫐", "lvl": 10, "mne": "Myrtilo. Baie sauvage."}, {"artGrec": "η", "grec": "Τρούφα", "artFr": "la", "francais": "Truffe", "genreFr": "f.", "emoji": "🍄", "lvl": 10, "mne": "Se prononce 'troufa'. Champignon souterrain précieux."}, {"artGrec": "η", "grec": "Μανιόκα", "artFr": "le", "francais": "Manioc", "genreFr": "m.", "emoji": "🥔", "lvl": 10, "mne": "Manioka. Tubercule tropical."}, {"artGrec": "η", "grec": "Γογγυλοκράμβη", "artFr": "le", "francais": "Chou-rave", "genreFr": "m.", "emoji": "🥬", "lvl": 10, "mne": "Se prononce 'gongylokramvi'. Chou globe."}, {"artGrec": "η", "grec": "Γλυκοκολοκύθα", "artFr": "la", "francais": "Courge butternut", "genreFr": "f.", "emoji": "🎃", "lvl": 10, "mne": "Courge doubeurre."}, {"artGrec": "τα", "grec": "Φύκια", "artFr": "les", "francais": "Algues", "genreFr": "pl.", "emoji": "🌿", "lvl": 10, "mne": "Fykia. Légumes de la mer."}];
+const vocabulaire = [
+    {"artGrec": "το", "grec": "Μήλο", "artFr": "la", "francais": "Pomme", "genreFr": "f.", "emoji": "🍎", "lvl": 1, "mne": "Se prononce 'milo'. Facile : une pomme pour le petit Milo !"},
+    {"artGrec": "η", "grec": "Μπανάνα", "artFr": "la", "francais": "Banane", "genreFr": "f.", "emoji": "🍌", "lvl": 1, "mne": "Transcription directe et universelle : banana."},
+    {"artGrec": "το", "grec": "Λεμόνι", "artFr": "le", "francais": "Citron", "genreFr": "m.", "emoji": "🍋", "lvl": 1, "mne": "Se prononce 'lemoni'. Pensez à la limonade !"},
+    {"artGrec": "το", "grec": "Πορτοκάλι", "artFr": "l'", "francais": "Orange", "genreFr": "f.", "emoji": "🍊", "lvl": 1, "mne": "Se prononce 'portokali'. Le Portugal gérait autrefois l'import des oranges."},
+    {"artGrec": "η", "grec": "Φράουλα", "artFr": "la", "francais": "Fraise", "genreFr": "f.", "emoji": "🍓", "lvl": 1, "mne": "Se prononce 'fraoula'. Ressemble un peu au mot 'fraise'."},
+    {"artGrec": "η", "grec": "Πατάτα", "artFr": "la", "francais": "Pomme de terre", "genreFr": "f.", "emoji": "🥔", "lvl": 1, "mne": "Se prononce 'patata'. Identique à la patate !"},
+    {"artGrec": "το", "grec": "Καρότο", "artFr": "la", "francais": "Carotte", "genreFr": "f.", "emoji": "🥕", "lvl": 1, "mne": "Se prononce 'karoto'. Très proche de carotte."},
+    {"artGrec": "η", "grec": "Ντομάτα", "artFr": "la", "francais": "Tomate", "genreFr": "f.", "emoji": "🍅", "lvl": 1, "mne": "Se prononce 'domata'. Le N initial adoucit le T en D."},
+    {"artGrec": "το", "grec": "Σκόρδο", "artFr": "l'", "francais": "Ail", "genreFr": "m.", "emoji": "🧄", "lvl": 1, "mne": "Se prononce 'skordo'. L'Ail détruit votre fraîcheur buccale."},
+    {"artGrec": "το", "grec": "Κρεμμύδι", "artFr": "l'", "francais": "Oignon", "genreFr": "m.", "emoji": "🧅", "lvl": 1, "mne": "Se prononce 'kremmydi'. On dirait une crème piquante."},
+    {"artGrec": "το", "grec": "Κεράσι", "artFr": "la", "francais": "Cerise", "genreFr": "f.", "emoji": "🍒", "lvl": 2, "mne": "Se prononce 'kerasi'. Très proche phonétiquement."},
+    {"artGrec": "το", "grec": "Καρπούζι", "artFr": "la", "francais": "Pastèque", "genreFr": "f.", "emoji": "🍉", "lvl": 2, "mne": "L'emblème des étés en Grèce (karpouzi)."},
+    {"artGrec": "το", "grec": "Πεπόνι", "artFr": "le", "francais": "Melon", "genreFr": "m.", "emoji": "🍈", "lvl": 2, "mne": "Se prononce 'peponi'. Facile : attention aux pépins."},
+    {"artGrec": "το", "grec": "Ροδάκινο", "artFr": "la", "francais": "Pêche", "genreFr": "f.", "emoji": "🍑", "lvl": 2, "mne": "Se prononce 'rodakino'. Une pêche rose comme une rose ('rodo')."},
+    {"artGrec": "το", "grec": "Σύκο", "artFr": "la", "francais": "Figue", "genreFr": "f.", "emoji": "🫒", "lvl": 2, "mne": "Se prononce 'syko'. Fruit du sycomore."},
+    {"artGrec": "το", "grec": "Αγγούρι", "artFr": "le", "francais": "Concombre", "genreFr": "m.", "emoji": "🥒", "lvl": 2, "mne": "Se prononce 'angouri'. Légume d'eau allongé."},
+    {"artGrec": "το", "grec": "Μαρούλι", "artFr": "la", "francais": "Laitue", "genreFr": "f.", "emoji": "🥬", "lvl": 2, "mne": "Se prononce 'marouli'. Rouler la salade."},
+    {"artGrec": "το", "grec": "Σπανάκι", "artFr": "l'", "francais": "Épinard", "genreFr": "m.", "emoji": "🌿", "lvl": 2, "mne": "Se prononce 'spanaki'. Pour faire la spanakopita."},
+    {"artGrec": "το", "grec": "Μανιτάρι", "artFr": "le", "francais": "Champignon", "genreFr": "m.", "emoji": "🍄", "lvl": 2, "mne": "Se prononce 'manitari'. Cueillis à la main."},
+    {"artGrec": "το", "grec": "Μπρόκολο", "artFr": "le", "francais": "Brocoli", "genreFr": "m.", "emoji": "🥦", "lvl": 2, "mne": "Se prononce 'brokolo'. Suffixe modifié."},
+    {"artGrec": "το", "grec": "Αχλάδι", "artFr": "la", "francais": "Poire", "genreFr": "f.", "emoji": "🍐", "lvl": 3, "mne": "Se prononce 'achladi'. Une poire juteuse."},
+    {"artGrec": "ο", "grec": "Ανανάς", "artFr": "l'", "francais": "Ananas", "genreFr": "m.", "emoji": "🍍", "lvl": 3, "mne": "Se prononce 'ananas'. Identique !"},
+    {"artGrec": "το", "grec": "Βερίκοκο", "artFr": "l'", "francais": "Abricot", "genreFr": "m.", "emoji": "🍑", "lvl": 3, "mne": "Se prononce 'verikoko'. Couleur abricot."},
+    {"artGrec": "το", "grec": "Δαμάσκηνο", "artFr": "la", "francais": "Prune", "genreFr": "f.", "emoji": "🫐", "lvl": 3, "mne": "Se prononce 'damaskino'. Lié à la ville de Damas."},
+    {"artGrec": "το", "grec": "Ρόδι", "artFr": "la", "francais": "Grenade", "genreFr": "f.", "emoji": "🍇", "lvl": 3, "mne": "Se prononce 'rodi'. Fruit porte-bonheur."},
+    {"artGrec": "το", "grec": "Κουνουπίδι", "artFr": "le", "francais": "Chou-fleur", "genreFr": "m.", "emoji": "🥦", "lvl": 3, "mne": "Se prononce 'kounoupidi'. Chou blanc."},
+    {"artGrec": "το", "grec": "Κολοκύθι", "artFr": "la", "francais": "Courgette", "genreFr": "f.", "emoji": "🥒", "lvl": 3, "mne": "Se prononce 'kolokythi'. Pour les mezzés."},
+    {"artGrec": "η", "grec": "Μελιτζάνα", "artFr": "l'", "francais": "Aubergine", "genreFr": "f.", "emoji": "🍆", "lvl": 3, "mne": "Se prononce 'melitzana'. Indispensable pour la moussaka !"},
+    {"artGrec": "η", "grec": "Πιπεριά", "artFr": "le", "francais": "Poivron", "genreFr": "m.", "emoji": "🫑", "lvl": 3, "mne": "Se prononce 'piperia'. Même racine que le poivre."},
+    {"artGrec": "τα", "grec": "Φασολάκια", "artFr": "les", "francais": "Haricots verts", "genreFr": "pl.", "emoji": "🫘", "lvl": 3, "mne": "Se prononce 'fasolakia'. Petits haricots fins."},
+    {"artGrec": "το", "grec": "Μάνγκο", "artFr": "la", "francais": "Mangue", "genreFr": "f.", "emoji": "🥭", "lvl": 4, "mne": "Se prononce 'mango'. Écriture directe."},
+    {"artGrec": "το", "grec": "Ακτινίδιο", "artFr": "le", "francais": "Kiwi", "genreFr": "m.", "emoji": "🥝", "lvl": 4, "mne": "Se prononce 'aktinidio'. Rayons du fruit."},
+    {"artGrec": "το", "grec": "Γκρέιπφρουτ", "artFr": "le", "francais": "Pamplemousse", "genreFr": "m.", "emoji": "🍊", "lvl": 4, "mne": "Phonétique de grapefruit."},
+    {"artGrec": "το", "grec": "Σμέουρο", "artFr": "la", "francais": "Framboise", "genreFr": "f.", "emoji": "🍓", "lvl": 4, "mne": "Se prononce 'smeouro'. Fruit délicat."},
+    {"artGrec": "το", "grec": "Μύρτιλο", "artFr": "la", "francais": "Myrtille", "genreFr": "f.", "emoji": "🫐", "lvl": 4, "mne": "Se prononce 'myrtilo'. Très proche."},
+    {"artGrec": "ο", "grec": "Αρακάς", "artFr": "les", "francais": "Petits pois", "genreFr": "pl.", "emoji": "🫛", "lvl": 4, "mne": "Se prononce 'arakas'. Billes vertes."},
+    {"artGrec": "το", "grec": "Καλαμπόκι", "artFr": "le", "francais": "Maïs", "genreFr": "m.", "emoji": "🌽", "lvl": 4, "mne": "Se prononce 'kalamboki'. Épi jaune."},
+    {"artGrec": "το", "grec": "Λάχανο", "artFr": "le", "francais": "Chou", "genreFr": "m.", "emoji": "🥬", "lvl": 4, "mne": "Se prononce 'lachano'. Gros chou cabus."},
+    {"artGrec": "το", "grec": "Σέλινο", "artFr": "le", "francais": "Céleri", "genreFr": "m.", "emoji": "🌿", "lvl": 4, "mne": "Se prononce 'selino'. Très proche."},
+    {"artGrec": "ο", "grec": "Μαϊνtanός", "artFr": "le", "francais": "Persil", "genreFr": "m.", "emoji": "🌱", "lvl": 4, "mne": "Se prononce 'maintanos'. L'herbe aromatique phare."},
+    {"artGrec": "το", "grec": "Βατόμουρο", "artFr": "la", "francais": "Mûre", "genreFr": "f.", "emoji": "🍇", "lvl": 5, "mne": "Se prononce 'vatomouro'. Mûre des ronces."},
+    {"artGrec": "το", "grec": "Κράνμπερι", "artFr": "la", "francais": "Canneberge", "genreFr": "f.", "emoji": "🍒", "lvl": 5, "mne": "Phonétique de cranberry."},
+    {"artGrec": "το", "grec": "Μανταρίνι", "artFr": "la", "francais": "Mandarine", "genreFr": "f.", "emoji": "🍊", "lvl": 5, "mne": "Se prononce 'mandarini'. Identique."},
+    {"artGrec": "το", "grec": "Σταφύλι", "artFr": "le", "francais": "Raisin", "genreFr": "m.", "emoji": "🍇", "lvl": 5, "mne": "Se prononce 'stafyli'. Les vignes des Cyclades."},
+    {"artGrec": "το", "grec": "Καρύδι", "artFr": "la", "francais": "Noix", "genreFr": "f.", "emoji": "🌰", "lvl": 5, "mne": "Se prononce 'karydi'. Petite coque ligneuse."},
+    {"artGrec": "το", "grec": "Πράσο", "artFr": "le", "francais": "Poireau", "genreFr": "m.", "emoji": "🥬", "lvl": 5, "mne": "Se prononce 'praso'. Long poireau d'hiver."},
+    {"artGrec": "η", "grec": "Ρέβα", "artFr": "le", "francais": "Navet", "genreFr": "m.", "emoji": "🥔", "lvl": 5, "mne": "Reva. Racine mauve."},
+    {"artGrec": "το", "grec": "Ραπάνι", "artFr": "le", "francais": "Radis", "genreFr": "m.", "emoji": "🥕", "lvl": 5, "mne": "Se prononce 'rapani'. Croquant avec du sel."},
+    {"artGrec": "η", "grec": "Αγκινάρα", "artFr": "l'", "francais": "Artichaut", "genreFr": "m.", "emoji": "🥬", "lvl": 5, "mne": "Se prononce 'anginara'. Cœur tendre."},
+    {"artGrec": "το", "grec": "Σπαράγγι", "artFr": "l'", "francais": "Asperge", "genreFr": "f.", "emoji": "🥦", "lvl": 5, "mne": "Se prononce 'sparangi'. Asperge de printemps."},
+    {"artGrec": "το", "grec": "Φιστίκι", "artFr": "la", "francais": "Pistache", "genreFr": "f.", "emoji": "🥜", "lvl": 6, "mne": "Se prononce 'fistiki'. La pistache d'Égine."},
+    {"artGrec": "το", "grec": "Κάστανο", "artFr": "la", "francais": "Châtaigne", "genreFr": "f.", "emoji": "🌰", "lvl": 6, "mne": "Se prononce 'kastano'. Châtaignes chaudes."},
+    {"artGrec": "το", "grec": "Φουντούκι", "artFr": "la", "francais": "Noisette", "genreFr": "f.", "emoji": "🥜", "lvl": 6, "mne": "Se prononce 'fountouki'. Fruit du coudrier."},
+    {"artGrec": "το", "grec": "Αμύγδαλο", "artFr": "l'", "francais": "Amande", "genreFr": "f.", "emoji": "🌰", "lvl": 6, "mne": "Amnygdalo. En forme d'amande."},
+    {"artGrec": "η", "grec": "Καρύδα", "artFr": "la", "francais": "Noix de coco", "genreFr": "f.", "emoji": "🥥", "lvl": 6, "mne": "Se prononce 'karyda'. Grosse noix exotique."},
+    {"artGrec": "η", "grec": "Φάβα", "artFr": "la", "francais": "Fève", "genreFr": "f.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'fava'. Purée typique de Santorin."},
+    {"artGrec": "η", "grec": "Γλυκοπατάτα", "artFr": "la", "francais": "Patate douce", "genreFr": "f.", "emoji": "🍠", "lvl": 6, "mne": "Se prononce 'glykopatata'. Patate sucrée."},
+    {"artGrec": "το", "grec": "Φασόλι", "artFr": "le", "francais": "Haricot blanc", "genreFr": "m.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'fasoli'. Ingrédient de la fasolada."},
+    {"artGrec": "το", "grec": "Ρεβίθι", "artFr": "le", "francais": "Pois chiche", "genreFr": "m.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'revithi'. Base de soupe crémeuse."},
+    {"artGrec": "η", "grec": "Φακή", "artFr": "la", "francais": "Lentille", "genreFr": "f.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'faki'. Lentilles brunes."},
+    {"artGrec": "ο", "grec": "Χουρμάς", "artFr": "la", "francais": "Datte", "genreFr": "f.", "emoji": "🌴", "lvl": 7, "mne": "Se prononce 'chourmas'. Fruit séché."},
+    {"artGrec": "η", "grec": "Παπάγια", "artFr": "la", "francais": "Papaye", "genreFr": "f.", "emoji": "🥭", "lvl": 7, "mne": "Se prononce 'papaya'. Phonétique."},
+    {"artGrec": "το", "grec": "Αβοκάντο", "artFr": "l'", "francais": "Avocat", "genreFr": "m.", "emoji": "🥑", "lvl": 7, "mne": "Se prononce 'avokanto'. Avocat bien mûr."},
+    {"artGrec": "η", "grec": "Σταφίδα", "artFr": "le", "francais": "Raisin sec", "genreFr": "m.", "emoji": "🍇", "lvl": 7, "mne": "Se prononce 'stafida'. Raisin flétri."},
+    {"artGrec": "το", "grec": "Σύκο αποξηραμένο", "artFr": "la", "francais": "Figue sèche", "genreFr": "f.", "emoji": "𫫓", "lvl": 7, "mne": "Se prononce 'syko apoxirameno'."},
+    {"artGrec": "η", "grec": "Μπάμια", "artFr": "le", "francais": "Gombo", "genreFr": "m.", "emoji": "🥬", "lvl": 7, "mne": "Se prononce 'bamia'. Capsule mucilagineuse."},
+    {"artGrec": "το", "grec": "Σέσκουλο", "artFr": "la", "francais": "Bette", "genreFr": "f.", "emoji": "🥬", "lvl": 7, "mne": "Se prononce 'seskoulo'. Blettes à carde."},
+    {"artGrec": "η", "grec": "Κολοκύθα", "artFr": "la", "francais": "Citrouille", "genreFr": "f.", "emoji": "🎃", "lvl": 7, "mne": "Se prononce 'kolokytha'. Grosse courge d'automne."},
+    {"artGrec": "το", "grec": "Παντζάρι", "artFr": "la", "francais": "Betterave", "genreFr": "f.", "emoji": "🍠", "lvl": 7, "mne": "Se prononce 'pantzari'. Betterave pour salade."},
+    {"artGrec": "το", "grec": "Φινόκιο", "artFr": "le", "francais": "Fenouil", "genreFr": "m.", "emoji": "🌿", "lvl": 7, "mne": "Se prononce 'finokio'. Bulbe anisé."},
+    {"artGrec": "το", "grec": "Λάιμ", "artFr": "le", "francais": "Lime", "genreFr": "m.", "emoji": "🍋", "lvl": 8, "mne": "Se prononce 'laim'. Citron vert des îles."},
+    {"artGrec": "το", "grec": "Νεκταρίνι", "artFr": "la", "francais": "Nectarine", "genreFr": "f.", "emoji": "🍑", "lvl": 8, "mne": "Se prononce 'nektarini'. Identique."},
+    {"artGrec": "ο", "grec": "Λωτός", "artFr": "le", "francais": "Kaki", "genreFr": "m.", "emoji": "🍅", "lvl": 8, "mne": "Se prononce 'lotos'. Fruit du lotus sucré."},
+    {"artGrec": "το", "grec": "Κυδώνι", "artFr": "le", "francais": "Coing", "genreFr": "m.", "emoji": "🍏", "lvl": 8, "mne": "Se prononce 'kydoni'. Idéal en pâte de fruits."},
+    {"artGrec": "το", "grec": "Κράνο", "artFr": "la", "francais": "Cornouille", "genreFr": "f.", "emoji": "🍒", "lvl": 8, "mne": "Se prononce 'krano'. Baie acide sauvage."},
+    {"artGrec": "η", "grec": "Ρόκα", "artFr": "la", "francais": "Roquette", "genreFr": "f.", "emoji": "🌿", "lvl": 8, "mne": "Se prononce 'roka'. Salade poivrée."},
+    {"artGrec": "το", "grec": "Αντίδι", "artFr": "l'", "francais": "Endive", "genreFr": "f.", "emoji": "🥬", "lvl": 8, "mne": "Se prononce 'antidi'. Endive amère."},
+    {"artGrec": "η", "grec": "Λαχανίδα", "artFr": "le", "francais": "Chou frisé", "genreFr": "m.", "emoji": "🥬", "lvl": 8, "mne": "Se prononce 'lachanida'. Chou kale rustique."},
+    {"artGrec": "ο", "grec": "Άνηθος", "artFr": "l'", "francais": "Aneth", "genreFr": "m.", "emoji": "🌿", "lvl": 8, "mne": "Parfum des tzatzikis."},
+    {"artGrec": "το", "grec": "Σχοινόπρασο", "artFr": "la", "francais": "Ciboulette", "genreFr": "f.", "emoji": "🌱", "lvl": 8, "mne": "Se prononce 'schoinopraso'."},
+    {"artGrec": "το", "grec": "Φραγκόσυκο", "artFr": "la", "francais": "Figue de Barbarie", "genreFr": "f.", "emoji": "🌵", "lvl": 9, "mne": "Se prononce 'frangosyko'. Figue épineuse."},
+    {"artGrec": "το", "grec": "Φραγκοστάφυλο", "artFr": "la", "francais": "Groseille", "genreFr": "f.", "emoji": "🍒", "lvl": 9, "mne": "Se prononce 'frangostafylo'. Baie acide."},
+    {"artGrec": "το", "grec": "Φρούτο του πάθους", "artFr": "le", "francais": "Fruit de la passion", "genreFr": "m.", "emoji": "🍇", "lvl": 9, "mne": "Frouto tou pathous."},
+    {"artGrec": "το", "grec": "Γκότζι μπέρι", "artFr": "la", "francais": "Baie de Goji", "genreFr": "f.", "emoji": "🍒", "lvl": 9, "mne": "Phonétique directe."},
+    {"artGrec": "το", "grec": "Μούρο", "artFr": "la", "francais": "Mûre sauvage", "genreFr": "f.", "emoji": "🍇", "lvl": 9, "mne": "Se prononce 'mouro'. Fruits des buissons."},
+    {"artGrec": "το", "grec": "Τζίντζερ", "artFr": "le", "francais": "Gingembre", "genreFr": "m.", "emoji": "🫚", "lvl": 9, "mne": "Phonétique de ginger."},
+    {"artGrec": "η", "grec": "Κάπαρη", "artFr": "la", "francais": "Câpre", "genreFr": "f.", "emoji": "🌱", "lvl": 9, "mne": "Se prononce 'kapari'. Câpres salées des roches."},
+    {"artGrec": "ο", "grec": "Μάραθος", "artFr": "le", "francais": "Fenouil sauvage", "genreFr": "m.", "emoji": "🌿", "lvl": 9, "mne": "Se prononce 'marathos'. Herbe folle."},
+    {"artGrec": "το", "grec": "Σπαράγγι της θάλασσας", "artFr": "la", "francais": "Salicorne", "genreFr": "f.", "emoji": "🌿", "lvl": 9, "mne": "Asperge de mer marine."},
+    {"artGrec": "ο", "grec": "Βλαστός μπαμπού", "artFr": "la", "francais": "Pousse de bambou", "genreFr": "f.", "emoji": "🎍", "lvl": 9, "mne": "Pousse asiatique."},
+    {"artGrec": "το", "grec": "Λιτσί", "artFr": "le", "francais": "Litchi", "genreFr": "m.", "emoji": "🍒", "lvl": 10, "mne": "Se prononce 'litsi'. Fruit translucide."},
+    {"artGrec": "η", "grec": "Αγριοφράουλα", "artFr": "la", "francais": "Fraise des bois", "genreFr": "f.", "emoji": "🍓", "lvl": 10, "mne": "Se prononce 'agriofraoula'. Fraise sauvage."},
+    {"artGrec": "το", "grec": "Αγριοκέρασο", "artFr": "la", "francais": "Merise", "genreFr": "f.", "emoji": "🍒", "lvl": 10, "mne": "Se prononce 'agriokeraso'. Cerise sauvage des bois."},
+    {"artGrec": "η", "grec": "Ρέβα", "artFr": "le", "francais": "Navet", "genreFr": "m.", "emoji": "🥔", "lvl": 10, "mne": "Reva. Racine blanche."},
+    {"artGrec": "το", "grec": "Μύρτιλο", "artFr": "la", "francais": "Myrtille", "genreFr": "f.", "emoji": "🫐", "lvl": 10, "mne": "Myrtilo. Baie sauvage."},
+    {"artGrec": "η", "grec": "Τρούφα", "artFr": "la", "francais": "Truffe", "genreFr": "f.", "emoji": "🍄", "lvl": 10, "mne": "Se prononce 'troufa'. Champignon souterrain précieux."},
+    {"artGrec": "η", "grec": "Μανιόκα", "artFr": "le", "francais": "Manioc", "genreFr": "m.", "emoji": "🥔", "lvl": 10, "mne": "Manioka. Tubercule tropical."},
+    {"artGrec": "η", "grec": "Γογγυλοκράμβη", "artFr": "le", "francais": "Chou-rave", "genreFr": "m.", "emoji": "🥬", "lvl": 10, "mne": "Se prononce 'gongylokramvi'. Chou globe."},
+    {"artGrec": "η", "grec": "Γλυκοκολοκύθα", "artFr": "la", "francais": "Courge butternut", "genreFr": "f.", "emoji": "🎃", "lvl": 10, "mne": "Courge doubeurre."},
+    {"artGrec": "τα", "grec": "Φύκια", "artFr": "les", "francais": "Algues", "genreFr": "pl.", "emoji": "🌿", "lvl": 10, "mne": "Fykia. Légumes de la mer."}
+];
 
 const avatarsList = ["🍎", "🤓", "🎓", "🏛️", "🏺", "🦉", "🦁", "🦅", "🐉", "🌋", "☀️", "🌟", "👑", "🔮", "⚔️", "🛡️", "🏹", "✨", "🔥", "👑"];
 const prestigeAvatars = ["⚡", "🔱", "🏹", "🦉", "🛡️", "🌋", "🍷"];
@@ -26,8 +127,8 @@ const badgesList = [
 
 let state = JSON.parse(localStorage.getItem('greekVocabV2')) || { 
     score: 0, drachmes: 0, streak: 0, highestStreak: 0, currentCombo: 1, lastLvl: 1, prestige: 0, streakFreeze: 0, lastActiveDate: "",
-    unlockedAvatars: ["👶"], unlockedThemes: ["theme-orchard", "theme-greenhouse", "theme-olympe"],
-    activeAvatar: "👶", activeTheme: "theme-orchard", history: {}, dailyQuests: { date: "", list: [] }, chronoRecords: [], activityLog: {},
+    unlockedAvatars: ["🍎"], unlockedThemes: ["theme-orchard", "theme-greenhouse", "theme-olympe"],
+    activeAvatar: "🍎", activeTheme: "theme-orchard", history: {}, dailyQuests: { date: "", list: [] }, chronoRecords: [], activityLog: {},
     activityTracker: { qcm: 0, lecture: 0, ecriture: 0, audition: 0, oral: 0, chrono: 0, rattrapage: 0, association: 0 }
 };
 
@@ -144,12 +245,19 @@ function getNextWord() {
     if (unseen.length > 0) return unseen[Math.floor(Math.random() * unseen.length)];
     if (Math.random() < 0.25) { return pool[Math.floor(Math.random() * pool.length)]; }
 
-    return pool.sort((a, b) => {
+    pool.sort((a, b) => {
         const scoreA = (state.history[a.grec]?.errors || 0) / (state.history[a.grec]?.total || 1);
         const scoreB = (state.history[b.grec]?.errors || 0) / (state.history[b.grec]?.total || 1);
         if (scoreB !== scoreA) return scoreB - scoreA;
         return (state.history[a.grec]?.total || 0) - (state.history[b.grec]?.total || 0);
-    })[Math.floor(Math.random() * Math.min(4, pool.length))];
+    });
+
+    let selectedWord = pool[Math.floor(Math.random() * Math.min(4, pool.length))];
+    // Sécurité de roulement anti-répétition consécutive
+    if (currentWord && selectedWord.grec === currentWord.grec && pool.length > 1) {
+        selectedWord = pool[1];
+    }
+    return selectedWord;
 }
 
 function renderExercise() {
@@ -163,25 +271,41 @@ function renderExercise() {
 
     currentWord = getNextWord();
     let html = type === 'rattrapage' ? `<h2 style="color:var(--error)">⚠️ SESSION RATTRAPAGE (XP X2)</h2>` : `<h2>Mission</h2>`;
-    let audioButton = `<button onclick="speak('${currentWord.grec}')" class="inline-audio-btn">🔊 Écouter</button>`;
+    let audioButton = `<button id="inline-audio-trigger" class="inline-audio-btn">🔊 Écouter</button>`;
 
     if (type === 'qcm' || type === 'chrono') {
         const opts = [currentWord.francais];
         while(opts.length < 4) { const r = vocabulaire[Math.floor(Math.random() * vocabulaire.length)].francais; if(!opts.includes(r)) opts.push(r); }
         opts.sort(() => Math.random() - 0.5);
-        html += `<div class="word-audio-container"><span class="big-char">${currentWord.grec}</span>` + audioButton + `</div><p>Traduisez ce mot :</p><div class="qcm-grid">` + opts.map(o => `<button class="qcm-btn" onclick="checkAnswer(this, \\`` + o + `\\`, \\`` + currentWord.francais + `\\`)">` + o + `</button>`).join('') + `</div>`;
+        html += `<div class="word-audio-container"><span class="big-char">${currentWord.grec}</span>${audioButton}</div><p>Traduisez ce mot :</p><div class="qcm-grid">` + opts.map(o => `<button class="qcm-btn" data-option="${o}">${o}</button>`).join('') + `</div>`;
+        container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
+        
+        container.querySelectorAll('.qcm-btn').forEach(btn => {
+            btn.onclick = function() { checkAnswer(this, this.dataset.option, currentWord.francais); };
+        });
     } else if (type === 'lecture' || type === 'rattrapage') {
-        html += `<div class="word-audio-container"><span class="big-char">${currentWord.grec}</span>` + audioButton + `</div><p>Écrivez la traduction en Français :</p><input type="text" id="answer" data-correct="${currentWord.francais}" placeholder="Saisie en français..."><br><button class="valider-btn" onclick="validateText()">Valider</button>`;
+        html += `<div class="word-audio-container"><span class="big-char">${currentWord.grec}</span>${audioButton}</div><p>Écrivez la traduction en Français :</p><input type="text" id="answer" data-correct="${currentWord.francais}" placeholder="Saisie en français..."><br><button class="valider-btn" id="btn-valider">Valider</button>`;
+        container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
+        document.getElementById('btn-valider').onclick = validateText;
     } else if (type === 'ecriture') {
-        html += `<span class="big-char" style="font-size:2.4rem; color:var(--text);">${currentWord.emoji} ${currentWord.francais}</span><p>Écrivez en GREC :</p><input type="text" id="answer" data-correct="${currentWord.grec}" placeholder="Clavier natif Grec..."><br>` + audioButton + `<br><button class="valider-btn" onclick="validateText()">Valider</button>`;
+        html += `<span class="big-char" style="font-size:2.4rem; color:var(--text);">${currentWord.emoji} ${currentWord.francais}</span><p>Écrivez en GREC :</p><input type="text" id="answer" data-correct="${currentWord.grec}" placeholder="Clavier natif Grec..."><br>${audioButton}<br><button class="valider-btn" id="btn-valider">Valider</button>`;
+        container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
+        document.getElementById('btn-valider').onclick = validateText;
     } else if (type === 'audition') {
-        html += `<p>Écoutez attentivement :</p><button onclick="speak('${currentWord.grec}')" style="font-size:3.5rem; background:none; border:none; cursor:pointer;">🔊</button><br><input type="text" id="answer" data-correct="${currentWord.francais}" placeholder="Traduction française..."><br><button class="valider-btn" onclick="validateText()">Valider</button>`;
+        html += `<p>Écoutez attentivement :</p><button id="btn-listen" style="font-size:3.5rem; background:none; border:none; cursor:pointer;">🔊</button><br><input type="text" id="answer" data-correct="${currentWord.francais}" placeholder="Traduction française..."><br><button class="valider-btn" id="btn-valider">Valider</button>`;
+        container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
+        document.getElementById('btn-listen').onclick = () => speak(currentWord.grec);
+        document.getElementById('btn-valider').onclick = validateText;
         setTimeout(() => speak(currentWord.grec), 350);
     } else if (type === 'oral') {
-        html += `<div class="word-audio-container"><span class="big-char" style="font-size:2.4rem; color:var(--text);">${currentWord.grec}</span>` + audioButton + `</div><p>Prononcez le mot au micro :</p><button id="mic-trigger" class="mic-btn" onclick="startSpeech()">🎙️</button><div id="oral-transcript">En attente...</div>`;
+        html += `<div class="word-audio-container"><span class="big-char" style="font-size:2.4rem; color:var(--text);">${currentWord.grec}</span>${audioButton}</div><p>Prononcez le mot au micro :</p><button id="mic-trigger" class="mic-btn">🎙️</button><div id="oral-transcript">En attente...</div>`;
+        container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
+        document.getElementById('mic-trigger').onclick = startSpeech;
     }
-    container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
-    if(document.getElementById('answer')) document.getElementById('answer').focus();
+    
+    const audioTrigger = document.getElementById('inline-audio-trigger');
+    if (audioTrigger) audioTrigger.onclick = () => speak(currentWord.grec);
+    if (document.getElementById('answer')) document.getElementById('answer').focus();
 }
 
 function buildAssociationGame() {
@@ -189,9 +313,14 @@ function buildAssociationGame() {
     const shuffled = [...vocabulaire].filter(item => item.lvl <= getLevel()).sort(() => Math.random() - 0.5).slice(0, 4);
     let cards = []; shuffled.forEach(item => { cards.push({ id: item.grec, text: `${item.emoji} ${item.grec}`, type: "greek" }); cards.push({ id: item.grec, text: item.francais, type: "french" }); });
     cards.sort(() => Math.random() - 0.5);
+    
     let html = `<h2>🧩 Association Fertile</h2><p>Liez l'ingrédient à sa traduction ! En bonus, cliquez pour écouter.</p><div class="association-grid">`;
-    cards.forEach((card, idx) => { html += `<button id="assoc-card-${idx}" class="assoc-card" onclick="selectAssocCard(${idx}, '${card.id}')">${card.text}</button>`; });
+    cards.forEach((card, idx) => { html += `<button id="assoc-card-${idx}" class="assoc-card">${card.text}</button>`; });
     container.innerHTML = html + `</div>`;
+    
+    cards.forEach((card, idx) => {
+        document.getElementById(`assoc-card-${idx}`).onclick = function() { selectAssocCard(idx, card.id); };
+    });
 }
 
 window.selectAssocCard = function(idx, id) {
@@ -377,7 +506,7 @@ function saveAndRefresh() {
     document.body.className = state.activeTheme || "theme-orchard";
     const cBox = document.getElementById('combo-box');
     if(state.currentCombo > 1) { cBox.style.display = "block"; document.getElementById('combo-val').innerText = "x" + state.currentCombo; } else { cBox.style.display = "none"; }
-    renderDashboard(); renderQuestsUI();
+    renderDashboard(); renderQuestsUI(); renderActivityDots();
 }
 
 function renderDashboard() {
@@ -417,10 +546,16 @@ document.getElementById('btn-fiche').onclick = () => {
         </div>`;
         const levelWords = vocabulaire.filter(i => i.lvl === l);
         levelWords.forEach(word => {
-            html += `<div class="fiche-item"><span><b>` + word.artGrec + ` ` + word.grec + `</b> : ` + word.artFr + ` ` + word.francais + ` <small style="opacity:0.65;">(` + word.genreFr + `)</small> ` + word.emoji + `</span><div><button class="dictio-audio-btn" onclick="speak('` + word.grec + `')">🔊 Écouter</button></div></div>`;
+            html += `<div class="fiche-item"><span><b>` + word.artGrec + ` ` + word.grec + `</b> : ` + word.artFr + ` ` + word.francais + ` <small style="opacity:0.65;">(` + word.genreFr + `)</small> ` + word.emoji + `</span><div><button class="dictio-audio-btn" data-grec="${word.grec}">🔊 Écouter</button></div></div>`;
         });
     }
-    document.getElementById('fiche-content').innerHTML = html; document.getElementById('modal-fiche').showModal();
+    document.getElementById('fiche-content').innerHTML = html;
+    
+    document.getElementById('fiche-content').querySelectorAll('.dictio-audio-btn').forEach(btn => {
+        btn.onclick = function() { speak(this.dataset.grec); };
+    });
+    
+    document.getElementById('modal-fiche').showModal();
 };
 
 document.getElementById('close-modal').onclick = () => { if (slideshowInterval) window.toggleSlideshow(); document.getElementById('modal-fiche').close(); };
