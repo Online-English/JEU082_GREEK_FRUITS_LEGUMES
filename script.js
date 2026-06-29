@@ -30,7 +30,7 @@ const vocabulaire = [
     {"artGrec": "η", "grec": "Πιπεριά", "artFr": "le", "francais": "Poivron", "genreFr": "m.", "emoji": "🫑", "lvl": 3, "mne": "Se prononce 'piperia'. Même racine que le poivre."},
     {"artGrec": "τα", "grec": "Φασολάκια", "artFr": "les", "francais": "Haricots verts", "genreFr": "pl.", "emoji": "🫘", "lvl": 3, "mne": "Se prononce 'fasolakia'. Petits haricots fins."},
     {"artGrec": "το", "grec": "Μάνγκο", "artFr": "la", "francais": "Mangue", "genreFr": "f.", "emoji": "🥭", "lvl": 4, "mne": "Se prononce 'mango'. Écriture directe."},
-    {"artGrec": "το", "grec": "Ακτινίδιο", "artFr": "le", "francais": "Kiwi", "genreFr": "m.", "emoji": "🥝", "lvl": 4, "mne": "Se prononce 'aktinidio'. Rayons du fruit."},
+    {"artGrec": "το", "grec": "Ακτινίδio", "artFr": "le", "francais": "Kiwi", "genreFr": "m.", "emoji": "🥝", "lvl": 4, "mne": "Se prononce 'aktinidio'. Rayons du fruit."},
     {"artGrec": "το", "grec": "Γκρέιπφρουτ", "artFr": "le", "francais": "Pamplemousse", "genreFr": "m.", "emoji": "🍊", "lvl": 4, "mne": "Phonétique de grapefruit."},
     {"artGrec": "το", "grec": "Σμέουρο", "artFr": "la", "francais": "Framboise", "genreFr": "f.", "emoji": "🍓", "lvl": 4, "mne": "Se prononce 'smeouro'. Fruit délicat."},
     {"artGrec": "το", "grec": "Μύρτιλο", "artFr": "la", "francais": "Myrtille", "genreFr": "f.", "emoji": "🫐", "lvl": 4, "mne": "Se prononce 'myrtilo'. Très proche."},
@@ -38,7 +38,7 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Καλαμπόκι", "artFr": "le", "francais": "Maïs", "genreFr": "m.", "emoji": "🌽", "lvl": 4, "mne": "Se prononce 'kalamboki'. Épi jaune."},
     {"artGrec": "το", "grec": "Λάχανο", "artFr": "le", "francais": "Chou", "genreFr": "m.", "emoji": "🥬", "lvl": 4, "mne": "Se prononce 'lachano'. Gros chou cabus."},
     {"artGrec": "το", "grec": "Σέλινο", "artFr": "le", "francais": "Céleri", "genreFr": "m.", "emoji": "🌿", "lvl": 4, "mne": "Se prononce 'selino'. Très proche."},
-    {"artGrec": "ο", "grec": "Μαϊνtanός", "artFr": "le", "francais": "Persil", "genreFr": "m.", "emoji": "🌱", "lvl": 4, "mne": "Se prononce 'maintanos'. L'herbe aromatique phare."},
+    {"artGrec": "ο", "grec": "Μαϊντανός", "artFr": "le", "francais": "Persil", "genreFr": "m.", "emoji": "🌱", "lvl": 4, "mne": "Se prononce 'maintanos'. L'herbe aromatique phare."},
     {"artGrec": "το", "grec": "Βατόμουρο", "artFr": "la", "francais": "Mûre", "genreFr": "f.", "emoji": "🍇", "lvl": 5, "mne": "Se prononce 'vatomouro'. Mûre des ronces."},
     {"artGrec": "το", "grec": "Κράνμπερι", "artFr": "la", "francais": "Canneberge", "genreFr": "f.", "emoji": "🍒", "lvl": 5, "mne": "Phonétique de cranberry."},
     {"artGrec": "το", "grec": "Μανταρίνι", "artFr": "la", "francais": "Mandarine", "genreFr": "f.", "emoji": "🍊", "lvl": 5, "mne": "Se prononce 'mandarini'. Identique."},
@@ -87,10 +87,10 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Τζίντζερ", "artFr": "le", "francais": "Gingembre", "genreFr": "m.", "emoji": "🫚", "lvl": 9, "mne": "Phonétique de ginger."},
     {"artGrec": "η", "grec": "Κάπαρη", "artFr": "la", "francais": "Câpre", "genreFr": "f.", "emoji": "🌱", "lvl": 9, "mne": "Se prononce 'kapari'. Câpres salées des roches."},
     {"artGrec": "ο", "grec": "Μάραθος", "artFr": "le", "francais": "Fenouil sauvage", "genreFr": "m.", "emoji": "🌿", "lvl": 9, "mne": "Se prononce 'marathos'. Herbe folle."},
-    {"artGrec": "το", "grec": "Σπαράγγι της θάλασσας", "artFr": "la", "francais": "Salicorne", "genreFr": "f.", "emoji": "🌿", "lvl": 9, "mne": "Asperge de mer marine."},
+    {"artGrec": "το", "grec": "Σπαράγγi της θάλασσας", "artFr": "la", "francais": "Salicorne", "genreFr": "f.", "emoji": "🌿", "lvl": 9, "mne": "Asperge de mer marine."},
     {"artGrec": "ο", "grec": "Βλαστός μπαμπού", "artFr": "la", "francais": "Pousse de bambou", "genreFr": "f.", "emoji": "🎍", "lvl": 9, "mne": "Pousse asiatique."},
     {"artGrec": "το", "grec": "Λιτσί", "artFr": "le", "francais": "Litchi", "genreFr": "m.", "emoji": "🍒", "lvl": 10, "mne": "Se prononce 'litsi'. Fruit translucide."},
-    {"artGrec": "η", "grec": "Αγριοφράουλα", "artFr": "la", "francais": "Fraise des bois", "genreFr": "f.", "emoji": "🍓", "lvl": 10, "mne": "Se prononce 'agriofraoula'. Fraise sauvage."},
+    {"artGrec": "η", "grec": "Αγrioφράουλα", "artFr": "la", "francais": "Fraise des bois", "genreFr": "f.", "emoji": "🍓", "lvl": 10, "mne": "Se prononce 'agriofraoula'. Fraise sauvage."},
     {"artGrec": "το", "grec": "Αγριοκέρασο", "artFr": "la", "francais": "Merise", "genreFr": "f.", "emoji": "🍒", "lvl": 10, "mne": "Se prononce 'agriokeraso'. Cerise sauvage des bois."},
     {"artGrec": "η", "grec": "Ρέβα", "artFr": "le", "francais": "Navet", "genreFr": "m.", "emoji": "🥔", "lvl": 10, "mne": "Reva. Racine blanche."},
     {"artGrec": "το", "grec": "Μύρτιλο", "artFr": "la", "francais": "Myrtille", "genreFr": "f.", "emoji": "🫐", "lvl": 10, "mne": "Myrtilo. Baie sauvage."},
@@ -125,23 +125,29 @@ const badgesList = [
     "🌽 Célébration de Déméter (Niv 9)", "⚡ Grand Chef de l'Olympe (Niv 10)"
 ];
 
-let state = JSON.parse(localStorage.getItem('greekVocabV2')) || { 
-    score: 0, drachmes: 0, streak: 0, highestStreak: 0, currentCombo: 1, lastLvl: 1, prestige: 0, streakFreeze: 0, lastActiveDate: "",
-    unlockedAvatars: ["🍎"], unlockedThemes: ["theme-orchard", "theme-greenhouse", "theme-olympe"],
-    activeAvatar: "🍎", activeTheme: "theme-orchard", history: {}, dailyQuests: { date: "", list: [] }, chronoRecords: [], activityLog: {},
-    activityTracker: { qcm: 0, lecture: 0, ecriture: 0, audition: 0, oral: 0, chrono: 0, rattrapage: 0, association: 0 }
-};
+// Sécurisation absolue de l'état (Résout les crashs d'anciennes versions en LocalStorage)
+let state = JSON.parse(localStorage.getItem('greekVocabV2')) || {};
+state.score = state.score || 0; state.drachmes = state.drachmes || 0; state.streak = state.streak || 0;
+state.highestStreak = state.highestStreak || 0; state.currentCombo = state.currentCombo || 1;
+state.lastLvl = state.lastLvl || 1; state.prestige = state.prestige || 0; state.streakFreeze = state.streakFreeze || 0;
+state.lastActiveDate = state.lastActiveDate || ""; state.unlockedAvatars = state.unlockedAvatars || ["👶"];
+state.unlockedThemes = state.unlockedThemes || ["theme-orchard", "theme-greenhouse", "theme-olympe"];
+state.activeAvatar = state.activeAvatar || "👶"; state.activeTheme = state.activeTheme || "theme-orchard";
+state.history = state.history || {}; state.dailyQuests = state.dailyQuests || { date: "", list: [] };
+state.chronoRecords = state.chronoRecords || []; state.activityLog = state.activityLog || {};
+state.activityTracker = state.activityTracker || { qcm: 0, lecture: 0, ecriture: 0, audition: 0, oral: 0, chrono: 0, rattrapage: 0, association: 0 };
 
 let currentWord = null; let isSlowAudio = false; let chronoTimer = null; let timeLeft = 60; let chronoScore = 0;
 let assocSelected = null; let assocPairsMatched = 0;
 let slideshowInterval = null; let slideshowIndex = 0; let slideshowLevel = "all";
 
 function launchCelebration() {
-    for (let i = 0; i < 70; i++) {
+    const container = document.querySelector('.confetti-container'); if (!container) return;
+    for (let i = 0; i < 50; i++) {
         const p = document.createElement('div'); p.className = 'confetti-particle'; p.style.left = Math.random() * 100 + 'vw';
         p.style.backgroundColor = ['#ff007f', '#00ffcc', '#f59e0b', '#22c55e', '#6366f1'][Math.floor(Math.random() * 5)];
         p.style.animationDuration = (Math.random() * 2 + 1.5) + 's'; p.style.width = p.style.height = (Math.random() * 6 + 6) + 'px';
-        document.body.appendChild(p); setTimeout(() => p.remove(), 3000);
+        container.appendChild(p); setTimeout(() => p.remove(), 3000);
     }
 }
 
@@ -158,7 +164,6 @@ function playTone(freqs, duration) {
 }
 
 function getLevel() { 
-    if(!state.activityTracker) state.activityTracker = {};
     const keys = ['qcm', 'lecture', 'ecriture', 'audition', 'oral', 'chrono', 'rattrapage', 'association'];
     let greenCount = 0; keys.forEach(k => { if ((state.activityTracker[k] || 0) >= 10) greenCount++; });
     let xpLevel = Math.floor(state.score / 5000) + 1;
@@ -169,7 +174,7 @@ function getLevel() {
 
 function checkDailyStreakAndCalendar() {
     const today = new Date().toISOString().split('T')[0];
-    if (!state.activityLog) state.activityLog = {}; if (!state.activityLog[today]) state.activityLog[today] = 0;
+    if (!state.activityLog[today]) state.activityLog[today] = 0;
     if (state.lastActiveDate && state.lastActiveDate !== today) {
         const yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1); const yesterdayStr = yesterday.toISOString().split('T')[0];
         if (state.lastActiveDate !== yesterdayStr && state.streak > 0) {
@@ -181,7 +186,8 @@ function checkDailyStreakAndCalendar() {
 }
 
 function renderCalendarHeatmap() {
-    const container = document.getElementById('calendar-heatmap'); let html = '';
+    const container = document.getElementById('calendar-heatmap'); if (!container) return;
+    let html = '';
     for (let i = 20; i >= 0; i--) {
         const d = new Date(); d.setDate(d.getDate() - i); const dateStr = d.toISOString().split('T')[0]; const xp = state.activityLog[dateStr] || 0;
         let intensityLvl = 0; if (xp > 0 && xp <= 40) intensityLvl = 1; else if (xp > 40 && xp <= 120) intensityLvl = 2; else if (xp > 120) intensityLvl = 3;
@@ -229,7 +235,8 @@ function updateQuestProgress(id, amount) {
 }
 
 function renderQuestsUI() {
-    document.getElementById('quests-list').innerHTML = state.dailyQuests.list.map(q => `
+    const element = document.getElementById('quests-list'); if (!element) return;
+    element.innerHTML = state.dailyQuests.list.map(q => `
         <div class="quest-item ${q.done ? 'done' : ''}"><span>${q.desc}</span><span><b>${q.done ? '✅ Complété' : q.current + '/' + q.target}</b></span></div>
     `).join('');
 }
@@ -253,10 +260,7 @@ function getNextWord() {
     });
 
     let selectedWord = pool[Math.floor(Math.random() * Math.min(4, pool.length))];
-    // Sécurité de roulement anti-répétition consécutive
-    if (currentWord && selectedWord.grec === currentWord.grec && pool.length > 1) {
-        selectedWord = pool[1];
-    }
+    if (currentWord && selectedWord.grec === currentWord.grec && pool.length > 1) { selectedWord = pool[1]; }
     return selectedWord;
 }
 
@@ -264,6 +268,7 @@ function renderExercise() {
     const type = document.getElementById('exercise-select').value;
     const container = document.getElementById('exercise-container');
     const timerBox = document.getElementById('timer-container');
+    if (!container) return;
     
     if (type === 'chrono') { timerBox.classList.remove('timer-hidden'); if(!chronoTimer) { chronoScore = 0; startChrono(); } document.getElementById('chrono-score-val').innerText = chronoScore; } 
     else { timerBox.classList.add('timer-hidden'); stopChrono(); }
@@ -303,8 +308,7 @@ function renderExercise() {
         document.getElementById('mic-trigger').onclick = startSpeech;
     }
     
-    const audioTrigger = document.getElementById('inline-audio-trigger');
-    if (audioTrigger) audioTrigger.onclick = () => speak(currentWord.grec);
+    const audioTrigger = document.getElementById('inline-audio-trigger'); if (audioTrigger) audioTrigger.onclick = () => speak(currentWord.grec);
     if (document.getElementById('answer')) document.getElementById('answer').focus();
 }
 
@@ -315,15 +319,15 @@ function buildAssociationGame() {
     cards.sort(() => Math.random() - 0.5);
     
     let html = `<h2>🧩 Association Fertile</h2><p>Liez l'ingrédient à sa traduction ! En bonus, cliquez pour écouter.</p><div class="association-grid">`;
-    cards.forEach((card, idx) => { html += `<button id="assoc-card-${idx}" class="assoc-card">${card.text}</button>`; });
+    cards.forEach((card, idx) => { html += `<button id="assoc-card-${idx}" class="assoc-card" data-idx="${idx}" data-id="${card.id}">${card.text}</button>`; });
     container.innerHTML = html + `</div>`;
     
-    cards.forEach((card, idx) => {
-        document.getElementById(`assoc-card-${idx}`).onclick = function() { selectAssocCard(idx, card.id); };
+    container.querySelectorAll('.assoc-card').forEach(btn => {
+        btn.onclick = function() { selectAssocCard(parseInt(this.dataset.idx), this.dataset.id); };
     });
 }
 
-window.selectAssocCard = function(idx, id) {
+function selectAssocCard(idx, id) {
     const btn = document.getElementById(`assoc-card-${idx}`); if (btn.classList.contains('hidden-pair')) return;
     triggerVibrate(25); if(btn.innerText.includes("🍎") || btn.innerText.includes("🥦") || btn.innerText.includes("🥑") || btn.innerText.includes("🍉")) speak(id);
     if (!assocSelected) { assocSelected = { idx, id }; btn.classList.add('selected'); } 
@@ -345,16 +349,16 @@ window.selectAssocCard = function(idx, id) {
         }
         assocSelected = null;
     }
-};
+}
 
-window.checkAnswer = function(btnElement, selected, correct) {
+function checkAnswer(btnElement, selected, correct) {
     const buttons = btnElement.closest('.qcm-grid').querySelectorAll('.qcm-btn'); buttons.forEach(b => b.disabled = true);
     const isCorrect = selected.toLowerCase() === correct.toLowerCase();
     if (isCorrect) { btnElement.classList.add('feedback-success'); } else { btnElement.classList.add('feedback-error'); }
     processResult(isCorrect, correct);
-};
+}
 
-window.validateText = function() { const i = document.getElementById('answer'); processResult(i.value.trim().toLowerCase() === i.dataset.correct.toLowerCase(), i.dataset.correct); };
+function validateText() { const i = document.getElementById('answer'); processResult(i.value.trim().toLowerCase() === i.dataset.correct.toLowerCase(), i.dataset.correct); }
 
 function processResult(isCorrect, correctAnswerDisplay) {
     const type = document.getElementById('exercise-select').value; const today = new Date().toISOString().split('T')[0];
@@ -374,7 +378,6 @@ function processResult(isCorrect, correctAnswerDisplay) {
         if(type === 'chrono') { timeLeft += 2; chronoScore += gainedXP; document.getElementById('chrono-score-val').innerText = chronoScore; }
         
         updateQuestProgress("gain_xp", gainedXP); updateQuestProgress("answers", 1); updateQuestProgress("drachmes", gainedDrachmes);
-
         if(state.streak > (state.highestStreak || 0)) state.highestStreak = state.streak;
         if(input) input.classList.add('feedback-success');
         playTone([523.25, 659.25, 783.99], 0.12);
@@ -407,7 +410,7 @@ function saveChronoRecord(score) {
     saveAndRefresh();
 }
 
-window.startSpeech = function() {
+function startSpeech() {
     const SR = window.SpeechRecognition || window.webkitSpeechRecognition; if(!SR) return alert("Micro indisponible.");
     const rec = new SR(); rec.lang = 'el-GR';
     rec.onstart = () => document.getElementById('mic-trigger').classList.add('recording');
@@ -418,15 +421,15 @@ window.startSpeech = function() {
     rec.onerror = () => document.getElementById('mic-trigger').classList.remove('recording');
     rec.onend = () => document.getElementById('mic-trigger').classList.remove('recording');
     rec.start();
-};
+}
 
-window.exportSave = function() {
+function exportSave() {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state));
     const dlAnchor = document.createElement('a'); dlAnchor.setAttribute("href", dataStr);
     dlAnchor.setAttribute("download", `vocab_master_save.json`); document.body.appendChild(dlAnchor); dlAnchor.click(); dlAnchor.remove();
-};
+}
 
-window.importSave = function(event) {
+function importSave(event) {
     const file = event.target.files[0]; if (!file) return;
     const reader = new FileReader();
     reader.onload = function(e) {
@@ -436,15 +439,15 @@ window.importSave = function(event) {
         } catch (err) { alert("Erreur."); }
     };
     reader.readAsText(file);
-};
+}
 
-window.resetGameProgress = function() {
+function resetGameProgress() {
     if (confirm("🔄 Attention ! Voulez-vous réinitialiser l'INTEGRALITE de vos données de progression ?")) {
         localStorage.removeItem('greekVocabV2'); location.reload();
     }
-};
+}
 
-window.toggleSlideshow = function() {
+function toggleSlideshow() {
     const btn = document.getElementById('btn-start-slideshow'); const view = document.getElementById('slideshow-view'); const content = document.getElementById('fiche-content'); const selectMenu = document.getElementById('slideshow-level-select');
     if (slideshowInterval) {
         clearInterval(slideshowInterval); slideshowInterval = null;
@@ -454,12 +457,12 @@ window.toggleSlideshow = function() {
         btn.innerText = "⏹️ Arrêter"; btn.style.background = "var(--error)"; view.style.display = "block"; content.style.display = "none"; selectMenu.disabled = true;
         slideshowIndex = 0; runSlidePlayer(); slideshowInterval = setInterval(runSlidePlayer, 3500);
     }
-};
+}
 
 function runSlidePlayer() {
     const maxLvl = getLevel(); let pool = [];
     if (slideshowLevel === "all") { pool = vocabulaire.filter(i => i.lvl <= maxLvl); } else { pool = vocabulaire.filter(i => i.lvl === parseInt(slideshowLevel)); }
-    if (pool.length === 0) return window.toggleSlideshow();
+    if (pool.length === 0) return toggleSlideshow();
     if (slideshowIndex >= pool.length) slideshowIndex = 0;
     const word = pool[slideshowIndex];
     document.getElementById('slide-emoji').innerText = word.emoji || "🥗";
@@ -468,7 +471,7 @@ function runSlidePlayer() {
     speak(word.grec); slideshowIndex++;
 }
 
-window.buyItem = function(type, cost, value) {
+function buyItem(type, cost, value) {
     if (type !== 'equip-avatar' && type !== 'equip-theme') {
         if (state.drachmes < cost) { alert("🪙 Oboles insuffisantes !"); return; }
         state.drachmes -= cost; triggerVibrate(50); playTone([523.25, 783.99, 1046.50], 0.2);
@@ -479,21 +482,32 @@ window.buyItem = function(type, cost, value) {
     else if (type === 'equip-avatar') { state.activeAvatar = value; }
     else if (type === 'equip-theme') { state.activeTheme = value; }
     saveAndRefresh(); openShopMenuUI();
-};
+}
 
 function openShopMenuUI() {
     document.getElementById('freeze-count-val').innerText = state.streakFreeze || 0;
-    document.getElementById('avatars-shop-pool').innerHTML = shopAvatars.map(a => {
+    const poolAvatars = document.getElementById('avatars-shop-pool');
+    const poolThemes = document.getElementById('themes-shop-pool');
+    
+    poolAvatars.innerHTML = shopAvatars.map(a => {
         const isOwned = state.unlockedAvatars.includes(a.emoji); const isActive = state.activeAvatar === a.emoji;
         let cName = "shop-item-box" + (isActive ? " active-equip" : (isOwned ? " owned" : ""));
-        return `<div class="` + cName + `" onclick="buyItem('` + (isOwned ? 'equip-avatar' : 'avatar') + `', ` + a.cost + `, '` + a.emoji + `')">` + a.emoji + `<br><small style="font-size:0.55rem;">` + (isActive ? 'Actif' : (isOwned ? 'Équiper' : a.cost + ' 🪙')) + `</small></div>`;
+        return `<div class="${cName}" data-type="${isOwned ? 'equip-avatar' : 'avatar'}" data-cost="${a.cost}" data-value="${a.emoji}">${a.emoji}<br><small style="font-size:0.55rem;">${isActive ? 'Actif' : (isOwned ? 'Équiper' : a.cost + ' 🪙')}</small></div>`;
     }).join('');
 
-    document.getElementById('themes-shop-pool').innerHTML = shopThemes.map(t => {
+    poolThemes.innerHTML = shopThemes.map(t => {
         const isOwned = state.unlockedThemes.includes(t.id); const isActive = state.activeTheme === t.id;
         let cName = "theme-shop-btn" + (isActive ? " active-equip" : (isOwned ? " owned" : ""));
-        return `<button class="` + cName + `" onclick="buyItem('` + (isOwned ? 'equip-theme' : 'theme') + `', ` + t.cost + `, '` + t.id + `')"><span>` + t.name + `</span><small><b>` + (isActive ? 'Actif' : (isOwned ? 'Choisir' : t.cost + ' 🪙')) + `</b></small></button>`;
+        return `<button class="${cName}" data-type="${isOwned ? 'equip-theme' : 'theme'}" data-cost="${t.cost}" data-value="${t.id}"><span>${t.name}</span><small><b>${isActive ? 'Actif' : (isOwned ? 'Choisir' : t.cost + ' 🪙')}</b></small></button>`;
     }).join('');
+
+    // Raccordement programmatique imperméable aux apostrophes
+    poolAvatars.querySelectorAll('.shop-item-box').forEach(box => {
+        box.onclick = function() { buyItem(this.dataset.type, parseInt(this.dataset.cost), this.dataset.value); };
+    });
+    poolThemes.querySelectorAll('.theme-shop-btn').forEach(btn => {
+        btn.onclick = function() { buyItem(this.dataset.type, parseInt(this.dataset.cost), this.dataset.value); };
+    });
 }
 
 function saveAndRefresh() {
@@ -513,12 +527,13 @@ function renderDashboard() {
     const lvl = getLevel(); const pool = vocabulaire.filter(i => i.lvl <= lvl);
     document.getElementById('dashboard-grid').innerHTML = pool.map(l => {
         const h = state.history[l.grec]; let s = h && h.total > 0 ? ((h.errors/h.total < 0.25) ? "mastered" : "learning") : "";
-        return `<div class="dash-cell ` + s + `" title="` + l.francais + `">` + l.emoji + `</div>`;
+        return `<div class="dash-cell ${s}" title="${l.francais}">${l.emoji}</div>`;
     }).join('');
 }
 
 function speak(text) { window.speechSynthesis.cancel(); const u = window.SpeechSynthesisUtterance; const speechObj = new u(text); speechObj.lang = 'el-GR'; speechObj.rate = isSlowAudio ? 0.45 : 0.85; window.speechSynthesis.speak(speechObj); }
 
+// Attribution unifiée des boutons de navigation et fenêtres modales
 document.getElementById('btn-stats').onclick = () => {
     let total = 0, errs = 0; Object.values(state.history).forEach(h => { total += h.total; errs += h.errors; });
     const acc = total > 0 ? Math.round(((total - errs) / total) * 100) : 100;
@@ -549,18 +564,24 @@ document.getElementById('btn-fiche').onclick = () => {
             html += `<div class="fiche-item"><span><b>` + word.artGrec + ` ` + word.grec + `</b> : ` + word.artFr + ` ` + word.francais + ` <small style="opacity:0.65;">(` + word.genreFr + `)</small> ` + word.emoji + `</span><div><button class="dictio-audio-btn" data-grec="${word.grec}">🔊 Écouter</button></div></div>`;
         });
     }
-    document.getElementById('fiche-content').innerHTML = html;
+    const targetContent = document.getElementById('fiche-content');
+    targetContent.innerHTML = html;
     
-    document.getElementById('fiche-content').querySelectorAll('.dictio-audio-btn').forEach(btn => {
+    targetContent.querySelectorAll('.dictio-audio-btn').forEach(btn => {
         btn.onclick = function() { speak(this.dataset.grec); };
     });
-    
     document.getElementById('modal-fiche').showModal();
 };
 
-document.getElementById('close-modal').onclick = () => { if (slideshowInterval) window.toggleSlideshow(); document.getElementById('modal-fiche').close(); };
+document.getElementById('close-modal').onclick = () => { if (slideshowInterval) toggleSlideshow(); document.getElementById('modal-fiche').close(); };
 document.getElementById('slow-toggle').onclick = (e) => { isSlowAudio = !isSlowAudio; e.target.classList.toggle('active', isSlowAudio); e.target.innerText = isSlowAudio ? "Lent" : "Audio"; };
 document.getElementById('exercise-select').onchange = function() { renderExercise(); };
-document.addEventListener('keydown', (e) => { if(e.key === 'Enter') { const ex = document.getElementById('exercise-select').value; if(ex !== 'association' && ex !== 'qcm' && ex !== 'chrono') window.validateText(); } });
+document.getElementById('btn-buy-freeze').onclick = function() { buyItem('freeze', 80); };
+document.getElementById('btn-export-save').onclick = exportSave;
+document.getElementById('btn-trigger-import').onclick = () => document.getElementById('import-file-input').click();
+document.getElementById('import-file-input').onchange = (e) => importSave(e);
+document.getElementById('btn-reset-game').onclick = resetGameProgress;
+
+document.addEventListener('keydown', (e) => { if(e.key === 'Enter') { const ex = document.getElementById('exercise-select').value; if(ex !== 'association' && ex !== 'qcm' && ex !== 'chrono') validateText(); } });
 
 checkDailyStreakAndCalendar(); verifyAndGenerateQuests(); renderActivityDots(); renderExercise();

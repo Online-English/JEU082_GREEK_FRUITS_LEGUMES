@@ -66,7 +66,7 @@
         <!-- Commandes de Diaporama Unifiées -->
         <div class="slideshow-controls-container">
             <select id="slideshow-level-select"></select>
-            <button id="btn-start-slideshow" onclick="toggleSlideshow()">🎬 Lancer</button>
+            <button id="btn-start-slideshow">🎬 Lancer</button>
         </div>
 
         <!-- Écran de projection du diaporama -->
@@ -89,7 +89,7 @@
             <h3>Objets Spéciaux</h3>
             <div class="freeze-buy-container">
                 <span>❄️ Assurance récolte (Gèle la série) : <span id="freeze-count-val">0</span></span>
-                <button class="buy-item-btn" onclick="buyItem('freeze', 80)">Acheter (80 🪙)</button>
+                <button class="buy-item-btn" id="btn-buy-freeze">Acheter (80 🪙)</button>
             </div>
         </div>
         <div class="shop-section">
@@ -123,13 +123,14 @@
         <!-- Outils de Sauvegarde & Réinitialisation tout en bas -->
         <h3 style="margin-top:20px; border-top: 1px solid var(--kbd-bg); padding-top:15px;">💾 Gestion des données locales</h3>
         <div class="backup-container">
-            <button onclick="exportSave()">💾 Exporter la Sauvegarde</button>
-            <button onclick="document.getElementById('import-file-input').click()">📂 Importer une Sauvegarde</button>
-            <input type="file" id="import-file-input" style="display:none;" onchange="importSave(event)">
+            <button id="btn-export-save">💾 Exporter la Sauvegarde</button>
+            <button id="btn-trigger-import">📂 Importer une Sauvegarde</button>
+            <input type="file" id="import-file-input" style="display:none;">
         </div>
-        <button onclick="resetGameProgress()" class="buy-item-btn" style="background:var(--error); width:100%; padding:12px; margin-top:5px; text-align:center;">🔄 Réinitialiser la Progression</button>
+        <button id="btn-reset-game" class="buy-item-btn" style="background:var(--error); width:100%; padding:12px; margin-top:5px; text-align:center;">🔄 Réinitialiser la Progression</button>
     </dialog>
 
-    <div class="confetti-container" style="position:fixed; top:0; left:0; pointer-events:none; z-index:9999;"></div>
+    <script src="script_2.js"></script>
+    <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');</script>
 </body>
 </html>
