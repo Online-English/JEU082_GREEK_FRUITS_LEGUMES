@@ -32,12 +32,12 @@ const vocabulaire = [
     { grec: "Κουνουπίδι", francais: "Chou-fleur", emoji: "🥦", lvl: 3, mne: "Se prononce 'kounoupidi'. Chou blanc." },
     { grec: "Κολοκύθι", francais: "Courgette", emoji: "🥒", lvl: 3, mne: "Se prononce 'kolokythi'. Pour les mezzés." },
     { grec: "Μελιτζάνα", francais: "Aubergine", emoji: "🍆", lvl: 3, mne: "Se prononce 'melitzana'. Indispensable pour la moussaka !" },
-    { grec: "Πιπεριά", francais: "Poivron", emoji: "🫑", lvl: 3, mne: "Se prononce 'piperia'. Même racine que le poivre." },
-    { grec: "Φασολάκια", francais: "Haricots verts", emoji: "🫘", lvl: 3, mne: "Se prononce 'fasolakia'. Petits haricots fins." },
+    { grec: "Πιπεριά", francais: "Poivron", emoji: "🫑", lvl: 3, mne: "Se prononce 'piperia'. De la même racine piquante que le poivre." },
+    { grec: "Φασολάκια", francais: "Haricots verts", emoji: "🫘", lvl: 3, mne: "Se prononce 'fasolakia'. Les petits haricots fins du potager." },
 
     // ================= NIVEAU 4 =================
     { grec: "Μάνγκο", francais: "Mangue", emoji: "🥭", lvl: 4, mne: "Se prononce 'mango'. Écriture directe." },
-    { grec: "Ακτινίδio", francais: "Kiwi", emoji: "🥝", lvl: 4, mne: "Se prononce 'aktinidio'. Rayons du fruit." },
+    { grec: "Ακτινίδιο", francais: "Kiwi", emoji: "🥝", lvl: 4, mne: "Se prononce 'aktinidio'. Rayons du fruit." },
     { grec: "Γκρέιπφρουτ", francais: "Pamplemousse", emoji: "🍊", lvl: 4, mne: "Phonétique de grapefruit." },
     { grec: "Σμέουρο", francais: "Framboise", emoji: "🍓", lvl: 4, mne: "Se prononce 'smeouro'. Fruit délicat." },
     { grec: "Μύρτιλο", francais: "Myrtille", emoji: "🫐", lvl: 4, mne: "Se prononce 'myrtilo'. Très proche." },
@@ -48,16 +48,16 @@ const vocabulaire = [
     { grec: "Μαϊντανός", francais: "Persil", emoji: "🌱", lvl: 4, mne: "Se prononce 'maintanos'. L'herbe aromatique phare." },
 
     // ================= NIVEAU 5 =================
-    { grec: "Βατόμουρο", francais: "Mûre", emoji: "🍇", lvl: 5, mne: "Se prononce 'vatomouro'. Mûre des ronces." },
+    { grec: "Βατόμουρο", francais: "Mûre", emoji: "🍇", lvl: 5, mne: "Se prononce 'vatomouro'. La mûre sauvage des ronces." },
     { grec: "Κράνμπερι", francais: "Canneberge", emoji: "🍒", lvl: 5, mne: "Phonétique de cranberry." },
     { grec: "Μανταρίνι", francais: "Mandarine", emoji: "🍊", lvl: 5, mne: "Se prononce 'mandarini'. Identique." },
     { grec: "Σταφύλι", francais: "Raisin", emoji: "🍇", lvl: 5, mne: "Se prononce 'stafyli'. Les vignes des Cyclades." },
     { grec: "Καρύδι", francais: "Noix", emoji: "🌰", lvl: 5, mne: "Se prononce 'karydi'. Petite coque ligneuse." },
     { grec: "Πράσο", francais: "Poireau", emoji: "🥬", lvl: 5, mne: "Se prononce 'praso'. Long poireau d'hiver." },
-    { grec: "Réβα", francais: "Navet", emoji: "🥔", lvl: 5, mne: "Reva. Racine mauve." },
+    { grec: "Ρέβα", francais: "Navet", emoji: "🥔", lvl: 5, mne: "Reva. Racine mauve." },
     { grec: "Ραπάνι", francais: "Radis", emoji: "🥕", lvl: 5, mne: "Se prononce 'rapani'. Croquant avec du sel." },
     { grec: "Αγκινάρα", francais: "Artichaut", emoji: "🥬", lvl: 5, mne: "Se prononce 'anginara'. Cœur tendre." },
-    { grec: "Σπαράγγi", francais: "Asperge", emoji: "🥦", lvl: 5, mne: "Se prononce 'sparangi'. Asperge de printemps." },
+    { grec: "Σπαράγγι", francais: "Asperge", emoji: "🥦", lvl: 5, mne: "Se prononce 'sparangi'. Asperge de printemps." },
 
     // ================= NIVEAU 6 =================
     { grec: "Φιστίκι", francais: "Pistache", emoji: "🥜", lvl: 6, mne: "Se prononce 'fistiki'. La pistache d'Égine." },
@@ -69,7 +69,7 @@ const vocabulaire = [
     { grec: "Γλυκοπατάτα", francais: "Patate douce", emoji: "🍠", lvl: 6, mne: "Se prononce 'glykopatata'. Patate sucrée." },
     { grec: "Φασόλι", francais: "Haricot blanc", emoji: "🫘", lvl: 6, mne: "Se prononce 'fasoli'. Ingrédient de la fasolada." },
     { grec: "Ρεβίθι", francais: "Pois chiche", emoji: "🫘", lvl: 6, mne: "Se prononce 'revithi'. Base de soupe crémeuse." },
-    { grec: "Φακή", francais: "Lentille", emoji: "𫫘", lvl: 6, mne: "Se prononce 'faki'. Lentilles brunes." },
+    { grec: "Φακή", francais: "Lentille", emoji: "🫘", lvl: 6, mne: "Se prononce 'faki'. Lentilles brunes." },
 
     // ================= NIVEAU 7 =================
     { grec: "Χουρμάς", francais: "Datte", emoji: "🌴", lvl: 7, mne: "Se prononce 'chourmas'. Fruit séché." },
@@ -97,7 +97,7 @@ const vocabulaire = [
 
     // ================= NIVEAU 9 =================
     { grec: "Φραγκόσυκο", francais: "Figue de Barbarie", emoji: "🌵", lvl: 9, mne: "Se prononce 'frangosyko'. Figue épineuse." },
-    { grec: "Φραγκοστάφυλο", francais: "Groseille", emoji: "🍒", lvl: 9, mne: "Se prononce 'frangostafylo'. Baie acide." },
+    { grec: "Φραγkoστάφυλο", francais: "Groseille", emoji: "🍒", lvl: 9, mne: "Se prononce 'frangostafylo'. Baie acide." },
     { grec: "Φρούτο του πάθους", francais: "Fruit de la passion", emoji: "🍇", lvl: 9, mne: "Frouto tou pathous." },
     { grec: "Γκότζι μπέρι", francais: "Baie de Goji", emoji: "🍒", lvl: 9, mne: "Phonétique directe." },
     { grec: "Μούρο", francais: "Mûre sauvage", emoji: "🍇", lvl: 9, mne: "Se prononce 'mouro'. Fruits des buissons." },
@@ -111,7 +111,7 @@ const vocabulaire = [
     { grec: "Λιτσί", francais: "Litchi", emoji: "🍒", lvl: 10, mne: "Se prononce 'litsi'. Fruit translucide." },
     { grec: "Αγριοφράουλα", francais: "Fraise des bois", emoji: "🍓", lvl: 10, mne: "Se prononce 'agriofraoula'. Fraise sauvage." },
     { grec: "Αγριοκέρασο", francais: "Merise", emoji: "🍒", lvl: 10, mne: "Se prononce 'agriokeraso'. Cerise sauvage des bois." },
-    { grec: "Ρéβα", francais: "Navet", emoji: "🥔", lvl: 10, mne: "Reva. Racine blanche." },
+    { grec: "Ρέβα", francais: "Navet", emoji: "🥔", lvl: 10, mne: "Reva. Racine blanche." },
     { grec: "Μύρτιλο", francais: "Myrtille", emoji: "🫐", lvl: 10, mne: "Myrtilo. Baie sauvage." },
     { grec: "Τρούφα", francais: "Truffe", emoji: "🍄", lvl: 10, mne: "Se prononce 'troufa'. Champignon souterrain précieux." },
     { grec: "Μανιόκα", francais: "Manioc", emoji: "🥔", lvl: 10, mne: "Manioka. Tubercule tropical." },
@@ -120,19 +120,28 @@ const vocabulaire = [
     { grec: "Φύκια", francais: "Algues", emoji: "🌿", lvl: 10, mne: "Fykia. Légumes de la mer." }
 ];
 
+const avatarsList = ["🍎", "🤓", "🎓", "🏛️", "🏺", "🦉", "🦁", "🦅", "🐉", "🌋", "☀️", "🌟", "👑", "🔮", "⚔️", "🛡️", "🏹", "✨", "🔥", "👑"];
+const prestigeAvatars = ["⚡", "🔱", "🏹", "🦉", "🛡️", "🌋", "🍷"];
+
+// Économie rehaussée : Prix multipliés par 20
 const shopAvatars = [
-    { emoji: "👶", cost: 0 }, { emoji: "🥔", cost: 20 }, { emoji: "🥦", cost: 40 }, { emoji: "🥑", cost: 60 }, { emoji: "🍉", cost: 80 },
-    { emoji: "🥕", cost: 100 }, { emoji: "🍓", cost: 120 }, { emoji: "🍋", cost: 140 }, { emoji: "🍄", cost: 160 }, { emoji: "🍇", cost: 180 },
-    { emoji: "🌽", cost: 200 }, { emoji: "🍅", cost: 220 }, { emoji: "🍍", cost: 240 }, { emoji: "🥝", cost: 260 }, { emoji: "👨‍🍳", cost: 280 },
-    { emoji: "👩‍🍳", cost: 300 }, { emoji: "🐵", cost: 320 }, { emoji: "🦊", cost: 360 }, { emoji: "Rex", cost: 400 }, { emoji: "🧙", cost: 500 }
+    { emoji: "👶", cost: 0 }, { emoji: "🥔", cost: 400 }, { emoji: "🥦", cost: 800 }, { emoji: "🥑", cost: 1200 }, { emoji: "🍉", cost: 1600 },
+    { emoji: "🥕", cost: 2000 }, { emoji: "🍓", cost: 2400 }, { emoji: "🍋", cost: 2800 }, { emoji: "🍄", cost: 3200 }, { emoji: "🍇", cost: 3600 },
+    { emoji: "🌽", cost: 4000 }, { emoji: "🍅", cost: 4400 }, { emoji: "🍍", cost: 4800 }, { emoji: "🥝", cost: 5200 }, { emoji: "👨‍🍳", cost: 5600 },
+    { emoji: "👩‍🍳", cost: 6000 }, { emoji: "🐵", cost: 6400 }, { emoji: "🦊", cost: 7200 }, { emoji: "🦖", cost: 8000 }, { emoji: "🧙", cost: 10000 }
 ];
 
 const shopThemes = [
-    { id: "theme-orchard", name: "Verger Nocturne 🌌", cost: 0 }, { id: "theme-greenhouse", name: "Serre Épurée ☀️", cost: 0 },
-    { id: "theme-olympe", name: "Marbre Sacré 🏛️", cost: 0 }, { id: "theme-atlantis", name: "Fonds d'Atlantis 🌊", cost: 80 },
-    { id: "theme-cyberpunk", name: "Potager Cyberpunk ⚡", cost: 160 }, { id: "theme-sunset", name: "Crépuscule Égée 🌅", cost: 240 },
-    { id: "theme-forest", name: "Forêt des Dryades 🌳", cost: 320 }, { id: "theme-royal", name: "Festin Royal 👑", cost: 400 },
-    { id: "theme-neon", name: "Salade Néon 🧪", cost: 500 }, { id: "theme-sahara", name: "Oasis du Sahara 🏜️", cost: 600 }
+    { id: "theme-orchard", name: "Verger Nocturne 🌌", cost: 0 },
+    { id: "theme-greenhouse", name: "Serre Épurée ☀️", cost: 0 },
+    { id: "theme-olympe", name: "Marbre Sacré 🏛️", cost: 0 },
+    { id: "theme-atlantis", name: "Fonds d'Atlantis 🌊", cost: 1600 },
+    { id: "theme-cyberpunk", name: "Potager Cyberpunk ⚡", cost: 3200 },
+    { id: "theme-sunset", name: "Crépuscule Égée 🌅", cost: 4800 },
+    { id: "theme-forest", name: "Forêt des Dryades 🌳", cost: 6400 },
+    { id: "theme-royal", name: "Festin Royal 👑", cost: 8000 },
+    { id: "theme-neon", name: "Salade Néon 🧪", cost: 10000 },
+    { id: "theme-sahara", name: "Oasis du Sahara 🏜️", cost: 12000 }
 ];
 
 const badgesList = [
@@ -144,7 +153,7 @@ const badgesList = [
 let state = JSON.parse(localStorage.getItem('greekVocabV2')) || { 
     score: 0, drachmes: 0, streak: 0, highestStreak: 0, currentCombo: 1, lastLvl: 1, prestige: 0, streakFreeze: 0, lastActiveDate: "",
     unlockedAvatars: ["👶"], unlockedThemes: ["theme-orchard", "theme-greenhouse", "theme-olympe"],
-    activeAvatar: "👶", activeTheme: "theme-orchard", history: {}, dailyQuests: { date: "", list: [] }, chronoRecords: [], activityLog: {},
+    activeAvatar: "👶", activeTheme: "theme-dark", history: {}, dailyQuests: { date: "", list: [] }, chronoRecords: [], activityLog: {},
     activityTracker: { qcm: 0, lecture: 0, ecriture: 0, audition: 0, oral: 0, chrono: 0, rattrapage: 0, association: 0 }
 };
 
@@ -279,7 +288,6 @@ function renderExercise() {
         const opts = [currentWord.francais];
         while(opts.length < 4) { const r = vocabulaire[Math.floor(Math.random() * vocabulaire.length)].francais; if(!opts.includes(r)) opts.push(r); }
         opts.sort(() => Math.random() - 0.5);
-        // Utilisation sécurisée de backticks pour le passage de l'élément QCM et éviter le crash de sélection
         html += `<div class="word-audio-container"><span class="big-char">${currentWord.grec}</span>${audioButton}</div><p>Traduisez ce mot :</p><div class="qcm-grid">` + opts.map(o => `<button class="qcm-btn" onclick="checkAnswer(this, \`${o}\`, \`${currentWord.francais}\`)">${o}</button>`).join('') + `</div>`;
     } else if (type === 'lecture' || type === 'rattrapage') {
         html += `<div class="word-audio-container"><span class="big-char">${currentWord.grec}</span>${audioButton}</div><p>Écrivez la traduction en Français :</p><input type="text" id="answer" data-correct="${currentWord.francais}" placeholder="Saisie en français..."><br><button class="valider-btn" onclick="validateText()">Valider</button>`;
@@ -328,15 +336,11 @@ window.selectAssocCard = function(idx, id) {
     }
 };
 
-// Traitement unifié du QCM : Bloque la grille et applique un retour visuel direct de couleur
 window.checkAnswer = function(btnElement, selected, correct) {
     const buttons = btnElement.closest('.qcm-grid').querySelectorAll('.qcm-btn');
     buttons.forEach(b => b.disabled = true);
-    
     const isCorrect = selected.toLowerCase() === correct.toLowerCase();
-    if (isCorrect) { btnElement.classList.add('feedback-success'); } 
-    else { btnElement.classList.add('feedback-error'); }
-    
+    if (isCorrect) { btnElement.classList.add('feedback-success'); } else { btnElement.classList.add('feedback-error'); }
     processResult(isCorrect, correct);
 };
 
@@ -365,13 +369,12 @@ function processResult(isCorrect, correctAnswerDisplay) {
         triggerVibrate([60, 40, 60]); state.currentCombo = 1; state.streak = 0;
         state.history[currentWord.grec].errors++; if(type === 'chrono') timeLeft = Math.max(0, timeLeft - 5);
         playTone([220, 180], 0.2);
-        
         const container = document.getElementById('exercise-container');
         const mneDiv = document.createElement('div'); mneDiv.className = "mnemonic-text"; mneDiv.innerText = `💡 Rappel : ${currentWord.mne}`;
         container.insertBefore(mneDiv, container.lastChild);
         if(input) { input.classList.add('feedback-error'); input.value = `Correction : ${correctAnswerDisplay}`; }
     }
-    saveAndRefresh(); verifyAndGenerateQuests();
+    saveAndRefresh();
     setTimeout(renderExercise, isCorrect ? 1000 : 2800);
 }
 
@@ -422,44 +425,31 @@ window.importSave = function(event) {
     reader.readAsText(file);
 };
 
-// Réinitialisation totale des XP et des configurations de l'application
 window.resetGameProgress = function() {
-    if (confirm("🔄 Attention ! Voulez-vous réinitialiser l'INTEGRALITE de vos données de progression ? Cette action effacera vos scores, oboles et configurations.")) {
-        localStorage.removeItem('greekVocabV2');
-        location.reload();
+    if (confirm("🔄 Attention ! Voulez-vous réinitialiser l'INTEGRALITE de vos données de progression ?")) {
+        localStorage.removeItem('greekVocabV2'); location.reload();
     }
 };
 
-// Gestion de la logique de Diaporama Audio Automatique
 window.toggleSlideshow = function() {
-    const btn = document.getElementById('btn-start-slideshow');
-    const view = document.getElementById('slideshow-view');
-    const content = document.getElementById('fiche-content');
-    
+    const btn = document.getElementById('btn-start-slideshow'); const view = document.getElementById('slideshow-view'); const content = document.getElementById('fiche-content');
     if (slideshowInterval) {
         clearInterval(slideshowInterval); slideshowInterval = null;
-        btn.innerText = "🎬 Lancer le Diaporama Audio"; btn.style.background = "var(--accent)";
-        view.style.display = "none"; content.style.display = "grid";
+        btn.innerText = "🎬 Lancer le Diaporama Audio"; btn.style.background = "var(--accent)"; view.style.display = "none"; content.style.display = "grid";
     } else {
-        btn.innerText = "⏹️ Arrêter le Diaporama"; btn.style.background = "var(--error)";
-        view.style.display = "block"; content.style.display = "none";
-        slideshowIndex = 0; runSlidePlayer();
-        slideshowInterval = setInterval(runSlidePlayer, 3500);
+        btn.innerText = "⏹️ Arrêter le Diaporama"; btn.style.background = "var(--error)"; view.style.display = "block"; content.style.display = "none";
+        slideshowIndex = 0; runSlidePlayer(); slideshowInterval = setInterval(runSlidePlayer, 3500);
     }
 };
 
 function runSlidePlayer() {
-    const pool = vocabulaire.filter(i => i.lvl <= getLevel());
-    if (pool.length === 0) return window.toggleSlideshow();
+    const pool = vocabulaire.filter(i => i.lvl <= getLevel()); if (pool.length === 0) return window.toggleSlideshow();
     if (slideshowIndex >= pool.length) slideshowIndex = 0;
-    
     const word = pool[slideshowIndex];
     document.getElementById('slide-emoji').innerText = word.emoji || "🥗";
     document.getElementById('slide-grec').innerText = word.grec;
     document.getElementById('slide-francais').innerText = word.francais;
-    
-    speak(word.grec);
-    slideshowIndex++;
+    speak(word.grec); slideshowIndex++;
 }
 
 window.buyItem = function(type, cost, value) {
@@ -493,14 +483,11 @@ function openShopMenuUI() {
 function saveAndRefresh() {
     const lvl = getLevel(); if (lvl > (state.lastLvl || 1)) { setTimeout(launchCelebration, 200); state.lastLvl = lvl; }
     localStorage.setItem('greekVocabV2', JSON.stringify(state));
-    
     document.getElementById('level-val').innerText = lvl; document.getElementById('score').innerText = state.score;
     document.getElementById('drachmes-val').innerText = state.drachmes; document.getElementById('streak').innerText = state.streak;
     document.getElementById('avatar-val').innerText = state.activeAvatar || "🍎";
-    
     document.getElementById('progress-bar').style.width = `${((state.score % 5000) / 5000) * 100}%`;
     document.body.className = state.activeTheme || "theme-orchard";
-    
     const cBox = document.getElementById('combo-box');
     if(state.currentCombo > 1) { cBox.style.display = "block"; document.getElementById('combo-val').innerText = `x${state.currentCombo}`; } else { cBox.style.display = "none"; }
     renderDashboard(); renderQuestsUI();
@@ -536,10 +523,7 @@ document.getElementById('btn-fiche').onclick = () => {
     `).join('');
     document.getElementById('modal-fiche').showModal();
 };
-document.getElementById('close-modal').onclick = () => {
-    if (slideshowInterval) window.toggleSlideshow(); // Coupe proprement le diaporama à la fermeture
-    document.getElementById('modal-fiche').close();
-};
+document.getElementById('close-modal').onclick = () => { if (slideshowInterval) window.toggleSlideshow(); document.getElementById('modal-fiche').close(); };
 
 document.getElementById('slow-toggle').onclick = (e) => { isSlowAudio = !isSlowAudio; e.target.classList.toggle('active', isSlowAudio); e.target.innerText = isSlowAudio ? "Lent" : "Audio"; };
 document.getElementById('exercise-select').onchange = function() {
