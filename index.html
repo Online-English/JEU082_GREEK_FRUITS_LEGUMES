@@ -21,13 +21,13 @@
             <div class="level-badge">Rang <span id="level-val">1</span>/10 <span id="prestige-badge" style="display:none;">⭐ P.<span id="prestige-val">0</span></span></div>
             <div class="combo-badge" id="combo-box">Combo <span id="combo-val">x1</span> 🔥</div>
         </div>
-        <div id="stats">⚡ <span id="score">0</span> XP | 🪙 <span id="drachmes-val">0</span> Oboles | 🔥 Série : <span id="streak">0</span></div>
+        <div id="stats">⚡ <span id="score">0</span> / 50000 XP | 🪙 <span id="drachmes-val">0</span> Oboles | 🔥 Série : <span id="streak">0</span></div>
         <div id="timer-container" class="timer-hidden">⏱️ Temps : <span id="timer-val">60</span>s | Session : <span id="chrono-score-val">0</span> pts</div>
     </header>
 
     <main>
         <div id="daily-quests-box" class="daily-quests-box">
-            <h4>🎯 Missions du Jour (+300 XP / +150 🪙)</h4>
+            <h4>🎯 Missions du Jour (+300 XP / +30 🪙)</h4>
             <div id="quests-list"></div>
         </div>
 
@@ -36,13 +36,16 @@
         <select id="exercise-select">
             <option value="qcm">Mode QCM (Reconnaissance)</option>
             <option value="lecture">Thème Grec → Français (Saisie)</option>
-            <option value="ecriture">Thème Français → Grec (Clavier Grec requis)</option>
+            <option value="ecriture">Thème Français → Grec (Clavier Grec)</option>
             <option value="audition">Mode Dictée Audio (Écoute → Traduction)</option>
             <option value="oral">🗣️ Défi Chef Vocal (Prononciation)</option>
             <option value="chrono">⏱️ RUSH POTAGER (Contre-la-montre)</option>
             <option value="rattrapage">⚠️ REPAS DE RATTRAPAGE (XP x2)</option>
             <option value="association">🧩 MINI-JEU D'ASSOCIATION</option>
         </select>
+
+        <!-- Nouveau composant visuel d'exigence de niveau (points de couleurs) -->
+        <div id="activity-tracker-box" class="activity-tracker-box"></div>
 
         <div id="exercise-container">
             <p>Chargement des ingrédients...</p>
@@ -70,8 +73,8 @@
         <div class="shop-section">
             <h3>Objets Spéciaux</h3>
             <div class="freeze-buy-container">
-                <span>❄️ Assurance récolte (Gèle votre série) : <span id="freeze-count-val">0</span></span>
-                <button class="buy-item-btn" onclick="buyItem('freeze', 400)">Acheter (400 🪙)</button>
+                <span>❄️ Assurance récolte (Gèle la série) : <span id="freeze-count-val">0</span></span>
+                <button class="buy-item-btn" onclick="buyItem('freeze', 80)">Acheter (80 🪙)</button>
             </div>
         </div>
         <div class="shop-section">
