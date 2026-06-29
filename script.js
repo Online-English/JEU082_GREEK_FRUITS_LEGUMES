@@ -260,15 +260,41 @@ function renderQuestsUI() {
 }
 
 function getNextWord() {
-    const type = document.getElementById('exercise-select').value; const lvl = getLevel();
+    const type = document.getElementById('exercise-select').value; 
+    const lvl = getLevel();
     let pool = vocabulaire.filter(item => item.lvl <= lvl);
+    
+    // Mode rattrapage exclusif (cible uniquement les erreurs)
     if (type === 'rattrapage') {
         let weakPool = pool.filter(l => (state.history[l.grec]?.errors / state.history[l.grec]?.total) >= 0.40);
         return weakPool.length > 0 ? weakPool[Math.floor(Math.random() * weakPool.length)] : pool[Math.floor(Math.random() * pool.length)];
     }
+
+    // 1. Phase de découverte : Priorité absolue aux mots qui n'ont ENCORE JAMAIS été vus
     const unseen = pool.filter(l => !state.history[l.grec] || state.history[l.grec].total === 0);
     if (unseen.length > 0) return unseen[Math.floor(Math.random() * unseen.length)];
-    return pool.sort((a,b) => ((state.history[b.grec]?.errors||0)/(state.history[b.grec]?.total||1)) - ((state.history[a.grec]?.errors||0)/(state.history[a.grec]?.total||1)))[Math.floor(Math.random() * Math.min(3, pool.length))];
+
+    // 2. Anti-monotonie : 25% de chance de piocher un mot totalement aléatoire parmi les débloqués
+    if (Math.random() < 0.25) {
+        return pool[Math.floor(Math.random() * pool.length)];
+    }
+
+    // 3. Tri SRS intelligent avec gestion des égalités (Roulement parfait)
+    return pool.sort((a, b) => {
+        const totalA = state.history[a.grec]?.total || 0;
+        const totalB = state.history[b.grec]?.total || 0;
+        const errA = state.history[a.grec]?.errors || 0;
+        const errB = state.history[b.grec]?.errors || 0;
+
+        const rateA = errA / (totalA || 1);
+        const rateB = errB / (totalB || 1);
+
+        // Critère 1 : On trie d'abord par taux d'erreur décroissant (le plus difficile en premier)
+        if (rateB !== rateA) return rateB - rateA;
+
+        // Critère 2 : En cas d'égalité de réussite (ex: 0% d'erreur), on met en premier celui qui a été le MOINS RÉVISÉ
+        return totalA - totalB;
+    })[Math.floor(Math.random() * Math.min(4, pool.length))]; // Pioche dans un échantillon de tête élargi
 }
 
 function renderExercise() {
