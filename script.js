@@ -34,7 +34,7 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Γκρέιπφρουτ", "artFr": "le", "francais": "Pamplemousse", "genreFr": "m.", "emoji": "🍊", "lvl": 4, "mne": "Phonétique de grapefruit."},
     {"artGrec": "το", "grec": "Σμέουρο", "artFr": "la", "francais": "Framboise", "genreFr": "f.", "emoji": "🍓", "lvl": 4, "mne": "Se prononce 'smeouro'. Fruit délicat."},
     {"artGrec": "το", "grec": "Μύρτιλο", "artFr": "la", "francais": "Myrtille", "genreFr": "f.", "emoji": "🫐", "lvl": 4, "mne": "Se prononce 'myrtilo'. Très proche."},
-    {"artGrec": "ο", "grec": "Αρακάς", "artFr": "les", "francais": "Petits pois", "genreFr": "pl.", "emoji": "🫛", "lvl": 4, "mne": "Se prononce 'arakas'. Billes vertes."},
+    {"artGrec": "ο", "grec": "Αρακάς", "artFr": "les", "francais": "Petits pois", "genreFr": "pl.", "emoji": "𫛛", "lvl": 4, "mne": "Se prononce 'arakas'. Billes vertes."},
     {"artGrec": "το", "grec": "Καλαμπόκι", "artFr": "le", "francais": "Maïs", "genreFr": "m.", "emoji": "🌽", "lvl": 4, "mne": "Se prononce 'kalamboki'. Épi jaune."},
     {"artGrec": "το", "grec": "Λάχανο", "artFr": "le", "francais": "Chou", "genreFr": "m.", "emoji": "🥬", "lvl": 4, "mne": "Se prononce 'lachano'. Gros chou cabus."},
     {"artGrec": "το", "grec": "Σέλινο", "artFr": "le", "francais": "Céleri", "genreFr": "m.", "emoji": "🌿", "lvl": 4, "mne": "Se prononce 'selino'. Très proche."},
@@ -84,7 +84,7 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Φρούτο του πάθους", "artFr": "le", "francais": "Fruit de la passion", "genreFr": "m.", "emoji": "🍇", "lvl": 9, "mne": "Frouto tou pathous."},
     {"artGrec": "το", "grec": "Γκότζι μπέρι", "artFr": "la", "francais": "Baie de Goji", "genreFr": "f.", "emoji": "🍒", "lvl": 9, "mne": "Phonétique directe."},
     {"artGrec": "το", "grec": "Μούρο", "artFr": "la", "francais": "Mûre sauvage", "genreFr": "f.", "emoji": "🍇", "lvl": 9, "mne": "Se prononce 'mouro'. Fruits des buissons."},
-    {"artGrec": "το", "grec": "Τζίντζερ", "artFr": "le", "francais": "Gingembre", "genreFr": "m.", "emoji": "🫚", "lvl": 9, "mne": "Phonétique de ginger."},
+    {"artGrec": "το", "grec": "Τζίντζερ", "artFr": "le", "francais": "Gingembre", "genreFr": "m.", "emoji": "𫚚", "lvl": 9, "mne": "Phonétique de ginger."},
     {"artGrec": "η", "grec": "Κάπαρη", "artFr": "la", "francais": "Câpre", "genreFr": "f.", "emoji": "🌱", "lvl": 9, "mne": "Se prononce 'kapari'. Câpres salées des roches."},
     {"artGrec": "ο", "grec": "Μάραθος", "artFr": "le", "francais": "Fenouil sauvage", "genreFr": "m.", "emoji": "🌿", "lvl": 9, "mne": "Se prononce 'marathos'. Herbe folle."},
     {"artGrec": "το", "grec": "Σπαράγγι της θάλασσας", "artFr": "la", "francais": "Salicorne", "genreFr": "f.", "emoji": "🌿", "lvl": 9, "mne": "Asperge de mer marine."},
@@ -362,6 +362,7 @@ function processResult(isCorrect, correctAnswerDisplay) {
     if(!state.history[currentWord.grec]) state.history[currentWord.grec] = {errors: 0, total: 0};
     state.history[currentWord.grec].total++;
     const input = document.getElementById('answer'); if(input) input.disabled = true;
+    const container = document.getElementById('exercise-container');
 
     if (isCorrect) {
         triggerVibrate(30); state.currentCombo = Math.min(3, (state.currentCombo || 1) + 1);
@@ -383,7 +384,13 @@ function processResult(isCorrect, correctAnswerDisplay) {
         triggerVibrate([60, 40, 60]); state.currentCombo = 1; state.streak = 0;
         state.history[currentWord.grec].errors++; if(type === 'chrono') timeLeft = Math.max(0, timeLeft - 5);
         playTone([220, 180], 0.2);
-        const container = document.getElementById('exercise-container');
+        
+        // Effet Shake appliqué sur le boîtier d'exercice
+        if (container) {
+            container.classList.add('shake');
+            setTimeout(() => container.classList.remove('shake'), 400);
+        }
+
         const mneDiv = document.createElement('div'); mneDiv.className = "mnemonic-text"; mneDiv.innerText = `💡 Rappel : ` + currentWord.mne;
         container.insertBefore(mneDiv, container.lastChild);
         if(input) { input.classList.add('feedback-error'); input.value = `Correction : ` + correctAnswerDisplay; }
@@ -578,6 +585,26 @@ document.getElementById('import-file-input').onchange = (e) => importSave(e);
 document.getElementById('btn-reset-game').onclick = resetGameProgress;
 document.getElementById('btn-start-slideshow').onclick = toggleSlideshow;
 
-document.addEventListener('keydown', (e) => { if(e.key === 'Enter') { const ex = document.getElementById('exercise-select').value; if(ex !== 'association' && ex !== 'qcm' && ex !== 'chrono') validateText(); } });
+// Écouteur global mis à jour : Validation textuelle & Raccourcis QCM 1, 2, 3, 4
+document.addEventListener('keydown', (e) => { 
+    const ex = document.getElementById('exercise-select').value; 
+    if(e.key === 'Enter') { 
+        if(ex !== 'association' && ex !== 'qcm' && ex !== 'chrono') validateText(); 
+    } 
+    if ((ex === 'qcm' || ex === 'chrono') && ['1', '2', '3', '4'].includes(e.key)) {
+        const buttons = document.querySelectorAll('.qcm-btn');
+        const index = parseInt(e.key) - 1;
+        if (buttons[index] && !buttons[index].disabled) {
+            buttons[index].click();
+        }
+    }
+});
+
+// Enregistrement Automatique du Service Worker (Gestion du Cache / Mode Hors-ligne PWA)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(err => console.log('SW registration failed:', err));
+    });
+}
 
 checkDailyStreakAndCalendar(); verifyAndGenerateQuests(); renderActivityDots(); renderExercise();
