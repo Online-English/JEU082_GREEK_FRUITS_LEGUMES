@@ -13,7 +13,7 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Καρπούζι", "artFr": "la", "francais": "Pastèque", "genreFr": "f.", "emoji": "🍉", "lvl": 2, "mne": "L'emblème des étés en Grèce (karpouzi)."},
     {"artGrec": "το", "grec": "Πεπόνι", "artFr": "le", "francais": "Melon", "genreFr": "m.", "emoji": "🍈", "lvl": 2, "mne": "Se prononce 'peponi'. Facile : attention aux pépins."},
     {"artGrec": "το", "grec": "Ροδάκινο", "artFr": "la", "francais": "Pêche", "genreFr": "f.", "emoji": "🍑", "lvl": 2, "mne": "Se prononce 'rodakino'. Une pêche rose comme une rose ('rodo')."},
-    {"artGrec": "το", "grec": "Σύκο", "artFr": "la", "francais": "Figue", "genreFr": "f.", "emoji": "🫒", "lvl": 2, "mne": "Se prononce 'syko'. Fruit du sycomore."},
+    {"artGrec": "το", "grec": "Σύκο", "artFr": "la", "francais": "Figue", "genreFr": "f.", "emoji": "𫫓", "lvl": 2, "mne": "Se prononce 'syko'. Fruit du sycomore."},
     {"artGrec": "το", "grec": "Αγγούρι", "artFr": "le", "francais": "Concombre", "genreFr": "m.", "emoji": "🥒", "lvl": 2, "mne": "Se prononce 'angouri'. Légume d'eau allongé."},
     {"artGrec": "το", "grec": "Μαρούλι", "artFr": "la", "francais": "Laitue", "genreFr": "f.", "emoji": "🥬", "lvl": 2, "mne": "Se prononce 'marouli'. Rouler la salade."},
     {"artGrec": "το", "grec": "Σπανάκι", "artFr": "l'", "francais": "Épinard", "genreFr": "m.", "emoji": "🌿", "lvl": 2, "mne": "Se prononce 'spanaki'. Pour faire la spanakopita."},
@@ -147,7 +147,7 @@ function launchCelebration() {
     }
 }
 
-function triggerVibrate(p) { if ("vibrate" in navigator) navigator.vibrate(p); }
+function triggerVibrate(p) { if ("navigator" in window && "vibrate" in navigator) navigator.vibrate(p); }
 
 function playTone(freqs, duration) {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -337,6 +337,7 @@ function selectAssocCard(idx, id) {
             if (assocPairsMatched === 4) {
                 if(!state.activityTracker) state.activityTracker = {}; state.activityTracker['association'] = (state.activityTracker['association'] || 0) + 1;
                 state.score += 50; state.drachmes += 6; updateQuestProgress("gain_xp", 50); updateQuestProgress("drachmes", 6);
+                saveAndRefresh();
                 setTimeout(() => { alert("Tableau complété ! (+50 XP / +6 🪙)"); renderActivityDots(); buildAssociationGame(); }, 600);
             }
         } else {
