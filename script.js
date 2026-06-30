@@ -40,7 +40,7 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Σέλινο", "artFr": "le", "francais": "Céleri", "genreFr": "m.", "emoji": "🌿", "lvl": 4, "mne": "Se prononce 'selino'. Très proche."},
     {"artGrec": "ο", "grec": "Μαϊντανός", "artFr": "le", "francais": "Persil", "genreFr": "m.", "emoji": "🌱", "lvl": 4, "mne": "Se prononce 'maintanos'. L'herbe aromatique phare."},
     {"artGrec": "το", "grec": "Βατόμουρο", "artFr": "la", "francais": "Mûre", "genreFr": "f.", "emoji": "🍇", "lvl": 5, "mne": "Se prononce 'vatomouro'. Mûre des ronces."},
-    {"artGrec": "το", "grec": "Κράνμπερι", "artFr": "la", "francais": "Canneberge", "genreFr": "f.", "emoji": "🍒", "lvl": 5, "mne": "Phonétique de cranberry."},
+    {"artGrec": "το", "grec": "Κράνμperi", "artFr": "la", "francais": "Canneberge", "genreFr": "f.", "emoji": "🍒", "lvl": 5, "mne": "Phonétique de cranberry."},
     {"artGrec": "το", "grec": "Μανταρίνι", "artFr": "la", "francais": "Mandarine", "genreFr": "f.", "emoji": "🍊", "lvl": 5, "mne": "Se prononce 'mandarini'. Identique."},
     {"artGrec": "το", "grec": "Σταφύλι", "artFr": "le", "francais": "Raisin", "genreFr": "m.", "emoji": "🍇", "lvl": 5, "mne": "Se prononce 'stafyli'. Les vignes des Cyclades."},
     {"artGrec": "το", "grec": "Καρύδι", "artFr": "la", "francais": "Noix", "genreFr": "f.", "emoji": "🌰", "lvl": 5, "mne": "Se prononce 'karydi'. Petite coque ligneuse."},
@@ -55,7 +55,7 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Αμύγδαλο", "artFr": "l'", "francais": "Amande", "genreFr": "f.", "emoji": "🌰", "lvl": 6, "mne": "Amnygdalo. En forme d'amande."},
     {"artGrec": "η", "grec": "Καρύδα", "artFr": "la", "francais": "Noix de coco", "genreFr": "f.", "emoji": "🥥", "lvl": 6, "mne": "Se prononce 'karyda'. Grosse noix exotique."},
     {"artGrec": "η", "grec": "Φάβα", "artFr": "la", "francais": "Fève", "genreFr": "f.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'fava'. Purée typique de Santorin."},
-    {"artGrec": "η", "grec": "Γλυkoπατάτα", "artFr": "la", "francais": "Patate douce", "genreFr": "f.", "emoji": "🍠", "lvl": 6, "mne": "Se prononce 'glykopatata'. Patate sucrée."},
+    {"artGrec": "η", "grec": "Γλυκοπατάτα", "artFr": "la", "francais": "Patate douce", "genreFr": "f.", "emoji": "🍠", "lvl": 6, "mne": "Se prononce 'glykopatata'. Patate sucrée."},
     {"artGrec": "το", "grec": "Φασόλι", "artFr": "le", "francais": "Haricot blanc", "genreFr": "m.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'fasoli'. Ingrédient de la fasolada."},
     {"artGrec": "το", "grec": "Ρεβίθι", "artFr": "le", "francais": "Pois chiche", "genreFr": "m.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'revithi'. Base de soupe crémeuse."},
     {"artGrec": "η", "grec": "Φακή", "artFr": "la", "francais": "Lentille", "genreFr": "f.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'faki'. Lentilles brunes."},
@@ -492,7 +492,7 @@ function openShopMenuUI() {
         return `<div class="${cName}" data-type="${isOwned ? 'equip-avatar' : 'avatar'}" data-cost="${a.cost}" data-value="${a.emoji}">${a.emoji}<br><small style="font-size:0.55rem;">${isActive ? 'Actif' : (isOwned ? 'Équiper' : a.cost + ' 🪙')}</small></div>`;
     }).join('');
 
-    poolThemes.innerHTML = shopThemes.map(t => {
+    document.getElementById('themes-shop-pool').innerHTML = shopThemes.map(t => {
         const isOwned = state.unlockedThemes.includes(t.id); const isActive = state.activeTheme === t.id;
         let cName = "theme-shop-btn" + (isActive ? " active-equip" : (isOwned ? " owned" : ""));
         return `<button class="${cName}" data-type="${isOwned ? 'equip-theme' : 'theme'}" data-cost="${t.cost}" data-value="${t.id}"><span>${t.name}</span><small><b>${isActive ? 'Actif' : (isOwned ? 'Choisir' : t.cost + ' 🪙')}</b></small></button>`;
@@ -527,7 +527,7 @@ function renderDashboard() {
     }).join('');
 }
 
-function speak(text) { window.speechSynthesis.cancel(); const u = window.SpeechSynthesisUtterance; const speechObj = new u(text); speechObj.lang = 'el-GR'; speechObj.rate = isSlowAudio ? 0.45 : 0.85; window.speechSynthesis.speak(speechObj); }
+function speak(text) { window.speechSynthesis.cancel(); const speechObj = new SpeechSynthesisUtterance(text); speechObj.lang = 'el-GR'; speechObj.rate = isSlowAudio ? 0.45 : 0.85; window.speechSynthesis.speak(speechObj); }
 
 document.getElementById('btn-stats').onclick = () => {
     let total = 0, errs = 0; Object.values(state.history).forEach(h => { total += h.total; errs += h.errors; });
