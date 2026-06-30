@@ -30,7 +30,7 @@ const vocabulaire = [
     {"artGrec": "η", "grec": "Πιπεριά", "artFr": "le", "francais": "Poivron", "genreFr": "m.", "emoji": "🫑", "lvl": 3, "mne": "Se prononce 'piperia'. Même racine que le poivre."},
     {"artGrec": "τα", "grec": "Φασολάκια", "artFr": "les", "francais": "Haricots verts", "genreFr": "pl.", "emoji": "🫘", "lvl": 3, "mne": "Se prononce 'fasolakia'. Petits haricots fins."},
     {"artGrec": "το", "grec": "Μάνγκο", "artFr": "la", "francais": "Mangue", "genreFr": "f.", "emoji": "🥭", "lvl": 4, "mne": "Se prononce 'mango'. Écriture directe."},
-    {"artGrec": "το", "grec": "Ακτινίδio", "artFr": "le", "francais": "Kiwi", "genreFr": "m.", "emoji": "🥝", "lvl": 4, "mne": "Se prononce 'aktinidio'. Rayons du fruit."},
+    {"artGrec": "το", "grec": "Ακτινίδιο", "artFr": "le", "francais": "Kiwi", "genreFr": "m.", "emoji": "🥝", "lvl": 4, "mne": "Se prononce 'aktinidio'. Rayons du fruit."},
     {"artGrec": "το", "grec": "Γκρέιπφρουτ", "artFr": "le", "francais": "Pamplemousse", "genreFr": "m.", "emoji": "🍊", "lvl": 4, "mne": "Phonétique de grapefruit."},
     {"artGrec": "το", "grec": "Σμέουρο", "artFr": "la", "francais": "Framboise", "genreFr": "f.", "emoji": "🍓", "lvl": 4, "mne": "Se prononce 'smeouro'. Fruit délicat."},
     {"artGrec": "το", "grec": "Μύρτιλο", "artFr": "la", "francais": "Myrtille", "genreFr": "f.", "emoji": "🫐", "lvl": 4, "mne": "Se prononce 'myrtilo'. Très proche."},
@@ -55,7 +55,7 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Αμύγδαλο", "artFr": "l'", "francais": "Amande", "genreFr": "f.", "emoji": "🌰", "lvl": 6, "mne": "Amnygdalo. En forme d'amande."},
     {"artGrec": "η", "grec": "Καρύδα", "artFr": "la", "francais": "Noix de coco", "genreFr": "f.", "emoji": "🥥", "lvl": 6, "mne": "Se prononce 'karyda'. Grosse noix exotique."},
     {"artGrec": "η", "grec": "Φάβα", "artFr": "la", "francais": "Fève", "genreFr": "f.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'fava'. Purée typique de Santorin."},
-    {"artGrec": "η", "grec": "Γλυκοπατάτα", "artFr": "la", "francais": "Patate douce", "genreFr": "f.", "emoji": "🍠", "lvl": 6, "mne": "Se prononce 'glykopatata'. Patate sucrée."},
+    {"artGrec": "η", "grec": "Γλυkoπατάτα", "artFr": "la", "francais": "Patate douce", "genreFr": "f.", "emoji": "🍠", "lvl": 6, "mne": "Se prononce 'glykopatata'. Patate sucrée."},
     {"artGrec": "το", "grec": "Φασόλι", "artFr": "le", "francais": "Haricot blanc", "genreFr": "m.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'fasoli'. Ingrédient de la fasolada."},
     {"artGrec": "το", "grec": "Ρεβίθι", "artFr": "le", "francais": "Pois chiche", "genreFr": "m.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'revithi'. Base de soupe crémeuse."},
     {"artGrec": "η", "grec": "Φακή", "artFr": "la", "francais": "Lentille", "genreFr": "f.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'faki'. Lentilles brunes."},
@@ -87,10 +87,10 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Τζίντζερ", "artFr": "le", "francais": "Gingembre", "genreFr": "m.", "emoji": "🫚", "lvl": 9, "mne": "Phonétique de ginger."},
     {"artGrec": "η", "grec": "Κάπαρη", "artFr": "la", "francais": "Câpre", "genreFr": "f.", "emoji": "🌱", "lvl": 9, "mne": "Se prononce 'kapari'. Câpres salées des roches."},
     {"artGrec": "ο", "grec": "Μάραθος", "artFr": "le", "francais": "Fenouil sauvage", "genreFr": "m.", "emoji": "🌿", "lvl": 9, "mne": "Se prononce 'marathos'. Herbe folle."},
-    {"artGrec": "το", "grec": "Σπαράγγi της θάλασσας", "artFr": "la", "francais": "Salicorne", "genreFr": "f.", "emoji": "🌿", "lvl": 9, "mne": "Asperge de mer marine."},
+    {"artGrec": "το", "grec": "Σπαράγγι της θάλασσας", "artFr": "la", "francais": "Salicorne", "genreFr": "f.", "emoji": "🌿", "lvl": 9, "mne": "Asperge de mer marine."},
     {"artGrec": "ο", "grec": "Βλαστός μπαμπού", "artFr": "la", "francais": "Pousse de bambou", "genreFr": "f.", "emoji": "🎍", "lvl": 9, "mne": "Pousse asiatique."},
     {"artGrec": "το", "grec": "Λιτσί", "artFr": "le", "francais": "Litchi", "genreFr": "m.", "emoji": "🍒", "lvl": 10, "mne": "Se prononce 'litsi'. Fruit translucide."},
-    {"artGrec": "η", "grec": "Αγrioφράουλα", "artFr": "la", "francais": "Fraise des bois", "genreFr": "f.", "emoji": "🍓", "lvl": 10, "mne": "Se prononce 'agriofraoula'. Fraise sauvage."},
+    {"artGrec": "η", "grec": "Αγριοφράουλα", "artFr": "la", "francais": "Fraise des bois", "genreFr": "f.", "emoji": "🍓", "lvl": 10, "mne": "Se prononce 'agriofraoula'. Fraise sauvage."},
     {"artGrec": "το", "grec": "Αγριοκέρασο", "artFr": "la", "francais": "Merise", "genreFr": "f.", "emoji": "🍒", "lvl": 10, "mne": "Se prononce 'agriokeraso'. Cerise sauvage des bois."},
     {"artGrec": "η", "grec": "Ρέβα", "artFr": "le", "francais": "Navet", "genreFr": "m.", "emoji": "🥔", "lvl": 10, "mne": "Reva. Racine blanche."},
     {"artGrec": "το", "grec": "Μύρτιλο", "artFr": "la", "francais": "Myrtille", "genreFr": "f.", "emoji": "🫐", "lvl": 10, "mne": "Myrtilo. Baie sauvage."},
@@ -100,9 +100,6 @@ const vocabulaire = [
     {"artGrec": "η", "grec": "Γλυκοκολοκύθα", "artFr": "la", "francais": "Courge butternut", "genreFr": "f.", "emoji": "🎃", "lvl": 10, "mne": "Courge doubeurre."},
     {"artGrec": "τα", "grec": "Φύκια", "artFr": "les", "francais": "Algues", "genreFr": "pl.", "emoji": "🌿", "lvl": 10, "mne": "Fykia. Légumes de la mer."}
 ];
-
-const avatarsList = ["🍎", "🤓", "🎓", "🏛️", "🏺", "🦉", "🦁", "🦅", "🐉", "🌋", "☀️", "🌟", "👑", "🔮", "⚔️", "🛡️", "🏹", "✨", "🔥", "👑"];
-const prestigeAvatars = ["⚡", "🔱", "🏹", "🦉", "🛡️", "🌋", "🍷"];
 
 const shopAvatars = [
     { emoji: "👶", cost: 0 }, { emoji: "🥔", cost: 400 }, { emoji: "🥦", cost: 800 }, { emoji: "🥑", cost: 1200 }, { emoji: "🍉", cost: 1600 },
@@ -125,7 +122,6 @@ const badgesList = [
     "🌽 Célébration de Déméter (Niv 9)", "⚡ Grand Chef de l'Olympe (Niv 10)"
 ];
 
-// Sécurisation absolue de l'état (Résout les crashs d'anciennes versions en LocalStorage)
 let state = JSON.parse(localStorage.getItem('greekVocabV2')) || {};
 state.score = state.score || 0; state.drachmes = state.drachmes || 0; state.streak = state.streak || 0;
 state.highestStreak = state.highestStreak || 0; state.currentCombo = state.currentCombo || 1;
@@ -143,7 +139,7 @@ let slideshowInterval = null; let slideshowIndex = 0; let slideshowLevel = "all"
 
 function launchCelebration() {
     const container = document.querySelector('.confetti-container'); if (!container) return;
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 60; i++) {
         const p = document.createElement('div'); p.className = 'confetti-particle'; p.style.left = Math.random() * 100 + 'vw';
         p.style.backgroundColor = ['#ff007f', '#00ffcc', '#f59e0b', '#22c55e', '#6366f1'][Math.floor(Math.random() * 5)];
         p.style.animationDuration = (Math.random() * 2 + 1.5) + 's'; p.style.width = p.style.height = (Math.random() * 6 + 6) + 'px';
@@ -282,7 +278,7 @@ function renderExercise() {
         const opts = [currentWord.francais];
         while(opts.length < 4) { const r = vocabulaire[Math.floor(Math.random() * vocabulaire.length)].francais; if(!opts.includes(r)) opts.push(r); }
         opts.sort(() => Math.random() - 0.5);
-        html += `<div class="word-audio-container"><span class="big-char">${currentWord.grec}</span>${audioButton}</div><p>Traduisez ce mot :</p><div class="qcm-grid">` + opts.map(o => `<button class="qcm-btn" data-option="${o}">${o}</button>`).join('') + `</div>`;
+        html += `<div class="word-audio-container"><span class="big-char">${currentWord.grec}</span>${audioButton}</div><p>Traduisez ce mot :</p><div class="qcm-grid">` + opts.map(o => `<button class="qcm-btn" data-option="${o.replace(/"/g, '&quot;')}">${o}</button>`).join('') + `</div>`;
         container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
         
         container.querySelectorAll('.qcm-btn').forEach(btn => {
@@ -345,7 +341,7 @@ function selectAssocCard(idx, id) {
             }
         } else {
             btn.classList.add('feedback-error'); prevBtn.classList.add('feedback-error'); playTone([220], 0.15);
-            setTimeout(() => { btn.classList.remove('feedback-error', 'selected'); prevBtn.classList.remove('feedback-error', 'selected'); }, 600);
+            setTimeout(() => { btn.classList.remove('feedback-error', 'selected'); btn.classList.remove('selected'); prevBtn.classList.remove('feedback-error', 'selected'); prevBtn.classList.remove('selected'); }, 600);
         }
         assocSelected = null;
     }
@@ -358,7 +354,7 @@ function checkAnswer(btnElement, selected, correct) {
     processResult(isCorrect, correct);
 }
 
-function validateText() { const i = document.getElementById('answer'); processResult(i.value.trim().toLowerCase() === i.dataset.correct.toLowerCase(), i.dataset.correct); }
+function validateText() { const i = document.getElementById('answer'); if (!i || i.value.trim() === "") return; processResult(i.value.trim().toLowerCase() === i.dataset.correct.toLowerCase(), i.dataset.correct); }
 
 function processResult(isCorrect, correctAnswerDisplay) {
     const type = document.getElementById('exercise-select').value; const today = new Date().toISOString().split('T')[0];
@@ -378,6 +374,7 @@ function processResult(isCorrect, correctAnswerDisplay) {
         if(type === 'chrono') { timeLeft += 2; chronoScore += gainedXP; document.getElementById('chrono-score-val').innerText = chronoScore; }
         
         updateQuestProgress("gain_xp", gainedXP); updateQuestProgress("answers", 1); updateQuestProgress("drachmes", gainedDrachmes);
+
         if(state.streak > (state.highestStreak || 0)) state.highestStreak = state.streak;
         if(input) input.classList.add('feedback-success');
         playTone([523.25, 659.25, 783.99], 0.12);
@@ -501,7 +498,6 @@ function openShopMenuUI() {
         return `<button class="${cName}" data-type="${isOwned ? 'equip-theme' : 'theme'}" data-cost="${t.cost}" data-value="${t.id}"><span>${t.name}</span><small><b>${isActive ? 'Actif' : (isOwned ? 'Choisir' : t.cost + ' 🪙')}</b></small></button>`;
     }).join('');
 
-    // Raccordement programmatique imperméable aux apostrophes
     poolAvatars.querySelectorAll('.shop-item-box').forEach(box => {
         box.onclick = function() { buyItem(this.dataset.type, parseInt(this.dataset.cost), this.dataset.value); };
     });
@@ -520,7 +516,7 @@ function saveAndRefresh() {
     document.body.className = state.activeTheme || "theme-orchard";
     const cBox = document.getElementById('combo-box');
     if(state.currentCombo > 1) { cBox.style.display = "block"; document.getElementById('combo-val').innerText = "x" + state.currentCombo; } else { cBox.style.display = "none"; }
-    renderDashboard(); renderQuestsUI(); renderActivityDots();
+    renderDashboard(); renderQuestsUI();
 }
 
 function renderDashboard() {
@@ -533,7 +529,6 @@ function renderDashboard() {
 
 function speak(text) { window.speechSynthesis.cancel(); const u = window.SpeechSynthesisUtterance; const speechObj = new u(text); speechObj.lang = 'el-GR'; speechObj.rate = isSlowAudio ? 0.45 : 0.85; window.speechSynthesis.speak(speechObj); }
 
-// Attribution unifiée des boutons de navigation et fenêtres modales
 document.getElementById('btn-stats').onclick = () => {
     let total = 0, errs = 0; Object.values(state.history).forEach(h => { total += h.total; errs += h.errors; });
     const acc = total > 0 ? Math.round(((total - errs) / total) * 100) : 100;
@@ -564,8 +559,7 @@ document.getElementById('btn-fiche').onclick = () => {
             html += `<div class="fiche-item"><span><b>` + word.artGrec + ` ` + word.grec + `</b> : ` + word.artFr + ` ` + word.francais + ` <small style="opacity:0.65;">(` + word.genreFr + `)</small> ` + word.emoji + `</span><div><button class="dictio-audio-btn" data-grec="${word.grec}">🔊 Écouter</button></div></div>`;
         });
     }
-    const targetContent = document.getElementById('fiche-content');
-    targetContent.innerHTML = html;
+    const targetContent = document.getElementById('fiche-content'); targetContent.innerHTML = html;
     
     targetContent.querySelectorAll('.dictio-audio-btn').forEach(btn => {
         btn.onclick = function() { speak(this.dataset.grec); };
@@ -581,6 +575,7 @@ document.getElementById('btn-export-save').onclick = exportSave;
 document.getElementById('btn-trigger-import').onclick = () => document.getElementById('import-file-input').click();
 document.getElementById('import-file-input').onchange = (e) => importSave(e);
 document.getElementById('btn-reset-game').onclick = resetGameProgress;
+document.getElementById('btn-start-slideshow').onclick = toggleSlideshow;
 
 document.addEventListener('keydown', (e) => { if(e.key === 'Enter') { const ex = document.getElementById('exercise-select').value; if(ex !== 'association' && ex !== 'qcm' && ex !== 'chrono') validateText(); } });
 
