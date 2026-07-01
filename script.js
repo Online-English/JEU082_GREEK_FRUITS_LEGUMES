@@ -13,10 +13,10 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Καρπούζι", "artFr": "la", "francais": "Pastèque", "genreFr": "f.", "emoji": "🍉", "lvl": 2, "mne": "L'emblème des étés en Grèce (karpouzi)."},
     {"artGrec": "το", "grec": "Πεπόνι", "artFr": "le", "francais": "Melon", "genreFr": "m.", "emoji": "🍈", "lvl": 2, "mne": "Se prononce 'peponi'. Facile : attention aux pépins."},
     {"artGrec": "το", "grec": "Ροδάκινο", "artFr": "la", "francais": "Pêche", "genreFr": "f.", "emoji": "🍑", "lvl": 2, "mne": "Se prononce 'rodakino'. Une pêche rose comme une rose ('rodo')."},
-    {"artGrec": "το", "grec": "Σύκο", "artFr": "la", "francais": "Figue", "genreFr": "f.", "emoji": "𫫓", "lvl": 2, "mne": "Se prononce 'syko'. Fruit du sycomore."}, // Corrigé en vraie figue
+    {"artGrec": "το", "grec": "Σύκο", "artFr": "la", "francais": "Figue", "genreFr": "f.", "emoji": "𫫓", "lvl": 2, "mne": "Se prononce 'syko'. Fruit du sycomore."},
     {"artGrec": "το", "grec": "Αγγούρι", "artFr": "le", "francais": "Concombre", "genreFr": "m.", "emoji": "🥒", "lvl": 2, "mne": "Se prononce 'angouri'. Légume d'eau allongé."},
     {"artGrec": "το", "grec": "Μαρούλι", "artFr": "la", "francais": "Laitue", "genreFr": "f.", "emoji": "🥬", "lvl": 2, "mne": "Se prononce 'marouli'. Rouler la salade."},
-    {"artGrec": "το", "grec": "Σπανάκι", "artFr": "l'", "francais": "Épinard", "genreFr": "m.", "emoji": "🥬", "lvl": 2, "mne": "Se prononce 'spanaki'. Pour faire la spanakopita."}, // Corrigé en légume feuille
+    {"artGrec": "το", "grec": "Σπανάκι", "artFr": "l'", "francais": "Épinard", "genreFr": "m.", "emoji": "🥬", "lvl": 2, "mne": "Se prononce 'spanaki'. Pour faire la spanakopita."},
     {"artGrec": "το", "grec": "Μανιτάρι", "artFr": "le", "francais": "Champignon", "genreFr": "m.", "emoji": "🍄", "lvl": 2, "mne": "Se prononce 'manitari'. Cueillis à la main."},
     {"artGrec": "το", "grec": "Μπρόκολο", "artFr": "le", "francais": "Brocoli", "genreFr": "m.", "emoji": "🥦", "lvl": 2, "mne": "Se prononce 'brokolo'. Suffixe modifié."},
     {"artGrec": "το", "grec": "Αχλάδι", "artFr": "la", "francais": "Poire", "genreFr": "f.", "emoji": "🍐", "lvl": 3, "mne": "Se prononce 'achladi'. Une poire juteuse."},
@@ -373,9 +373,12 @@ function selectAssocCard(idx, id) {
             assocPairsMatched++;
             if (assocPairsMatched === 4) {
                 if(!state.activityTracker) state.activityTracker = {}; state.activityTracker['association'] = (state.activityTracker['association'] || 0) + 1;
-                state.score += 50; state.drachmes += 6; updateQuestProgress("gain_xp", 50); updateQuestProgress("drachmes", 6);
+                
+                // MULTIPLICATEUR DE PRESTIGE appliqué aux gains d'Oboles
+                let bonusOboles = 6 * (1 + state.prestige);
+                state.score += 50; state.drachmes += bonusOboles; updateQuestProgress("gain_xp", 50); updateQuestProgress("drachmes", bonusOboles);
                 saveAndRefresh();
-                setTimeout(() => { alert("Tableau complété ! (+50 XP / +6 🪙)"); renderActivityDots(); buildAssociationGame(); }, 600);
+                setTimeout(() => { alert("Tableau complété ! (+50 XP / +" + bonusOboles + " 🪙)"); renderActivityDots(); buildAssociationGame(); }, 600);
             }
         } else {
             btn.classList.add('feedback-error'); prevBtn.classList.add('feedback-error'); playTone([220], 0.15);
@@ -414,7 +417,10 @@ function processResult(isCorrect, correctAnswerDisplay) {
 
         let baseXP = type === 'rattrapage' ? 0 : 10;
         let gainedXP = baseXP * state.currentCombo; 
-        let gainedDrachmes = type === 'rattrapage' ? 0 : Math.max(1, Math.round((12 * state.currentCombo) / 5));
+        let baseDrachmes = type === 'rattrapage' ? 0 : Math.max(1, Math.round((12 * state.currentCombo) / 5));
+        
+        // BONUS PRESTIGE PERMANENT MULTIPLICATEUR SUR LES DRACHMES
+        let gainedDrachmes = baseDrachmes * (1 + state.prestige);
         
         state.score += gainedXP; state.drachmes += gainedDrachmes; state.streak++;
         state.activityLog[today] = (state.activityLog[today] || 0) + gainedXP;
@@ -447,6 +453,24 @@ function processResult(isCorrect, correctAnswerDisplay) {
     }
     saveAndRefresh();
     setTimeout(renderExercise, isCorrect ? 1000 : 2800);
+}
+
+// LOGIQUE D'ACTIVATION ET ÉVÉNEMENT DE PRESTIGE
+function triggerPrestigeEvent() {
+    if (confirm(`🌟 ASCENSION DIVINE DE PRESTIGE 🌟\n\nFélicitations ! Vous possédez les 50 000 XP et le grade maximal.\n\nEn acceptant l'Ascension au Prestige n°${state.prestige + 1} :\n- Votre Rang redescend à 1 et votre XP à 0.\n- Vos points verts de paliers se réinitialisent.\n- Vous obtenez un bonus divin : TOUTES vos récoltes d'Oboles seront multipliées par ${state.prestige + 2} de manière permanente !\n\nLancer le rituel ?`)) {
+        state.prestige++;
+        state.score = 0;
+        state.lastLvl = 1;
+        for (let k in state.activityTracker) {
+            state.activityTracker[k] = 0;
+        }
+        setTimeout(launchCelebration, 150);
+        setTimeout(launchCelebration, 500);
+        playTone([523.25, 659.25, 783.99, 1046.50, 1318.51], 0.35);
+        alert(`✨ Vous avez transcendé votre savoir ! Bienvenue au Prestige ${state.prestige}. Vos gains en Oboles sont boostés ! ✨`);
+        saveAndRefresh();
+        renderExercise();
+    }
 }
 
 function startChrono() {
@@ -575,7 +599,6 @@ function openShopMenuUI() {
 function saveAndRefresh() {
     const lvl = getLevel(); 
     
-    // CORRECTION ET RESET DES POINTS VERTS : Dès que le rang augmente, on vide le tracker
     if (lvl > (state.lastLvl || 1)) { 
         setTimeout(launchCelebration, 200); 
         state.lastLvl = lvl; 
@@ -590,6 +613,33 @@ function saveAndRefresh() {
     document.getElementById('avatar-val').innerText = state.activeAvatar || "🍎";
     document.getElementById('progress-bar').style.width = ((state.score % 5000) / 5000) * 100 + "%";
     document.body.className = state.activeTheme || "theme-orchard";
+    
+    // GESTION VISUELLE DU COMPTEUR DE PRESTIGE EXISTANT
+    const prestigeBadge = document.getElementById('prestige-badge');
+    const prestigeVal = document.getElementById('prestige-val');
+    if (state.prestige > 0) {
+        prestigeBadge.style.display = "inline-block";
+        prestigeVal.innerText = state.prestige;
+    } else {
+        prestigeBadge.style.display = "none";
+    }
+
+    // TRANSFORMATION DU PALIER MAX EN BOUTON DE PRESTIGE CLIQUABLE
+    const lvlBadgeContainer = document.querySelector('.level-badge');
+    if (lvl >= 10 && state.score >= 50000) {
+        lvlBadgeContainer.style.background = "var(--success)";
+        lvlBadgeContainer.style.color = "#000";
+        lvlBadgeContainer.style.cursor = "pointer";
+        lvlBadgeContainer.style.fontWeight = "bold";
+        lvlBadgeContainer.title = "✨ Prêt pour l'Ascension Divine ! Cliquez ici ! ✨";
+        lvlBadgeContainer.onclick = triggerPrestigeEvent;
+    } else {
+        lvlBadgeContainer.style.background = "";
+        lvlBadgeContainer.style.color = "";
+        lvlBadgeContainer.style.cursor = "default";
+        lvlBadgeContainer.title = "";
+        lvlBadgeContainer.onclick = null;
+    }
     
     const muteBtn = document.getElementById('mute-toggle');
     if (muteBtn) {
@@ -643,7 +693,6 @@ document.getElementById('btn-fiche').onclick = () => {
         </div>`;
         const levelWords = vocabulaire.filter(i => i.lvl === l);
         levelWords.forEach(word => {
-            // CORRECTION DU LEXIQUE : Suppression Box, insertion du Genre après le grec, nettoyage sur le français
             html += `<div class="fiche-item"><span><b>` + word.artGrec + ` ` + word.grec + `</b> <small style="color:var(--accent); font-weight:bold;">(${word.genreFr})</small> : ` + word.artFr + ` ` + word.francais + ` ` + word.emoji + `</span><div><button class="dictio-audio-btn" data-grec="${word.grec}">🔊 Écouter</button></div></div>`;
         });
     }
