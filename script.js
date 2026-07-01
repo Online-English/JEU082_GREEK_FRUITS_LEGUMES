@@ -122,6 +122,12 @@ const badgesList = [
     "🌽 Célébration de Déméter (Niv 9)", "⚡ Grand Chef de l'Olympe (Niv 10)"
 ];
 
+// Paliers de révision SRS (Boîte 1 à 5 en millisecondes) : Immédiat, 2min, 10min, 1h, 24h
+const srsIntervals = [0, 120000, 600000, 3600000, 86400000];
+
+// Clavier virtuel Grec simplifié (Minuscules utiles + Voyelles accentuées + Commandes)
+const greekAlphabet = ['α','β','γ','δ','ε','ζ','η','θ','ι','κ','λ','μ','ν','ξ','ο','π','ρ','σ','ς','τ','υ','φ','χ','ψ','ω','ά','έ','ή','ί','ό','ύ','ώ',' ','⌫'];
+
 let state = JSON.parse(localStorage.getItem('greekVocabV2')) || {};
 state.score = state.score || 0; state.drachmes = state.drachmes || 0; state.streak = state.streak || 0;
 state.highestStreak = state.highestStreak || 0; state.currentCombo = state.currentCombo || 1;
@@ -132,12 +138,14 @@ state.activeAvatar = state.activeAvatar || "👶"; state.activeTheme = state.act
 state.history = state.history || {}; state.dailyQuests = state.dailyQuests || { date: "", list: [] };
 state.chronoRecords = state.chronoRecords || []; state.activityLog = state.activityLog || {};
 state.activityTracker = state.activityTracker || { qcm: 0, lecture: 0, ecriture: 0, audition: 0, oral: 0, chrono: 0, rattrapage: 0, association: 0 };
+state.isMuted = state.isMuted || false; // Option Muet résidente
 
 let currentWord = null; let isSlowAudio = false; let chronoTimer = null; let timeLeft = 60; let chronoScore = 0;
 let assocSelected = null; let assocPairsMatched = 0;
 let slideshowInterval = null; let slideshowIndex = 0; let slideshowLevel = "all";
 
 function launchCelebration() {
+    if (state.isMuted) return;
     const container = document.querySelector('.confetti-container'); if (!container) return;
     for (let i = 0; i < 60; i++) {
         const p = document.createElement('div'); p.className = 'confetti-particle'; p.style.left = Math.random() * 100 + 'vw';
@@ -150,6 +158,7 @@ function launchCelebration() {
 function triggerVibrate(p) { if ("navigator" in window && "vibrate" in navigator) navigator.vibrate(p); }
 
 function playTone(freqs, duration) {
+    if (state.isMuted) return; // Coupure Audio
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     freqs.forEach((f, i) => {
         const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.connect(gain); gain.connect(ctx.destination);
@@ -237,25 +246,40 @@ function renderQuestsUI() {
     `).join('');
 }
 
+// ALGORITHME SRS INTÉGRÉ : Sélection intelligente par urgence temporelle et boîte
 function getNextWord() {
     const type = document.getElementById('exercise-select').value; const lvl = getLevel();
     let pool = vocabulaire.filter(item => item.lvl <= lvl);
+    
     if (type === 'rattrapage') {
-        let weakPool = pool.filter(l => (state.history[l.grec]?.errors / state.history[l.grec]?.total) >= 0.40);
+        let weakPool = pool.filter(l => {
+            const h = state.history[l.grec];
+            return h && (h.box === 1 || (h.errors / h.total) >= 0.40);
+        });
         return weakPool.length > 0 ? weakPool[Math.floor(Math.random() * weakPool.length)] : pool[Math.floor(Math.random() * pool.length)];
     }
-    const unseen = pool.filter(l => !state.history[l.grec] || state.history[l.grec].total === 0);
-    if (unseen.length > 0) return unseen[Math.floor(Math.random() * unseen.length)];
-    if (Math.random() < 0.25) { return pool[Math.floor(Math.random() * pool.length)]; }
 
+    const now = Date.now();
+    
+    // 1. Chercher en priorité les mots mûrs selon le calendrier SRS (Exclut Box 5 acquise)
+    let duePool = pool.filter(l => {
+        const h = state.history[l.grec];
+        return h && h.total > 0 && h.nextReview <= now && h.box < 5;
+    });
+    if (duePool.length > 0) return duePool[Math.floor(Math.random() * duePool.length)];
+
+    // 2. S'il n'y a pas de mots dus, proposer une nouveauté absolue (non vue)
+    let unseen = pool.filter(l => !state.history[l.grec] || state.history[l.grec].total === 0);
+    if (unseen.length > 0) return unseen[Math.floor(Math.random() * unseen.length)];
+
+    // 3. Repli : Tout est à jour, trier et distribuer le mot de la boîte la plus fragile
     pool.sort((a, b) => {
-        const scoreA = (state.history[a.grec]?.errors || 0) / (state.history[a.grec]?.total || 1);
-        const scoreB = (state.history[b.grec]?.errors || 0) / (state.history[b.grec]?.total || 1);
-        if (scoreB !== scoreA) return scoreB - scoreA;
-        return (state.history[a.grec]?.total || 0) - (state.history[b.grec]?.total || 0);
+        const boxA = state.history[a.grec]?.box || 1;
+        const boxB = state.history[b.grec]?.box || 1;
+        return boxA - boxB;
     });
 
-    let selectedWord = pool[Math.floor(Math.random() * Math.min(4, pool.length))];
+    let selectedWord = pool[Math.floor(Math.random() * Math.min(3, pool.length))];
     if (currentWord && selectedWord.grec === currentWord.grec && pool.length > 1) { selectedWord = pool[1]; }
     return selectedWord;
 }
@@ -289,8 +313,22 @@ function renderExercise() {
         container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
         document.getElementById('btn-valider').onclick = validateText;
     } else if (type === 'ecriture') {
-        html += `<span class="big-char" style="font-size:2.4rem; color:var(--text);">${currentWord.emoji} ${currentWord.francais}</span><p>Écrivez en GREC :</p><input type="text" id="answer" data-correct="${currentWord.grec}" placeholder="Clavier natif Grec..."><br>${audioButton}<br><button class="valider-btn" id="btn-valider">Valider</button>`;
+        // Mode Écriture avec injection du Clavier Virtuel Grec
+        html += `<span class="big-char" style="font-size:2.4rem; color:var(--text);">${currentWord.emoji} ${currentWord.francais}</span><p>Écrivez en GREC :</p><input type="text" id="answer" data-correct="${currentWord.grec}" placeholder="Utilisez le clavier virtuel ou physique..."><br><div class="greek-keyboard">` + 
+        greekAlphabet.map(k => `<button class="key-btn ${k===' '?'space-key':''} ${k==='⌫'?'backspace-key':''}" data-key="${k}">${k===' '?'Espace':k}</button>`).join('') + 
+        `</div><br>${audioButton}<br><button class="valider-btn" id="btn-valider">Valider</button>`;
         container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
+        
+        // Attachement des touches virtuelles
+        container.querySelectorAll('.key-btn').forEach(btn => {
+            btn.onclick = function() {
+                const input = document.getElementById('answer'); if (!input || input.disabled) return;
+                triggerVibrate(15);
+                if (this.dataset.key === '⌫') { input.value = input.value.slice(0, -1); }
+                else { input.value += this.dataset.key; }
+                input.focus();
+            };
+        });
         document.getElementById('btn-valider').onclick = validateText;
     } else if (type === 'audition') {
         html += `<p>Écoutez attentivement :</p><button id="btn-listen" style="font-size:3.5rem; background:none; border:none; cursor:pointer;">🔊</button><br><input type="text" id="answer" data-correct="${currentWord.francais}" placeholder="Traduction française..."><br><button class="valider-btn" id="btn-valider">Valider</button>`;
@@ -359,10 +397,14 @@ function validateText() { const i = document.getElementById('answer'); if (!i ||
 
 function processResult(isCorrect, correctAnswerDisplay) {
     const type = document.getElementById('exercise-select').value; const today = new Date().toISOString().split('T')[0];
-    if(!state.history[currentWord.grec]) state.history[currentWord.grec] = {errors: 0, total: 0};
-    state.history[currentWord.grec].total++;
-    const input = document.getElementById('answer'); if(input) input.disabled = true;
     const container = document.getElementById('exercise-container');
+    
+    // Initialisation ou récupération de l'état SRS du mot
+    if(!state.history[currentWord.grec]) state.history[currentWord.grec] = {errors: 0, total: 0, box: 1, nextReview: 0};
+    let srsData = state.history[currentWord.grec];
+    srsData.total++;
+    
+    const input = document.getElementById('answer'); if(input) input.disabled = true;
 
     if (isCorrect) {
         triggerVibrate(30); state.currentCombo = Math.min(3, (state.currentCombo || 1) + 1);
@@ -375,6 +417,10 @@ function processResult(isCorrect, correctAnswerDisplay) {
         state.activityLog[today] = (state.activityLog[today] || 0) + gainedXP;
         if(type === 'chrono') { timeLeft += 2; chronoScore += gainedXP; document.getElementById('chrono-score-val').innerText = chronoScore; }
         
+        // Progression SRS : Monte d'une boîte et calcule la date de révision
+        srsData.box = Math.min(5, (srsData.box || 1) + 1);
+        srsData.nextReview = Date.now() + srsIntervals[srsData.box - 1];
+
         updateQuestProgress("gain_xp", gainedXP); updateQuestProgress("answers", 1); updateQuestProgress("drachmes", gainedDrachmes);
 
         if(state.streak > (state.highestStreak || 0)) state.highestStreak = state.streak;
@@ -382,10 +428,14 @@ function processResult(isCorrect, correctAnswerDisplay) {
         playTone([523.25, 659.25, 783.99], 0.12);
     } else {
         triggerVibrate([60, 40, 60]); state.currentCombo = 1; state.streak = 0;
-        state.history[currentWord.grec].errors++; if(type === 'chrono') timeLeft = Math.max(0, timeLeft - 5);
+        srsData.errors++; if(type === 'chrono') timeLeft = Math.max(0, timeLeft - 5);
         playTone([220, 180], 0.2);
         
-        // Effet Shake appliqué sur le boîtier d'exercice
+        // Chute SRS : Retour immédiat en boîte 1 pour révision
+        srsData.box = 1;
+        srsData.nextReview = Date.now();
+
+        // Effet Visuel Shake en cas de mauvaise réponse
         if (container) {
             container.classList.add('shake');
             setTimeout(() => container.classList.remove('shake'), 400);
@@ -522,6 +572,14 @@ function saveAndRefresh() {
     document.getElementById('avatar-val').innerText = state.activeAvatar || "🍎";
     document.getElementById('progress-bar').style.width = ((state.score % 5000) / 5000) * 100 + "%";
     document.body.className = state.activeTheme || "theme-orchard";
+    
+    // Rafraîchissement visuel du bouton Muet
+    const muteBtn = document.getElementById('mute-toggle');
+    if (muteBtn) {
+        muteBtn.innerText = state.isMuted ? "🔇 Muet" : "🔊 Son";
+        muteBtn.classList.toggle('active', state.isMuted);
+    }
+
     const cBox = document.getElementById('combo-box');
     if(state.currentCombo > 1) { cBox.style.display = "block"; document.getElementById('combo-val').innerText = "x" + state.currentCombo; } else { cBox.style.display = "none"; }
     renderDashboard(); renderQuestsUI();
@@ -530,12 +588,19 @@ function saveAndRefresh() {
 function renderDashboard() {
     const lvl = getLevel(); const pool = vocabulaire.filter(i => i.lvl <= lvl);
     document.getElementById('dashboard-grid').innerHTML = pool.map(l => {
-        const h = state.history[l.grec]; let s = h && h.total > 0 ? ((h.errors/h.total < 0.25) ? "mastered" : "learning") : "";
-        return `<div class="dash-cell ${s}" title="${l.francais}">${l.emoji}</div>`;
+        const h = state.history[l.grec]; 
+        let s = "";
+        if (h && h.total > 0) {
+            s = (h.box >= 4) ? "mastered" : "learning";
+        }
+        return `<div class="dash-cell ${s}" title="${l.francais} (Box ${h?.box || 1})">${l.emoji}</div>`;
     }).join('');
 }
 
-function speak(text) { window.speechSynthesis.cancel(); const speechObj = new SpeechSynthesisUtterance(text); speechObj.lang = 'el-GR'; speechObj.rate = isSlowAudio ? 0.45 : 0.85; window.speechSynthesis.speak(speechObj); }
+function speak(text) { 
+    if (state.isMuted) return; // Coupure Synthèse Vocale
+    window.speechSynthesis.cancel(); const speechObj = new SpeechSynthesisUtterance(text); speechObj.lang = 'el-GR'; speechObj.rate = isSlowAudio ? 0.45 : 0.85; window.speechSynthesis.speak(speechObj); 
+}
 
 document.getElementById('btn-stats').onclick = () => {
     let total = 0, errs = 0; Object.values(state.history).forEach(h => { total += h.total; errs += h.errors; });
@@ -564,7 +629,9 @@ document.getElementById('btn-fiche').onclick = () => {
         </div>`;
         const levelWords = vocabulaire.filter(i => i.lvl === l);
         levelWords.forEach(word => {
-            html += `<div class="fiche-item"><span><b>` + word.artGrec + ` ` + word.grec + `</b> : ` + word.artFr + ` ` + word.francais + ` <small style="opacity:0.65;">(` + word.genreFr + `)</small> ` + word.emoji + `</span><div><button class="dictio-audio-btn" data-grec="${word.grec}">🔊 Écouter</button></div></div>`;
+            const srs = state.history[word.grec];
+            const boxInfo = srs ? ` <small style="color:var(--accent)">[Box ${srs.box}]</small>` : '';
+            html += `<div class="fiche-item"><span><b>` + word.artGrec + ` ` + word.grec + `</b>${boxInfo} : ` + word.artFr + ` ` + word.francais + ` <small style="opacity:0.65;">(` + word.genreFr + `)</small> ` + word.emoji + `</span><div><button class="dictio-audio-btn" data-grec="${word.grec}">🔊 Écouter</button></div></div>`;
         });
     }
     const targetContent = document.getElementById('fiche-content'); targetContent.innerHTML = html;
@@ -577,6 +644,10 @@ document.getElementById('btn-fiche').onclick = () => {
 
 document.getElementById('close-modal').onclick = () => { if (slideshowInterval) toggleSlideshow(); document.getElementById('modal-fiche').close(); };
 document.getElementById('slow-toggle').onclick = (e) => { isSlowAudio = !isSlowAudio; e.target.classList.toggle('active', isSlowAudio); e.target.innerText = isSlowAudio ? "Lent" : "Audio"; };
+
+// Logique d'activation du bouton Muet
+document.getElementById('mute-toggle').onclick = () => { state.isMuted = !state.isMuted; saveAndRefresh(); };
+
 document.getElementById('exercise-select').onchange = function() { renderExercise(); };
 document.getElementById('btn-buy-freeze').onclick = function() { buyItem('freeze', 80); };
 document.getElementById('btn-export-save').onclick = exportSave;
@@ -585,22 +656,19 @@ document.getElementById('import-file-input').onchange = (e) => importSave(e);
 document.getElementById('btn-reset-game').onclick = resetGameProgress;
 document.getElementById('btn-start-slideshow').onclick = toggleSlideshow;
 
-// Écouteur global mis à jour : Validation textuelle & Raccourcis QCM 1, 2, 3, 4
+// Écouteur clavier physique : Ajout des touches numériques 1, 2, 3, 4 pour le QCM
 document.addEventListener('keydown', (e) => { 
     const ex = document.getElementById('exercise-select').value; 
     if(e.key === 'Enter') { 
         if(ex !== 'association' && ex !== 'qcm' && ex !== 'chrono') validateText(); 
     } 
-    if ((ex === 'qcm' || ex === 'chrono') && ['1', '2', '3', '4'].includes(e.key)) {
+    if((ex === 'qcm' || ex === 'chrono') && ['1', '2', '3', '4'].includes(e.key)) {
         const buttons = document.querySelectorAll('.qcm-btn');
         const index = parseInt(e.key) - 1;
-        if (buttons[index] && !buttons[index].disabled) {
-            buttons[index].click();
-        }
+        if(buttons[index] && !buttons[index].disabled) buttons[index].click();
     }
 });
 
-// Enregistrement Automatique du Service Worker (Gestion du Cache / Mode Hors-ligne PWA)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js').catch(err => console.log('SW registration failed:', err));
