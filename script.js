@@ -13,10 +13,10 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Καρπούζι", "artFr": "la", "francais": "Pastèque", "genreFr": "f.", "emoji": "🍉", "lvl": 2, "mne": "L'emblème des étés en Grèce (karpouzi)."},
     {"artGrec": "το", "grec": "Πεπόνι", "artFr": "le", "francais": "Melon", "genreFr": "m.", "emoji": "🍈", "lvl": 2, "mne": "Se prononce 'peponi'. Facile : attention aux pépins."},
     {"artGrec": "το", "grec": "Ροδάκινο", "artFr": "la", "francais": "Pêche", "genreFr": "f.", "emoji": "🍑", "lvl": 2, "mne": "Se prononce 'rodakino'. Une pêche rose comme une rose ('rodo')."},
-    {"artGrec": "το", "grec": "Σύκο", "artFr": "la", "francais": "Figue", "genreFr": "f.", "emoji": "𫫓", "lvl": 2, "mne": "Se prononce 'syko'. Fruit du sycomore."},
+    {"artGrec": "το", "grec": "Σύκο", "artFr": "la", "francais": "Figue", "genreFr": "f.", "emoji": "𫫓", "lvl": 2, "mne": "Se prononce 'syko'. Fruit du sycomore."}, // Corrigé en vraie figue
     {"artGrec": "το", "grec": "Αγγούρι", "artFr": "le", "francais": "Concombre", "genreFr": "m.", "emoji": "🥒", "lvl": 2, "mne": "Se prononce 'angouri'. Légume d'eau allongé."},
     {"artGrec": "το", "grec": "Μαρούλι", "artFr": "la", "francais": "Laitue", "genreFr": "f.", "emoji": "🥬", "lvl": 2, "mne": "Se prononce 'marouli'. Rouler la salade."},
-    {"artGrec": "το", "grec": "Σπανάκι", "artFr": "l'", "francais": "Épinard", "genreFr": "m.", "emoji": "🌿", "lvl": 2, "mne": "Se prononce 'spanaki'. Pour faire la spanakopita."},
+    {"artGrec": "το", "grec": "Σπανάκι", "artFr": "l'", "francais": "Épinard", "genreFr": "m.", "emoji": "🥬", "lvl": 2, "mne": "Se prononce 'spanaki'. Pour faire la spanakopita."}, // Corrigé en légume feuille
     {"artGrec": "το", "grec": "Μανιτάρι", "artFr": "le", "francais": "Champignon", "genreFr": "m.", "emoji": "🍄", "lvl": 2, "mne": "Se prononce 'manitari'. Cueillis à la main."},
     {"artGrec": "το", "grec": "Μπρόκολο", "artFr": "le", "francais": "Brocoli", "genreFr": "m.", "emoji": "🥦", "lvl": 2, "mne": "Se prononce 'brokolo'. Suffixe modifié."},
     {"artGrec": "το", "grec": "Αχλάδι", "artFr": "la", "francais": "Poire", "genreFr": "f.", "emoji": "🍐", "lvl": 3, "mne": "Se prononce 'achladi'. Une poire juteuse."},
@@ -252,17 +252,13 @@ function getNextWord() {
     const type = document.getElementById('exercise-select').value; const lvl = getLevel();
     let pool = vocabulaire.filter(item => item.lvl <= lvl);
     
-    // CORRECTION DU BLOCAGE EN RATTRAPAGE
     if (type === 'rattrapage') {
         let weakPool = pool.filter(l => {
             const h = state.history[l.grec];
             return h && (h.box === 1 || (h.errors / (h.total || 1)) >= 0.40);
         });
         
-        // Si moins de 2 mots fragiles différents trouvés, on pioche dans le pool total pour amener de la variété
         let finalPool = (weakPool.length > 1 || (weakPool.length === 1 && (!currentWord || weakPool[0].grec !== currentWord.grec))) ? weakPool : pool;
-        
-        // Anti-répétition stricte
         let choices = finalPool.filter(l => !currentWord || l.grec !== currentWord.grec);
         if (choices.length === 0) choices = finalPool;
         return choices[Math.floor(Math.random() * choices.length)];
@@ -297,8 +293,6 @@ function renderExercise() {
     if (type === 'association') { buildAssociationGame(); return; }
 
     currentWord = getNextWord();
-    
-    // CORRECTIONS MENTION DU HEADER
     let html = type === 'rattrapage' ? `<h2 style="color:var(--error)">⚠️ SESSION RATTRAPAGE (Entraînement)</h2>` : `<h2>Mission</h2>`;
     let audioButton = `<button id="inline-audio-trigger" class="inline-audio-btn">🔊 Écouter</button>`;
 
@@ -413,7 +407,6 @@ function processResult(isCorrect, correctAnswerDisplay) {
     if (isCorrect) {
         triggerVibrate(30); state.currentCombo = Math.min(3, (state.currentCombo || 1) + 1);
         
-        // CORRECTION COMPTEUR POINTS VERTS : le rattrapage progresse désormais normalement
         if(type !== 'chrono') {
             if(!state.activityTracker) state.activityTracker = {}; 
             state.activityTracker[type] = (state.activityTracker[type] || 0) + 1;
@@ -537,7 +530,7 @@ function runSlidePlayer() {
     const word = pool[slideshowIndex];
     document.getElementById('slide-emoji').innerText = word.emoji || "🥗";
     document.getElementById('slide-grec').innerText = word.artGrec + " " + word.grec;
-    document.getElementById('slide-francais').innerText = word.artFr + " " + word.francais + " (" + word.genreFr + ")";
+    document.getElementById('slide-francais').innerText = word.artFr + " " + word.francais;
     speak(word.grec); slideshowIndex++;
 }
 
@@ -580,7 +573,17 @@ function openShopMenuUI() {
 }
 
 function saveAndRefresh() {
-    const lvl = getLevel(); if (lvl > (state.lastLvl || 1)) { setTimeout(launchCelebration, 200); state.lastLvl = lvl; }
+    const lvl = getLevel(); 
+    
+    // CORRECTION ET RESET DES POINTS VERTS : Dès que le rang augmente, on vide le tracker
+    if (lvl > (state.lastLvl || 1)) { 
+        setTimeout(launchCelebration, 200); 
+        state.lastLvl = lvl; 
+        for (let k in state.activityTracker) {
+            state.activityTracker[k] = 0;
+        }
+    }
+    
     localStorage.setItem('greekVocabV2', JSON.stringify(state));
     document.getElementById('level-val').innerText = lvl; document.getElementById('score').innerText = state.score;
     document.getElementById('drachmes-val').innerText = state.drachmes; document.getElementById('streak').innerText = state.streak;
@@ -640,8 +643,8 @@ document.getElementById('btn-fiche').onclick = () => {
         </div>`;
         const levelWords = vocabulaire.filter(i => i.lvl === l);
         levelWords.forEach(word => {
-            const srs = state.history[word.grec]; const boxInfo = srs ? ` <small style="color:var(--accent)">[Box ${srs.box}]</small>` : '';
-            html += `<div class="fiche-item"><span><b>` + word.artGrec + ` ` + word.grec + `</b>${boxInfo} : ` + word.artFr + ` ` + word.francais + ` <small style="opacity:0.65;">(` + word.genreFr + `)</small> ` + word.emoji + `</span><div><button class="dictio-audio-btn" data-grec="${word.grec}">🔊 Écouter</button></div></div>`;
+            // CORRECTION DU LEXIQUE : Suppression Box, insertion du Genre après le grec, nettoyage sur le français
+            html += `<div class="fiche-item"><span><b>` + word.artGrec + ` ` + word.grec + `</b> <small style="color:var(--accent); font-weight:bold;">(${word.genreFr})</small> : ` + word.artFr + ` ` + word.francais + ` ` + word.emoji + `</span><div><button class="dictio-audio-btn" data-grec="${word.grec}">🔊 Écouter</button></div></div>`;
         });
     }
     const targetContent = document.getElementById('fiche-content'); targetContent.innerHTML = html;
