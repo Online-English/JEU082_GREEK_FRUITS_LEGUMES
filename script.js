@@ -122,10 +122,7 @@ const badgesList = [
     "🌽 Célébration de Déméter (Niv 9)", "⚡ Grand Chef de l'Olympe (Niv 10)"
 ];
 
-// Paliers de révision SRS (Boîte 1 à 5 en millisecondes) : Immédiat, 2min, 10min, 1h, 24h
 const srsIntervals = [0, 120000, 600000, 3600000, 86400000];
-
-// Clavier virtuel Grec simplifié (Minuscules utiles + Voyelles accentuées + Commandes)
 const greekAlphabet = ['α','β','γ','δ','ε','ζ','η','θ','ι','κ','λ','μ','ν','ξ','ο','π','ρ','σ','ς','τ','υ','φ','χ','ψ','ω','ά','έ','ή','ί','ό','ύ','ώ',' ','⌫'];
 
 let state = JSON.parse(localStorage.getItem('greekVocabV2')) || {};
@@ -138,7 +135,7 @@ state.activeAvatar = state.activeAvatar || "👶"; state.activeTheme = state.act
 state.history = state.history || {}; state.dailyQuests = state.dailyQuests || { date: "", list: [] };
 state.chronoRecords = state.chronoRecords || []; state.activityLog = state.activityLog || {};
 state.activityTracker = state.activityTracker || { qcm: 0, lecture: 0, ecriture: 0, audition: 0, oral: 0, chrono: 0, rattrapage: 0, association: 0 };
-state.isMuted = state.isMuted || false; // Option Muet résidente
+state.isMuted = state.isMuted || false;
 
 let currentWord = null; let isSlowAudio = false; let chronoTimer = null; let timeLeft = 60; let chronoScore = 0;
 let assocSelected = null; let assocPairsMatched = 0;
@@ -158,7 +155,7 @@ function launchCelebration() {
 function triggerVibrate(p) { if ("navigator" in window && "vibrate" in navigator) navigator.vibrate(p); }
 
 function playTone(freqs, duration) {
-    if (state.isMuted) return; // Coupure Audio
+    if (state.isMuted) return;
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
     freqs.forEach((f, i) => {
         const osc = ctx.createOscillator(); const gain = ctx.createGain(); osc.connect(gain); gain.connect(ctx.destination);
@@ -170,7 +167,11 @@ function playTone(freqs, duration) {
 
 function getLevel() { 
     const keys = ['qcm', 'lecture', 'ecriture', 'audition', 'oral', 'chrono', 'rattrapage', 'association'];
-    let greenCount = 0; keys.forEach(k => { if ((state.activityTracker[k] || 0) >= 10) greenCount++; });
+    let greenCount = 0;
+    keys.forEach(k => {
+        const target = (k === 'chrono') ? 2 : 10; // Cible de 2 pour le Rush, 10 pour les autres
+        if ((state.activityTracker[k] || 0) >= target) greenCount++;
+    });
     let xpLevel = Math.floor(state.score / 5000) + 1;
     let allowedLevel = state.lastLvl || 1;
     if (xpLevel > allowedLevel) { if (greenCount >= 6) { return Math.min(10, xpLevel); } else { return allowedLevel; } }
@@ -207,8 +208,9 @@ function renderActivityDots() {
     let html = `<div class="dots-title">6 points verts pour débloquer niveau suivant :</div><div class="dots-grid">`;
     for (let k in labels) {
         const count = state.activityTracker[k] || 0;
-        let dotClass = "dot-red"; if(count >= 1 && count < 10) dotClass = "dot-orange"; else if(count >= 10) dotClass = "dot-green";
-        html += `<div class="dot-item"><span class="status-dot ${dotClass}"></span><small>${labels[k]} (${count}/10)</small></div>`;
+        const target = (k === 'chrono') ? 2 : 10; // Affichage de la cible dynamique
+        let dotClass = "dot-red"; if(count >= 1 && count < target) dotClass = "dot-orange"; else if(count >= target) dotClass = "dot-green";
+        html += `<div class="dot-item"><span class="status-dot ${dotClass}"></span><small>${labels[k]} (${count}/${target})</small></div>`;
     }
     box.innerHTML = html + `</div>`;
 }
@@ -246,11 +248,9 @@ function renderQuestsUI() {
     `).join('');
 }
 
-// ALGORITHME SRS INTÉGRÉ : Sélection intelligente par urgence temporelle et boîte
 function getNextWord() {
     const type = document.getElementById('exercise-select').value; const lvl = getLevel();
     let pool = vocabulaire.filter(item => item.lvl <= lvl);
-    
     if (type === 'rattrapage') {
         let weakPool = pool.filter(l => {
             const h = state.history[l.grec];
@@ -258,27 +258,19 @@ function getNextWord() {
         });
         return weakPool.length > 0 ? weakPool[Math.floor(Math.random() * weakPool.length)] : pool[Math.floor(Math.random() * pool.length)];
     }
-
     const now = Date.now();
-    
-    // 1. Chercher en priorité les mots mûrs selon le calendrier SRS (Exclut Box 5 acquise)
     let duePool = pool.filter(l => {
         const h = state.history[l.grec];
         return h && h.total > 0 && h.nextReview <= now && h.box < 5;
     });
     if (duePool.length > 0) return duePool[Math.floor(Math.random() * duePool.length)];
-
-    // 2. S'il n'y a pas de mots dus, proposer une nouveauté absolue (non vue)
     let unseen = pool.filter(l => !state.history[l.grec] || state.history[l.grec].total === 0);
     if (unseen.length > 0) return unseen[Math.floor(Math.random() * unseen.length)];
-
-    // 3. Repli : Tout est à jour, trier et distribuer le mot de la boîte la plus fragile
     pool.sort((a, b) => {
         const boxA = state.history[a.grec]?.box || 1;
         const boxB = state.history[b.grec]?.box || 1;
         return boxA - boxB;
     });
-
     let selectedWord = pool[Math.floor(Math.random() * Math.min(3, pool.length))];
     if (currentWord && selectedWord.grec === currentWord.grec && pool.length > 1) { selectedWord = pool[1]; }
     return selectedWord;
@@ -295,7 +287,7 @@ function renderExercise() {
     if (type === 'association') { buildAssociationGame(); return; }
 
     currentWord = getNextWord();
-    let html = type === 'rattrapage' ? `<h2 style="color:var(--error)">⚠️ SESSION RATTRAPAGE (XP X2)</h2>` : `<h2>Mission</h2>`;
+    let html = type === 'rattrapage' ? `<h2 style="color:var(--error)">⚠️ SESSION RATTRAPAGE (0 XP / 0 🪙)</h2>` : `<h2>Mission</h2>`;
     let audioButton = `<button id="inline-audio-trigger" class="inline-audio-btn">🔊 Écouter</button>`;
 
     if (type === 'qcm' || type === 'chrono') {
@@ -313,13 +305,11 @@ function renderExercise() {
         container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
         document.getElementById('btn-valider').onclick = validateText;
     } else if (type === 'ecriture') {
-        // Mode Écriture avec injection du Clavier Virtuel Grec
         html += `<span class="big-char" style="font-size:2.4rem; color:var(--text);">${currentWord.emoji} ${currentWord.francais}</span><p>Écrivez en GREC :</p><input type="text" id="answer" data-correct="${currentWord.grec}" placeholder="Utilisez le clavier virtuel ou physique..."><br><div class="greek-keyboard">` + 
         greekAlphabet.map(k => `<button class="key-btn ${k===' '?'space-key':''} ${k==='⌫'?'backspace-key':''}" data-key="${k}">${k===' '?'Espace':k}</button>`).join('') + 
         `</div><br>${audioButton}<br><button class="valider-btn" id="btn-valider">Valider</button>`;
         container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
         
-        // Attachement des touches virtuelles
         container.querySelectorAll('.key-btn').forEach(btn => {
             btn.onclick = function() {
                 const input = document.getElementById('answer'); if (!input || input.disabled) return;
@@ -335,7 +325,6 @@ function renderExercise() {
         container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
         document.getElementById('btn-listen').onclick = () => speak(currentWord.grec);
         document.getElementById('btn-valider').onclick = validateText;
-        setTimeout(() => speak(currentWord.grec), 350);
     } else if (type === 'oral') {
         html += `<div class="word-audio-container"><span class="big-char" style="font-size:2.4rem; color:var(--text);">${currentWord.grec}</span>${audioButton}</div><p>Prononcez le mot au micro :</p><button id="mic-trigger" class="mic-btn">🎙️</button><div id="oral-transcript">En attente...</div>`;
         container.innerHTML = html + `<p class="hint-word">Aide : ${currentWord.mne}</p>`;
@@ -344,6 +333,11 @@ function renderExercise() {
     
     const audioTrigger = document.getElementById('inline-audio-trigger'); if (audioTrigger) audioTrigger.onclick = () => speak(currentWord.grec);
     if (document.getElementById('answer')) document.getElementById('answer').focus();
+
+    // LECTURE AUTOMATIQUE : Prononce instantanément le mot grec à chaque chargement d'écran
+    if (type !== 'association') {
+        setTimeout(() => speak(currentWord.grec), 250);
+    }
 }
 
 function buildAssociationGame() {
@@ -399,7 +393,6 @@ function processResult(isCorrect, correctAnswerDisplay) {
     const type = document.getElementById('exercise-select').value; const today = new Date().toISOString().split('T')[0];
     const container = document.getElementById('exercise-container');
     
-    // Initialisation ou récupération de l'état SRS du mot
     if(!state.history[currentWord.grec]) state.history[currentWord.grec] = {errors: 0, total: 0, box: 1, nextReview: 0};
     let srsData = state.history[currentWord.grec];
     srsData.total++;
@@ -408,16 +401,21 @@ function processResult(isCorrect, correctAnswerDisplay) {
 
     if (isCorrect) {
         triggerVibrate(30); state.currentCombo = Math.min(3, (state.currentCombo || 1) + 1);
-        if(!state.activityTracker) state.activityTracker = {}; state.activityTracker[type] = (state.activityTracker[type] || 0) + 1;
+        
+        // Incrémentation par bonne réponse UNIQUEMENT si ce n'est pas le mode Chrono (géré par série complète)
+        if(type !== 'chrono') {
+            if(!state.activityTracker) state.activityTracker = {}; state.activityTracker[type] = (state.activityTracker[type] || 0) + 1;
+        }
 
-        let baseXP = type === 'rattrapage' ? 20 : 10;
-        let gainedXP = baseXP * state.currentCombo; let gainedDrachmes = Math.max(1, Math.round((12 * state.currentCombo) / 5));
+        // RATTRAPAGE SANS POINTS : base à 0 XP si mode rattrapage
+        let baseXP = type === 'rattrapage' ? 0 : 10;
+        let gainedXP = baseXP * state.currentCombo; 
+        let gainedDrachmes = type === 'rattrapage' ? 0 : Math.max(1, Math.round((12 * state.currentCombo) / 5));
         
         state.score += gainedXP; state.drachmes += gainedDrachmes; state.streak++;
         state.activityLog[today] = (state.activityLog[today] || 0) + gainedXP;
         if(type === 'chrono') { timeLeft += 2; chronoScore += gainedXP; document.getElementById('chrono-score-val').innerText = chronoScore; }
         
-        // Progression SRS : Monte d'une boîte et calcule la date de révision
         srsData.box = Math.min(5, (srsData.box || 1) + 1);
         srsData.nextReview = Date.now() + srsIntervals[srsData.box - 1];
 
@@ -431,11 +429,9 @@ function processResult(isCorrect, correctAnswerDisplay) {
         srsData.errors++; if(type === 'chrono') timeLeft = Math.max(0, timeLeft - 5);
         playTone([220, 180], 0.2);
         
-        // Chute SRS : Retour immédiat en boîte 1 pour révision
         srsData.box = 1;
         srsData.nextReview = Date.now();
 
-        // Effet Visuel Shake en cas de mauvaise réponse
         if (container) {
             container.classList.add('shake');
             setTimeout(() => container.classList.remove('shake'), 400);
@@ -453,7 +449,18 @@ function startChrono() {
     timeLeft = 60; document.getElementById('timer-val').innerText = timeLeft;
     chronoTimer = setInterval(() => {
         timeLeft--; document.getElementById('timer-val').innerText = timeLeft;
-        if(timeLeft <= 0) { stopChrono(); saveChronoRecord(chronoScore); alert(`Rush terminé ! +` + chronoScore + ` XP.`); document.getElementById('exercise-select').value = 'qcm'; renderExercise(); }
+        if(timeLeft <= 0) { 
+            stopChrono(); 
+            saveChronoRecord(chronoScore); 
+            
+            // POINT VERT RUSH : Le tracker s'incrémente de 1 par série de jeu complète achevée
+            state.activityTracker['chrono'] = (state.activityTracker['chrono'] || 0) + 1;
+            saveAndRefresh();
+            
+            alert(`Rush terminé ! +` + chronoScore + ` XP.`); 
+            document.getElementById('exercise-select').value = 'qcm'; 
+            renderExercise(); 
+        }
     }, 1000);
 }
 function stopChrono() { clearInterval(chronoTimer); chronoTimer = null; }
@@ -573,7 +580,6 @@ function saveAndRefresh() {
     document.getElementById('progress-bar').style.width = ((state.score % 5000) / 5000) * 100 + "%";
     document.body.className = state.activeTheme || "theme-orchard";
     
-    // Rafraîchissement visuel du bouton Muet
     const muteBtn = document.getElementById('mute-toggle');
     if (muteBtn) {
         muteBtn.innerText = state.isMuted ? "🔇 Muet" : "🔊 Son";
@@ -582,23 +588,20 @@ function saveAndRefresh() {
 
     const cBox = document.getElementById('combo-box');
     if(state.currentCombo > 1) { cBox.style.display = "block"; document.getElementById('combo-val').innerText = "x" + state.currentCombo; } else { cBox.style.display = "none"; }
-    renderDashboard(); renderQuestsUI();
+    renderDashboard(); renderActivityDots(); renderQuestsUI();
 }
 
 function renderDashboard() {
     const lvl = getLevel(); const pool = vocabulaire.filter(i => i.lvl <= lvl);
     document.getElementById('dashboard-grid').innerHTML = pool.map(l => {
         const h = state.history[l.grec]; 
-        let s = "";
-        if (h && h.total > 0) {
-            s = (h.box >= 4) ? "mastered" : "learning";
-        }
+        let s = ""; if (h && h.total > 0) s = (h.box >= 4) ? "mastered" : "learning";
         return `<div class="dash-cell ${s}" title="${l.francais} (Box ${h?.box || 1})">${l.emoji}</div>`;
     }).join('');
 }
 
 function speak(text) { 
-    if (state.isMuted) return; // Coupure Synthèse Vocale
+    if (state.isMuted) return;
     window.speechSynthesis.cancel(); const speechObj = new SpeechSynthesisUtterance(text); speechObj.lang = 'el-GR'; speechObj.rate = isSlowAudio ? 0.45 : 0.85; window.speechSynthesis.speak(speechObj); 
 }
 
@@ -629,8 +632,7 @@ document.getElementById('btn-fiche').onclick = () => {
         </div>`;
         const levelWords = vocabulaire.filter(i => i.lvl === l);
         levelWords.forEach(word => {
-            const srs = state.history[word.grec];
-            const boxInfo = srs ? ` <small style="color:var(--accent)">[Box ${srs.box}]</small>` : '';
+            const srs = state.history[word.grec]; const boxInfo = srs ? ` <small style="color:var(--accent)">[Box ${srs.box}]</small>` : '';
             html += `<div class="fiche-item"><span><b>` + word.artGrec + ` ` + word.grec + `</b>${boxInfo} : ` + word.artFr + ` ` + word.francais + ` <small style="opacity:0.65;">(` + word.genreFr + `)</small> ` + word.emoji + `</span><div><button class="dictio-audio-btn" data-grec="${word.grec}">🔊 Écouter</button></div></div>`;
         });
     }
@@ -644,10 +646,7 @@ document.getElementById('btn-fiche').onclick = () => {
 
 document.getElementById('close-modal').onclick = () => { if (slideshowInterval) toggleSlideshow(); document.getElementById('modal-fiche').close(); };
 document.getElementById('slow-toggle').onclick = (e) => { isSlowAudio = !isSlowAudio; e.target.classList.toggle('active', isSlowAudio); e.target.innerText = isSlowAudio ? "Lent" : "Audio"; };
-
-// Logique d'activation du bouton Muet
 document.getElementById('mute-toggle').onclick = () => { state.isMuted = !state.isMuted; saveAndRefresh(); };
-
 document.getElementById('exercise-select').onchange = function() { renderExercise(); };
 document.getElementById('btn-buy-freeze').onclick = function() { buyItem('freeze', 80); };
 document.getElementById('btn-export-save').onclick = exportSave;
@@ -656,15 +655,13 @@ document.getElementById('import-file-input').onchange = (e) => importSave(e);
 document.getElementById('btn-reset-game').onclick = resetGameProgress;
 document.getElementById('btn-start-slideshow').onclick = toggleSlideshow;
 
-// Écouteur clavier physique : Ajout des touches numériques 1, 2, 3, 4 pour le QCM
 document.addEventListener('keydown', (e) => { 
     const ex = document.getElementById('exercise-select').value; 
     if(e.key === 'Enter') { 
         if(ex !== 'association' && ex !== 'qcm' && ex !== 'chrono') validateText(); 
     } 
     if((ex === 'qcm' || ex === 'chrono') && ['1', '2', '3', '4'].includes(e.key)) {
-        const buttons = document.querySelectorAll('.qcm-btn');
-        const index = parseInt(e.key) - 1;
+        const buttons = document.querySelectorAll('.qcm-btn'); const index = parseInt(e.key) - 1;
         if(buttons[index] && !buttons[index].disabled) buttons[index].click();
     }
 });
