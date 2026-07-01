@@ -28,7 +28,7 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Κολοκύθι", "artFr": "la", "francais": "Courgette", "genreFr": "f.", "emoji": "🥒", "lvl": 3, "mne": "Se prononce 'kolokythi'. Pour les mezzés."},
     {"artGrec": "η", "grec": "Μελιτζάνα", "artFr": "l'", "francais": "Aubergine", "genreFr": "f.", "emoji": "🍆", "lvl": 3, "mne": "Se prononce 'melitzana'. Indispensable pour la moussaka !"},
     {"artGrec": "η", "grec": "Πιπεριά", "artFr": "le", "francais": "Poivron", "genreFr": "m.", "emoji": "🫑", "lvl": 3, "mne": "Se prononce 'piperia'. Même racine que le poivre."},
-    {"artGrec": "τα", "grec": "Φασολάκια", "artFr": "les", "francais": "Haricots verts", "genreFr": "pl.", "emoji": "🫘", "lvl": 3, "mne": "Se prononce 'fasolakia'. Petits haricots fins."},
+    {"artGrec": "τα", "grec": "Φασολάκια", "artFr": "les", "francais": "Haricots verts", "genreFr": "pl.", "emoji": "𫫘", "lvl": 3, "mne": "Se prononce 'fasolakia'. Petits haricots fins."},
     {"artGrec": "το", "grec": "Μάνγκο", "artFr": "la", "francais": "Mangue", "genreFr": "f.", "emoji": "🥭", "lvl": 4, "mne": "Se prononce 'mango'. Écriture directe."},
     {"artGrec": "το", "grec": "Ακτινίδιο", "artFr": "le", "francais": "Kiwi", "genreFr": "m.", "emoji": "🥝", "lvl": 4, "mne": "Se prononce 'aktinidio'. Rayons du fruit."},
     {"artGrec": "το", "grec": "Γκρέιπφρουτ", "artFr": "le", "francais": "Pamplemousse", "genreFr": "m.", "emoji": "🍊", "lvl": 4, "mne": "Phonétique de grapefruit."},
@@ -54,11 +54,11 @@ const vocabulaire = [
     {"artGrec": "το", "grec": "Φουντούκι", "artFr": "la", "francais": "Noisette", "genreFr": "f.", "emoji": "🥜", "lvl": 6, "mne": "Se prononce 'fountouki'. Fruit du coudrier."},
     {"artGrec": "το", "grec": "Αμύγδαλο", "artFr": "l'", "francais": "Amande", "genreFr": "f.", "emoji": "🌰", "lvl": 6, "mne": "Amnygdalo. En forme d'amande."},
     {"artGrec": "η", "grec": "Καρύδα", "artFr": "la", "francais": "Noix de coco", "genreFr": "f.", "emoji": "🥥", "lvl": 6, "mne": "Se prononce 'karyda'. Grosse noix exotique."},
-    {"artGrec": "η", "grec": "Φάβα", "artFr": "la", "francais": "Fève", "genreFr": "f.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'fava'. Purée typique de Santorin."},
+    {"artGrec": "η", "grec": "Φάβα", "artFr": "la", "francais": "Fève", "genreFr": "f.", "emoji": "𫫘", "lvl": 6, "mne": "Se prononce 'fava'. Purée typique de Santorin."},
     {"artGrec": "η", "grec": "Γλυκοπατάτα", "artFr": "la", "francais": "Patate douce", "genreFr": "f.", "emoji": "🍠", "lvl": 6, "mne": "Se prononce 'glykopatata'. Patate sucrée."},
-    {"artGrec": "το", "grec": "Φασόλι", "artFr": "le", "francais": "Haricot blanc", "genreFr": "m.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'fasoli'. Ingrédient de la fasolada."},
-    {"artGrec": "το", "grec": "Ρεβίθι", "artFr": "le", "francais": "Pois chiche", "genreFr": "m.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'revithi'. Base de soupe crémeuse."},
-    {"artGrec": "η", "grec": "Φακή", "artFr": "la", "francais": "Lentille", "genreFr": "f.", "emoji": "🫘", "lvl": 6, "mne": "Se prononce 'faki'. Lentilles brunes."},
+    {"artGrec": "το", "grec": "Φασόλι", "artFr": "le", "francais": "Haricot blanc", "genreFr": "m.", "emoji": "𫫘", "lvl": 6, "mne": "Se prononce 'fasoli'. Ingrédient de la fasolada."},
+    {"artGrec": "το", "grec": "Ρεβίθι", "artFr": "le", "francais": "Pois chiche", "genreFr": "m.", "emoji": "𫫘", "lvl": 6, "mne": "Se prononce 'revithi'. Base de soupe crémeuse."},
+    {"artGrec": "η", "grec": "Φακή", "artFr": "la", "francais": "Lentille", "genreFr": "f.", "emoji": "𫫘", "lvl": 6, "mne": "Se prononce 'faki'. Lentilles brunes."},
     {"artGrec": "ο", "grec": "Χουρμάς", "artFr": "la", "francais": "Datte", "genreFr": "f.", "emoji": "🌴", "lvl": 7, "mne": "Se prononce 'chourmas'. Fruit séché."},
     {"artGrec": "η", "grec": "Παπάγια", "artFr": "la", "francais": "Papaye", "genreFr": "f.", "emoji": "🥭", "lvl": 7, "mne": "Se prononce 'papaya'. Phonétique."},
     {"artGrec": "το", "grec": "Αβοκάντο", "artFr": "l'", "francais": "Avocat", "genreFr": "m.", "emoji": "🥑", "lvl": 7, "mne": "Se prononce 'avokanto'. Avocat bien mûr."},
@@ -169,7 +169,7 @@ function getLevel() {
     const keys = ['qcm', 'lecture', 'ecriture', 'audition', 'oral', 'chrono', 'rattrapage', 'association'];
     let greenCount = 0;
     keys.forEach(k => {
-        const target = (k === 'chrono') ? 2 : 10; // Cible de 2 pour le Rush, 10 pour les autres
+        const target = (k === 'chrono') ? 2 : 10;
         if ((state.activityTracker[k] || 0) >= target) greenCount++;
     });
     let xpLevel = Math.floor(state.score / 5000) + 1;
@@ -208,7 +208,7 @@ function renderActivityDots() {
     let html = `<div class="dots-title">6 points verts pour débloquer niveau suivant :</div><div class="dots-grid">`;
     for (let k in labels) {
         const count = state.activityTracker[k] || 0;
-        const target = (k === 'chrono') ? 2 : 10; // Affichage de la cible dynamique
+        const target = (k === 'chrono') ? 2 : 10;
         let dotClass = "dot-red"; if(count >= 1 && count < target) dotClass = "dot-orange"; else if(count >= target) dotClass = "dot-green";
         html += `<div class="dot-item"><span class="status-dot ${dotClass}"></span><small>${labels[k]} (${count}/${target})</small></div>`;
     }
@@ -251,13 +251,23 @@ function renderQuestsUI() {
 function getNextWord() {
     const type = document.getElementById('exercise-select').value; const lvl = getLevel();
     let pool = vocabulaire.filter(item => item.lvl <= lvl);
+    
+    // CORRECTION DU BLOCAGE EN RATTRAPAGE
     if (type === 'rattrapage') {
         let weakPool = pool.filter(l => {
             const h = state.history[l.grec];
-            return h && (h.box === 1 || (h.errors / h.total) >= 0.40);
+            return h && (h.box === 1 || (h.errors / (h.total || 1)) >= 0.40);
         });
-        return weakPool.length > 0 ? weakPool[Math.floor(Math.random() * weakPool.length)] : pool[Math.floor(Math.random() * pool.length)];
+        
+        // Si moins de 2 mots fragiles différents trouvés, on pioche dans le pool total pour amener de la variété
+        let finalPool = (weakPool.length > 1 || (weakPool.length === 1 && (!currentWord || weakPool[0].grec !== currentWord.grec))) ? weakPool : pool;
+        
+        // Anti-répétition stricte
+        let choices = finalPool.filter(l => !currentWord || l.grec !== currentWord.grec);
+        if (choices.length === 0) choices = finalPool;
+        return choices[Math.floor(Math.random() * choices.length)];
     }
+    
     const now = Date.now();
     let duePool = pool.filter(l => {
         const h = state.history[l.grec];
@@ -287,7 +297,9 @@ function renderExercise() {
     if (type === 'association') { buildAssociationGame(); return; }
 
     currentWord = getNextWord();
-    let html = type === 'rattrapage' ? `<h2 style="color:var(--error)">⚠️ SESSION RATTRAPAGE (0 XP / 0 🪙)</h2>` : `<h2>Mission</h2>`;
+    
+    // CORRECTIONS MENTION DU HEADER
+    let html = type === 'rattrapage' ? `<h2 style="color:var(--error)">⚠️ SESSION RATTRAPAGE (Entraînement)</h2>` : `<h2>Mission</h2>`;
     let audioButton = `<button id="inline-audio-trigger" class="inline-audio-btn">🔊 Écouter</button>`;
 
     if (type === 'qcm' || type === 'chrono') {
@@ -334,7 +346,6 @@ function renderExercise() {
     const audioTrigger = document.getElementById('inline-audio-trigger'); if (audioTrigger) audioTrigger.onclick = () => speak(currentWord.grec);
     if (document.getElementById('answer')) document.getElementById('answer').focus();
 
-    // LECTURE AUTOMATIQUE : Prononce instantanément le mot grec à chaque chargement d'écran
     if (type !== 'association') {
         setTimeout(() => speak(currentWord.grec), 250);
     }
@@ -402,12 +413,12 @@ function processResult(isCorrect, correctAnswerDisplay) {
     if (isCorrect) {
         triggerVibrate(30); state.currentCombo = Math.min(3, (state.currentCombo || 1) + 1);
         
-        // Incrémentation par bonne réponse UNIQUEMENT si ce n'est pas le mode Chrono (géré par série complète)
+        // CORRECTION COMPTEUR POINTS VERTS : le rattrapage progresse désormais normalement
         if(type !== 'chrono') {
-            if(!state.activityTracker) state.activityTracker = {}; state.activityTracker[type] = (state.activityTracker[type] || 0) + 1;
+            if(!state.activityTracker) state.activityTracker = {}; 
+            state.activityTracker[type] = (state.activityTracker[type] || 0) + 1;
         }
 
-        // RATTRAPAGE SANS POINTS : base à 0 XP si mode rattrapage
         let baseXP = type === 'rattrapage' ? 0 : 10;
         let gainedXP = baseXP * state.currentCombo; 
         let gainedDrachmes = type === 'rattrapage' ? 0 : Math.max(1, Math.round((12 * state.currentCombo) / 5));
@@ -452,11 +463,8 @@ function startChrono() {
         if(timeLeft <= 0) { 
             stopChrono(); 
             saveChronoRecord(chronoScore); 
-            
-            // POINT VERT RUSH : Le tracker s'incrémente de 1 par série de jeu complète achevée
             state.activityTracker['chrono'] = (state.activityTracker['chrono'] || 0) + 1;
             saveAndRefresh();
-            
             alert(`Rush terminé ! +` + chronoScore + ` XP.`); 
             document.getElementById('exercise-select').value = 'qcm'; 
             renderExercise(); 
